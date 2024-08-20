@@ -1,8 +1,13 @@
 <script lang='ts'>
+	import { joinURL } from 'ufo';
 	import type { PR } from '$lib';
 	import { formatDate } from '$lib/date-utils';
 
 	const { pr }: { pr: PR } = $props();
+
+	const prURL = joinURL('https://github.com', pr.repo);
+	const prUserName = pr.repo.split('/').at(0) ?? '';
+	const prRepoName = pr.repo.split('/').at(1) ?? '';
 </script>
 <!-- svelte-ignore element_invalid_self_closing_tag -->
 
@@ -13,7 +18,7 @@
 >
 	<a
 		border='~ gray-200 dark:border-gray-800'
-		href='https://github.com/{pr.repo}'
+		href={prURL}
 		overflow-hidden
 		relative
 		rounded-md
@@ -25,7 +30,7 @@
 		<img
 			alt={pr.repo}
 			size-full
-			src="https://github.com/{pr.repo.split('/')[0]}.png"
+			src='https://github.com/{prUserName}.png'
 		/>
 	</a>
 
@@ -62,13 +67,13 @@
 			<a
 				flex
 				gap-1
-				href='https://github.com/{pr.repo}'
+				href={prURL}
 				target='_blank'
 				underline='hover:~'
 			>
-				<span opacity-75>{pr.repo.split('/')[0]}</span>
+				<span opacity-75>{prUserName}</span>
 				<span opacity-50>/</span>
-				<span truncate>{pr.repo.split('/')[1]}</span>
+				<span truncate>{prRepoName}</span>
 			</a>
 		</div>
 

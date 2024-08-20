@@ -1,9 +1,12 @@
 <script>
+	import { joinURL } from 'ufo';
 	import PullRequest from './PullRequest.svelte';
 
 	const { data } = $props();
 	const user = data.user;
 	const prs = data.prs;
+
+	const userUrl = joinURL('https://github.com', user.username);
 </script>
 
 <!-- svelte-ignore element_invalid_self_closing_tag -->
@@ -26,7 +29,7 @@
 			<a
 				flex='~ items-center'
 				gap-2
-				href='https://github.com/{user.username}'
+				href={userUrl}
 				target='_blank'
 			>
 				<img
@@ -45,7 +48,7 @@
 			op75
 			text-center
 		>
-			<a href='https://github.com/leon-fong' target='_blank'>
+			<a href={userUrl} target='_blank'>
 				{user.username}'s recent pull requests on GitHub
 			</a>
 		</p>
