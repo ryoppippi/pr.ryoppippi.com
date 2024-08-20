@@ -18,14 +18,33 @@
 	p10
 >
 	<div flex='~ col'>
-		<h1 flex='~ gap-2 wrap justify-center items-center' text-3xl>
-			<a flex='~ items-center gap-2' href='https://github.com/{user.username}' target='_blank'>
-				<img alt='Leon Fong' mr1 rounded-full src={user.avatar} w-12 />
+		<h1
+			flex='~ gap-2 wrap'
+			items-center
+			justify-center
+			text-3xl>
+			<a
+				flex='~ items-center'
+				gap-2
+				href='https://github.com/{user.username}'
+				target='_blank'
+			>
+				<img
+					alt={user.username}
+					mr1
+					rounded-full
+					src={user.avatar}
+					w-12
+				/>
 				{user.name}
 			</a>
 			is <animate-pulse>Contributing...</animate-pulse>
 		</h1>
-		<p mt1 op75 text-center>
+		<p
+			mt1
+			op75
+			text-center
+		>
 			<a href='https://github.com/leon-fong' target='_blank'>
 				{user.username}'s recent pull requests on GitHub
 			</a>

@@ -6,45 +6,89 @@
 </script>
 <!-- svelte-ignore element_invalid_self_closing_tag -->
 
-<div class='flex items-center gap-4'>
+<div
+	flex
+	gap-4
+	items-center
+>
 	<a
-		class='size-12 shrink-0 rounded-md border border-gray-200 dark:border-gray-800 overflow-hidden shadow-sm'
+		border='~ gray-200 dark:border-gray-800'
 		href='https://github.com/{pr.repo}'
+		overflow-hidden
 		relative
+		rounded-md
+		shadow-sm
+		shrink-0
+		size-12
 		target='_blank'
 	>
-		<img class='size-full' alt={pr.repo} src="https://github.com/{pr.repo.split('/')[0]}.png" />
+		<img
+			alt={pr.repo}
+			size-full
+			src="https://github.com/{pr.repo.split('/')[0]}.png"
+		/>
 	</a>
 
-	<div class='flex-1 flex justify-between gap-2 lg:gap-4 min-w-0'>
-		<div class='flex flex-col min-w-0 gap-1'>
-			<a class='flex items-center gap-1 hover:underline text-gray-900 dark:text-white' href={pr.url} target='_blank'>
+	<div
+		flex='~ 1'
+		gap='2 lg:4'
+		justify-between
+		min-w-0
+	>
+		<div
+			flex='~ col'
+			gap-1
+			min-w-0
+		>
+			<a
+				flex
+				gap-1
+				href={pr.url}
+				items-center
+				target='_blank'
+				text='gray-900 dark:white'
+				underline='hover:~'
+			>
 				<i-ph-git-pull-request-duotone
-					class='size-5 shrink-0'
-					class:dark:text-green-400={pr.state === 'open'}
-					class:dark:text-purple-400={pr.state === 'merged'}
-					class:text-green-500={pr.state === 'open'}
-					class:text-purple-500={pr.state === 'merged'}
+					class:mergedPR={pr.state === 'merged'}
+					class:openPR={pr.state === 'open'}
+					shrink-0
+					size-5
 				/>
 
-				<span class='truncate'>{pr.title}</span>
+				<span truncate>{pr.title}</span>
 			</a>
 
-			<a class='flex gap-1 hover:underline' href='https://github.com/{pr.repo}' target='_blank'>
-				<span class='opacity-75'>{pr.repo.split('/')[0]}</span>
-				<span class='opacity-50'>/</span>
-				<span class='truncate'>{pr.repo.split('/')[1]}</span>
+			<a
+				flex
+				gap-1
+				href='https://github.com/{pr.repo}'
+				target='_blank'
+				underline='hover:~'
+			>
+				<span opacity-75>{pr.repo.split('/')[0]}</span>
+				<span opacity-50>/</span>
+				<span truncate>{pr.repo.split('/')[1]}</span>
 			</a>
 		</div>
 
-		<div class='flex flex-col justify-between shrink-0 text-right'>
-			<a class='hover:underline' href={pr.url} target='_blank'>
+		<div
+			flex='~ col'
+			justify-between
+			shrink-0
+			text-right
+		>
+			<a
+				href={pr.url}
+				target='_blank'
+				underline='hover:~'
+			>
 				#{pr.number}
 			</a>
 
 			<time
-				class='text-sm text-gray-500 dark:text-gray-400'
 				datatime={pr.created_at}
+				text='sm gray-500 dark:gray-400'
 			>
 				{formatDate(new Date(pr.created_at))}
 			</time>
