@@ -26,6 +26,10 @@
 		"svelte": "^5.0.0-next.1",
 		"svelte-check": "^3.6.0",
 		"typescript": "^5.0.0",
+		"typescript-svelte-plugin": "^0.3.40",
 		"vite": "^5.0.3"
+	},
+	"dependencies": {
+		"feed": "^4.2.2"
 	}
 }
