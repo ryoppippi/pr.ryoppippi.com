@@ -41,7 +41,7 @@
 		min-w-0
 	>
 		<div
-			flex='~ col'
+			fcol
 			gap-1
 			min-w-0
 		>
@@ -78,7 +78,7 @@
 		</div>
 
 		<div
-			flex='~ col'
+			fcol
 			justify-between
 			shrink-0
 			text-right

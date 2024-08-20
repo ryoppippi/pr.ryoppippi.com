@@ -13,14 +13,15 @@
 
 <div
 	class='p-4 sm:p-6 lg:p-8 max-w-2xl'
-	flex='~ col gap-8'
+	fcol
 	font-sans
+	gap-8
 	lt-sm='px6'
 	max-w-180
 	mxa
 	p10
 >
-	<div flex='~ col'>
+	<div fcol>
 		<h1
 			flex='~ gap-2 wrap'
 			items-center
