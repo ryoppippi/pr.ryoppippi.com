@@ -2,6 +2,7 @@ import { json } from '@sveltejs/kit';
 import { Octokit } from 'octokit';
 import type { RequestHandler } from './$types';
 import { env } from '$env/dynamic/private';
+import type { Contributions } from '$lib';
 
 export const GET = (async () => {
 	const octokit = new Octokit({
@@ -25,9 +26,9 @@ export const GET = (async () => {
 		title: pr.title,
 		url: pr.html_url,
 		created_at: pr.created_at,
-		state: pr.pull_request?.merged_at != null ? 'merged' : pr.state,
+		state: pr.pull_request?.merged_at != null ? 'merged' : pr.state as Contributions['prs'][0]['state'],
 		number: pr.number,
 	}));
 
-	return json({ user, prs });
+	return json({ user, prs } satisfies Contributions);
 }) satisfies RequestHandler;

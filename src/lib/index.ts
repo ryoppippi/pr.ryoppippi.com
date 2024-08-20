@@ -1,1 +1,15 @@
-// place files you want to import through the `$lib` alias in this folder.
+export type Contributions = {
+	user: {
+		username: string;
+		name: string;
+		avatar: string;
+	};
+	prs: {
+		repo: string;
+		title: string;
+		url: string;
+		created_at: string;
+		state: 'merged' | 'open' | 'closed';
+		number: number;
+	}[];
+};
