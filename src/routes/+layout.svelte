@@ -2,8 +2,12 @@
 	import 'uno.css';
 	import '@unocss/reset/tailwind.css';
 
+	import DarkModeHeader from './DarkModeHeader.svelte';
+
 	const { children } = $props();
 </script>
+
+<DarkModeHeader />
 
 {@render children()}
 
