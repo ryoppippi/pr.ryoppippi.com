@@ -3,6 +3,8 @@ import { joinURL } from 'ufo';
 import type { RequestHandler } from './$types';
 import type { Contributions } from '$lib';
 
+export const prerender = true;
+
 export const GET = (async ({ fetch, url }) => {
 	const domain = `${url.protocol}//${url.host}`;
 	const res = await fetch(`/api/contributions`);

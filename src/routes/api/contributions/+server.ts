@@ -1,12 +1,14 @@
 import { json } from '@sveltejs/kit';
 import { Octokit } from 'octokit';
 import type { RequestHandler } from './$types';
-import { env } from '$env/dynamic/private';
+import { GH_TOKEN } from '$env/static/private';
 import type { Contributions } from '$lib';
+
+export const prerender = true;
 
 export const GET = (async () => {
 	const octokit = new Octokit({
-		auth: env.GH_TOKEN,
+		auth: GH_TOKEN,
 	});
 	// Fetch user from token
 	const userResponse = await octokit.request('GET /user');
