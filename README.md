@@ -1,6 +1,6 @@
 # pr.ryoppippi.com
 
-![Screenshot](https://github.com/user-attachments/assets/58f73019-676e-40ca-9a18-81f601260ffc)
+![Screenshot](https://github.com/user-attachments/assets/16ae88c5-fe7c-47b8-90e5-e0a9cd69aad3)
 
 ## Built with
 
