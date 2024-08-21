@@ -2,12 +2,20 @@
 
 ![Screenshot](https://github.com/user-attachments/assets/16ae88c5-fe7c-47b8-90e5-e0a9cd69aad3)
 
+<details>
+<summary>...with nice icons!</summary>
+
+https://github.com/user-attachments/assets/d29e0e35-05d5-4271-96dd-981fe29c1f64
+
+</details>
+
 ## Built with
 
 - [Svelte 5](https://svelte.dev/)
 - [SvelteKit](https://kit.svelte.dev/)
 - [GitHub API](https://docs.github.com/en/rest)
 - [Uno CSS](https://unocss.dev/)
+- [unplugin-icons](https://github.com/unplugin/unplugin-icons)
 - [Cloudflare Pages](https://pages.cloudflare.com/)
 
 ## Setup
