@@ -1,16 +1,29 @@
 <script>
 	import { joinURL } from 'ufo';
 	import PullRequest from './PullRequest.svelte';
+	import { browser } from '$app/environment';
 
 	const { data } = $props();
 	const user = data.user;
 	const prs = data.prs;
 
 	const userUrl = joinURL('https://github.com', user.username);
+
+	let isDark = $state(
+		browser
+			? localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
+			: false,
+	);
+
+	function toggleDarkMode() {
+		document.documentElement.classList.toggle('dark');
+		isDark = document.documentElement.classList.contains('dark');
+		localStorage.theme = isDark ? 'dark' : 'light';
+	}
 </script>
 
 <!-- svelte-ignore element_invalid_self_closing_tag -->
-
+<!-- svelte-ignore a11y_missing_content -->
 <div
 	class='p-4 sm:p-6 lg:p-8 max-w-2xl'
 	fcol
@@ -53,9 +66,19 @@
 				{user.username}'s recent pull requests on GitHub
 			</a>
 		</p>
+		<div flex gap-3 justify-center p3>
+			<!-- eslint-disable-next-line svelte/button-has-type -->
+			<button
+				class:i-ph-moon-stars-duotone={!isDark}
+				class:i-ph-sun-duotone={isDark}
+				onclick={toggleDarkMode}
+			/>
+			<a href={userUrl} i-line-md-github-loop target='_blank' />
+			<a href='/feed.xml' i-ph-rss-simple-duotone />
+		</div>
 
-		<div p5>
-			<hr ma op25 w-20 />
+		<div p2>
+			<hr ma op25 w-50 />
 		</div>
 	</div>
 
