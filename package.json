@@ -8,6 +8,7 @@
 		"dev": "vite dev",
 		"build": "vite build",
 		"preview": "vite preview",
+		"deploy": "wrangler pages deploy ./build",
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "eslint --cache .",
@@ -37,6 +38,7 @@
 		"typescript-svelte-plugin": "^0.3.40",
 		"ufo": "^1.5.4",
 		"unocss": "^0.62.2",
-		"vite": "^5.0.3"
+		"vite": "^5.0.3",
+		"wrangler": "^3.72.1"
 	}
 }
