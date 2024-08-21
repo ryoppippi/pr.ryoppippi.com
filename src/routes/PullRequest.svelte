@@ -54,9 +54,10 @@
 				text='gray-900 dark:white'
 				underline='hover:~'
 			>
-				<i-ph-git-pull-request-duotone
+				<span
 					class:mergedPR={pr.state === 'merged'}
 					class:openPR={pr.state === 'open'}
+					i-ph-git-pull-request-duotone
 					shrink-0
 					size-5
 				/>

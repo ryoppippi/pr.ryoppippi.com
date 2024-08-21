@@ -7,7 +7,6 @@ import {
 	transformerDirectives,
 	transformerVariantGroup,
 } from 'unocss';
-import presetTagify from '@unocss/preset-tagify';
 import { isDevelopment } from 'std-env';
 
 export default defineConfig({
@@ -19,7 +18,6 @@ export default defineConfig({
 			autoInstall: isDevelopment,
 		}),
 		presetTypography(),
-		presetTagify(),
 	],
 	transformers: [
 		transformerDirectives(),

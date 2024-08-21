@@ -62,7 +62,7 @@
 				/>
 				{user.name}
 			</a>
-			is <animate-pulse>Contributing...</animate-pulse>
+			is <span animate-pulse>Contributing...</span>
 		</h1>
 		<p
 			mt1
