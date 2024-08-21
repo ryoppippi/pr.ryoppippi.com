@@ -53,7 +53,6 @@
 				items-center
 				target='_blank'
 				text='gray-900 dark:white'
-				underline='hover:~'
 			>
 				<span
 					class:mergedPR={pr.state === 'merged'}
@@ -71,7 +70,6 @@
 				gap-1
 				href={prURL}
 				target='_blank'
-				underline='hover:~'
 			>
 				<span opacity-75>{prUserName}</span>
 				<span opacity-50>/</span>
@@ -88,7 +86,6 @@
 			<a
 				href={pr.url}
 				target='_blank'
-				underline='hover:~'
 			>
 				#{pr.number}
 			</a>
@@ -102,3 +99,9 @@
 		</div>
 	</div>
 </div>
+
+<style>
+	a {
+		--at-apply: hover:underline;
+	}
+</style>
