@@ -23,7 +23,9 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: pnpm run build
+      - run: |
+          mv .env.example .env
+          pnpm run build
         env:
           GH_TOKEN: ${{secrets.GH_TOKEN}}
       - run: pnpm run deploy
