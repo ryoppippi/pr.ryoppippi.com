@@ -2,12 +2,12 @@ import { Feed } from 'feed';
 import { joinURL } from 'ufo';
 import type { RequestHandler } from './$types';
 import type { Contributions } from '$lib';
-import { DOMAIN } from '$env/static/private';
+import { assets } from '$app/paths';
 
 export const prerender = true;
 
 export const GET = (async ({ fetch }) => {
-	const domain = DOMAIN;
+	const domain = new URL(assets).origin;
 	const res = await fetch(`/api/contributions`);
 	const { user, prs } = await res.json() as Contributions;
 

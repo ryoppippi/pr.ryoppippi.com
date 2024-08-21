@@ -4,11 +4,10 @@
 
 	import DarkModeHeader from './DarkModeHeader.svelte';
 	import { assets } from '$app/paths';
-	import { DOMAIN } from '$env/static/private';
 
 	const { children } = $props();
 
-	const faviconURL = `${DOMAIN}/favicon.png`;
+	const faviconURL = `${assets}/favicon.png`;
 </script>
 
 <svelte:head>
