@@ -1,6 +1,6 @@
 # pr.ryoppippi.com
 
-![Screenshot](https://github.com/user-attachments/assets/16ae88c5-fe7c-47b8-90e5-e0a9cd69aad3)
+![Screenshot](https://github.com/user-attachments/assets/aeb193b5-7afe-4ef2-8078-28f54249f490)
 
 <details>
 <summary>...with nice icons!</summary>
