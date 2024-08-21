@@ -32,14 +32,12 @@
 <!-- svelte-ignore element_invalid_self_closing_tag -->
 <!-- svelte-ignore a11y_missing_content -->
 <div
-	class='p-4 sm:p-6 lg:p-8 max-w-2xl'
 	fcol
 	font-sans
 	gap-8
-	lt-sm='px6'
-	max-w-180
+	max-w-2xl
 	mxa
-	p10
+	p='4 sm:6 lg:8'
 >
 	<div fcol>
 		<h1
