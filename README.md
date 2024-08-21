@@ -1,38 +1,34 @@
-# create-svelte
+# pr.ryoppippi.com
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/main/packages/create-svelte).
+![Screenshot](https://github.com/user-attachments/assets/58f73019-676e-40ca-9a18-81f601260ffc)
 
-## Creating a project
+## Built with
 
-If you're seeing this, you've probably already done this step. Congrats!
+- [Svelte 5](https://svelte.dev/)
+- [SvelteKit](https://kit.svelte.dev/)
+- [GitHub API](https://docs.github.com/en/rest)
+- [Uno CSS](https://unocss.dev/)
+- [Cloudflare Pages](https://pages.cloudflare.com/)
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Setup
 
 ```bash
-npm run dev
+# install dependencies
+pnpm install
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+# serve in dev mode, with hot reload at localhost:3000
+GH_TOKEN=(gh auth token) pnpm dev
+
+# build for production
+GH_TOKEN=(gh auth token) pnpm build
 ```
 
-## Building
+## Inspirations
 
-To create a production version of your app:
+- [Anthony Fu](https://github.com/antfu)'s [releases.antfu.me](https://github.com/antfu/releases.antfu.me)
+- [leonf-fong](https://github.com/leon-fong)'s [pr.leofong.me](https://github.com/leon-fong/prs)
+- [atinux](https://github.com/atinux)'s [my-pull-requests](https://github.com/atinux/my-pull-requests)
 
-```bash
-npm run build
-```
+## License
 
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+[MIT License](./LICENSE)
