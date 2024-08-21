@@ -1,7 +1,11 @@
-<script>
+<script lang='ts'>
 	import { joinURL } from 'ufo';
 	import PullRequest from './PullRequest.svelte';
 	import { browser } from '$app/environment';
+	import MoonToSunny from '~icons/line-md/moon-filled-to-sunny-filled-loop-transition';
+	import SunnyToMoon from '~icons/line-md/sunny-filled-loop-to-moon-filled-transition';
+	import GitHub from '~icons/line-md/github-loop';
+	import RSS from '~icons/line-md/rss';
 
 	const { data } = $props();
 	const user = data.user;
@@ -9,7 +13,7 @@
 
 	const userUrl = joinURL('https://github.com', user.username);
 
-	let isDark = $state(browser ? document.documentElement.classList.contains('dark') : false);
+	let isDark = $state(browser ? document.documentElement.classList.contains('dark') : true);
 
 	function toggleDarkMode() {
 		document.documentElement.classList.toggle('dark');
@@ -25,8 +29,6 @@
 	<meta name='og:image:alt' content='{user.name} is Contributing...' />
 </svelte:head>
 
-<!-- svelte-ignore element_invalid_self_closing_tag -->
-<!-- svelte-ignore a11y_missing_content -->
 <div
 	fcol
 	font-sans
@@ -69,14 +71,22 @@
 			</a>
 		</p>
 		<div flex gap-3 justify-center p3>
-			<!-- eslint-disable-next-line svelte/button-has-type -->
 			<button
-				class:i-ph-moon-stars-duotone={!isDark}
-				class:i-ph-sun-duotone={isDark}
 				onclick={toggleDarkMode}
-			/>
-			<a href={userUrl} i-line-md-github-loop target='_blank' />
-			<a href='/feed.xml' i-ph-rss-simple-duotone />
+				type='button'
+			>
+				{#if isDark}
+					<SunnyToMoon />
+				{:else}
+					<MoonToSunny />
+				{/if}
+			</button>
+			<a href={userUrl} target='_blank'>
+				<GitHub />
+			</a>
+			<a href='/feed.xml'>
+				<RSS />
+			</a>
 		</div>
 
 		<div p2>

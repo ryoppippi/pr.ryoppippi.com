@@ -1,22 +1,16 @@
 import {
 	defineConfig,
 	presetAttributify,
-	presetIcons,
 	presetTypography,
 	presetUno,
 	transformerDirectives,
 	transformerVariantGroup,
 } from 'unocss';
-import { isDevelopment } from 'std-env';
 
 export default defineConfig({
 	presets: [
 		presetUno(),
 		presetAttributify(),
-		presetIcons({
-			scale: 1.2,
-			autoInstall: isDevelopment,
-		}),
 		presetTypography(),
 	],
 	transformers: [

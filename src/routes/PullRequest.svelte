@@ -3,13 +3,14 @@
 	import { formatTimeAgo } from '@vueuse/core';
 	import type { PR } from '$lib';
 
+	import PullRequestIcon from '~icons/ph/git-pull-request-duotone';
+
 	const { pr }: { pr: PR } = $props();
 
 	const prURL = joinURL('https://github.com', pr.repo);
 	const prUserName = pr.repo.split('/').at(0) ?? '';
 	const prRepoName = pr.repo.split('/').at(1) ?? '';
 </script>
-<!-- svelte-ignore element_invalid_self_closing_tag -->
 
 <div
 	flex
@@ -57,12 +58,14 @@
 				<span
 					class:mergedPR={pr.state === 'merged'}
 					class:openPR={pr.state === 'open'}
-					i-ph-git-pull-request-duotone
 					shrink-0
 					size-5
-				/>
+				>
+					<PullRequestIcon />
+				</span>
 
 				<span truncate>{pr.title}</span>
+
 			</a>
 
 			<a
