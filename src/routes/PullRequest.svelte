@@ -29,6 +29,7 @@
 	>
 		<img
 			alt={pr.repo}
+			loading='lazy'
 			size-full
 			src='https://github.com/{prUserName}.png'
 		/>

@@ -55,6 +55,7 @@
 			>
 				<img
 					alt={user.username}
+					loading='lazy'
 					mr1
 					rounded-full
 					src={user.avatar}
