@@ -23,7 +23,7 @@ GH_TOKEN=(gh auth token) pnpm dev
 GH_TOKEN=(gh auth token) pnpm build
 ```
 
-## Inspirations
+## Inspired by
 
 - [Anthony Fu](https://github.com/antfu)'s [releases.antfu.me](https://github.com/antfu/releases.antfu.me)
 - [leonf-fong](https://github.com/leon-fong)'s [pr.leofong.me](https://github.com/leon-fong/prs)
