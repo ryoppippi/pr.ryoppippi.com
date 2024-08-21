@@ -3,9 +3,21 @@
 	import '@unocss/reset/tailwind.css';
 
 	import DarkModeHeader from './DarkModeHeader.svelte';
+	import { assets } from '$app/paths';
+	import { DOMAIN } from '$env/static/private';
 
 	const { children } = $props();
+
+	const faviconURL = `${DOMAIN}/favicon.png`;
 </script>
+
+<svelte:head>
+	<meta name='theme-color' content='#121212' media='(prefers-color-scheme: dark)' />
+	<meta name='theme-color' content='#ffffff' media='(prefers-color-scheme: light)' />
+	<meta name='twitter:card' content='summary_large_image' />
+	<meta name='twitter:image' content={faviconURL} />
+	<meta name='og:image' content={faviconURL} />
+</svelte:head>
 
 <DarkModeHeader />
 

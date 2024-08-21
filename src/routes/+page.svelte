@@ -22,6 +22,13 @@
 	}
 </script>
 
+<svelte:head>
+	<title>{user.name} is Contributing...</title>
+	<meta name='description' content="{user.name}'s recent pull requests" />
+	<meta name='twitter:image:alt' content='{user.name} is Contributing...' />
+	<meta name='og:image:alt' content='{user.name} is Contributing...' />
+</svelte:head>
+
 <!-- svelte-ignore element_invalid_self_closing_tag -->
 <!-- svelte-ignore a11y_missing_content -->
 <div
