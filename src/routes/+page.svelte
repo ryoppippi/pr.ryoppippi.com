@@ -9,11 +9,7 @@
 
 	const userUrl = joinURL('https://github.com', user.username);
 
-	let isDark = $state(
-		browser
-			? localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)
-			: false,
-	);
+	let isDark = $state(browser ? document.documentElement.classList.contains('dark') : false);
 
 	function toggleDarkMode() {
 		document.documentElement.classList.toggle('dark');
