@@ -1,7 +1,7 @@
 <script lang='ts'>
 	import { joinURL } from 'ufo';
+	import { formatTimeAgo } from '@vueuse/core';
 	import type { PR } from '$lib';
-	import { formatDate } from '$lib/date-utils';
 
 	const { pr }: { pr: PR } = $props();
 
@@ -95,7 +95,7 @@
 				datatime={pr.created_at}
 				text='sm gray-500 dark:gray-400'
 			>
-				{formatDate(new Date(pr.created_at))}
+				{formatTimeAgo(new Date(pr.created_at))}
 			</time>
 		</div>
 	</div>
