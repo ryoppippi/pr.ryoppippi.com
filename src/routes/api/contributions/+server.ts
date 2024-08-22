@@ -2,7 +2,7 @@ import { json } from '@sveltejs/kit';
 import { Octokit } from 'octokit';
 import type { RequestHandler } from './$types';
 import { GH_TOKEN } from '$env/static/private';
-import type { Contributions } from '$lib';
+import type { Contributions, PR } from '$lib';
 
 export const prerender = true;
 
@@ -28,7 +28,7 @@ export const GET = (async () => {
 		title: pr.title,
 		url: pr.html_url,
 		created_at: pr.created_at,
-		state: pr.pull_request?.merged_at != null ? 'merged' : pr.state as Contributions['prs'][0]['state'],
+		state: pr.pull_request?.merged_at != null ? 'merged' : pr.state as PR['state'],
 		number: pr.number,
 	}));
 
