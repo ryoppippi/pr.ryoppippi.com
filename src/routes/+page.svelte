@@ -81,7 +81,7 @@
 					<MoonToSunny />
 				{/if}
 			</button>
-			<a href={userUrl} target='_blank'>
+			<a href='https://github.com/ryoppippi/pr.ryoppippi.com' target='_blank'>
 				<GitHub />
 			</a>
 			<a href='/feed.xml'>
