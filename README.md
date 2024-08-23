@@ -29,15 +29,31 @@ cp .env.example .env
 
 # set your GitHub username into .env
 echo "USERNAME=ryoppippi" >> .env
+```
 
+Then edit asset path in `svelte.config.js` and fix it into your own domain.
+
+## 🔧 Development
+
+```bash
 # serve in dev mode, with hot reload at localhost:3000
 pnpm dev
+```
 
+## 📦 Build
+
+```bash
 # build for production
 pnpm build
 ```
 
-## Deploy
+## ✨ Preview
+
+```bash
+pnpm preview
+```
+
+## 💻 Deploy
 
 ```bash
 pnpm run deploy
