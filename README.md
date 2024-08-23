@@ -48,6 +48,12 @@ export default config;
 pnpm dev
 ```
 
+(Optional): To prevent rate limiting, you can pass your GitHub token as an environment variable:
+
+```bash
+GITHUB_TOKEN=(gh auth token) pnpm dev
+```
+
 ## 📦 Build
 
 ```bash

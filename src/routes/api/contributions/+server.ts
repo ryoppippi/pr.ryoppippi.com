@@ -1,13 +1,18 @@
 import { json } from '@sveltejs/kit';
 import { Octokit } from 'octokit';
 import type { RequestHandler } from './$types';
+import { env } from '$env/dynamic/private';
 import type { Contributions, PR } from '$lib';
 import { route } from '$lib/ROUTES';
+import { building } from '$app/environment';
 
 export const prerender = true;
 
 export const GET = (async () => {
-	const octokit = new Octokit();
+	const octokit = new Octokit({
+		/* you can add optional auth here */
+		auth: !building ? env.GITHUB_TOKEN : undefined,
+	});
 	// Fetch user from token
 	const userResponse = await octokit.request('GET /users/{username}', {
 		username: route('username'),
