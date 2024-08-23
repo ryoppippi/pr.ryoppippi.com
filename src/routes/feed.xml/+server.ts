@@ -1,14 +1,19 @@
 import { Feed } from 'feed';
 import { joinURL } from 'ufo';
+import { error } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 import type { Contributions } from '$lib';
 import { route } from '$lib/ROUTES';
-import { assets } from '$app/paths';
+import { DOMAIN } from '$env/static/private';
 
 export const prerender = true;
 
 export const GET = (async ({ fetch }) => {
-	const domain = new URL(assets).origin;
+	if (!URL.canParse(DOMAIN)) {
+		return error(500, 'Invalid domain');
+	}
+
+	const domain = new URL(DOMAIN).origin;
 	const res = await fetch(route('GET /api/contributions'));
 	const { user, prs } = await res.json() as Contributions;
 

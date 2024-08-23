@@ -27,8 +27,9 @@ pnpm install
 # copy .env.example to .env
 cp .env.example .env
 
-# set your GitHub username into .env
-echo "USERNAME=ryoppippi" >> .env
+# set your GitHub username & DOMAIN into .env
+echo "USERNAME=ryoppippi" > .env
+echo "DOMAIN=https://pr.ryoppippi.com" >> .env
 ```
 
 Then edit asset path in `svelte.config.js` and fix it into your own domain.
