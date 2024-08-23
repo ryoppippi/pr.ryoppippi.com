@@ -31,6 +31,18 @@ GH_TOKEN=(gh auth token) pnpm dev
 GH_TOKEN=(gh auth token) pnpm build
 ```
 
+## Deploy
+
+```bash
+pnpm run deploy
+```
+
+If you want to deploy from GitHub Actions, you need to set the following secrets:
+
+- `GH_TOKEN`: GitHub token
+- `CLOUDFLARE_ACCOUNT_ID`: Cloudflare account ID
+- `CLOUDFLARE_API_TOKEN`: Cloudflare API token
+
 ## Inspired by
 
 - [Anthony Fu](https://github.com/antfu)'s [releases.antfu.me](https://github.com/antfu/releases.antfu.me)
