@@ -16,7 +16,6 @@ https://github.com/user-attachments/assets/d29e0e35-05d5-4271-96dd-981fe29c1f64
 - [GitHub API](https://docs.github.com/en/rest)
 - [Uno CSS](https://unocss.dev/)
 - [unplugin-icons](https://github.com/unplugin/unplugin-icons)
-- [Cloudflare Pages](https://pages.cloudflare.com/)
 
 ## 🚀 Setup
 
@@ -35,7 +34,7 @@ const config = {
 	// ...
 	LINKS: {
 		domain: `https://pr.ryoppippi.com`, // The hostname of your site
-		repo: 'https://github.com/ryoppippi/pr.ryoppippi.com', // GitHub repository name
+		repo: 'https://github.com/ryoppippi/pr.ryoppippi.com', // GitHub repository name ( will be the link of octocat icon 🐱 )
 		username: 'ryoppippi', // GitHub username
 	},
 	// ...
@@ -64,14 +63,42 @@ pnpm preview
 
 ## 💻 Deploy
 
+This repository supports two deployment destinations: [Cloudflare Pages](https://pages.cloudflare.com/) and [GitHub Pages](https://pages.github.com/).
+
+### Cloudflare Pages
+
+Run the following command:
+
 ```bash
 pnpm run deploy
 ```
 
-If you want to deploy from GitHub Actions, you need to set the following secrets:
+When deploying to Cloudflare Pages from GitHub Actions, follow the steps below:
 
-- `CLOUDFLARE_ACCOUNT_ID`: Cloudflare account ID
-- `CLOUDFLARE_API_TOKEN`: Cloudflare API token
+1. set the following secrets to your repository:
+
+   - `CLOUDFLARE_ACCOUNT_ID`: Cloudflare account ID
+   - `CLOUDFLARE_API_TOKEN`: Cloudflare API token
+
+2. edit info in `vite.config.ts`
+
+3. set `CF` to `env.UPLOAD_TO` in [workflows/deploy.yaml](./.github/workflows/deploy.yml).
+
+4. run the workflow manually or push to the repository.
+
+5. enjoy!
+
+### GitHub Pages
+
+You can upload the `build` to GitHub Pages via GitHub Actions.
+
+1. set `GH` to `env.UPLOAD_TO` in [workflows/deploy.yaml](./.github/workflows/deploy.yml).
+
+2. edit info in `vite.config.ts`
+
+3. run the workflow manually or push to the repository.
+
+4. enjoy!
 
 ## Inspired by
 
