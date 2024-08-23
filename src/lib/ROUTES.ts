@@ -33,7 +33,9 @@ const ACTIONS = {
  * LINKS
  */
 const LINKS = {
-  
+  "domain": `https://pr.ryoppippi.com`,
+  "repo": `https://github.com/ryoppippi/pr.ryoppippi.com`,
+  "username": `ryoppippi`
 }
 
 type ParamValue = string | number | undefined
@@ -136,6 +138,6 @@ export type KIT_ROUTES = {
   PAGES: { '/': never }
   SERVERS: { 'prerender /api/contributions': never, 'GET /api/contributions': never, 'prerender /feed.xml': never, 'GET /feed.xml': never }
   ACTIONS: Record<string, never>
-  LINKS: Record<string, never>
+  LINKS: { 'domain': never, 'repo': never, 'username': never }
   Params: Record<string, never>
 }

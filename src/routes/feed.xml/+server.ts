@@ -4,9 +4,10 @@ import { error } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 import type { Contributions } from '$lib';
 import { route } from '$lib/ROUTES';
-import { DOMAIN } from '$env/static/private';
 
 export const prerender = true;
+
+const DOMAIN = route('domain');
 
 export const GET = (async ({ fetch }) => {
 	if (!URL.canParse(DOMAIN)) {

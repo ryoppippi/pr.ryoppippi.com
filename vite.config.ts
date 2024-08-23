@@ -18,6 +18,12 @@ export default defineConfig({
 			autoInstall: isDevelopment,
 		}),
 		sveltekit(),
-		kitRoutes(),
+		kitRoutes({
+			LINKS: {
+				domain: `https://pr.ryoppippi.com`,
+				repo: 'https://github.com/ryoppippi/pr.ryoppippi.com',
+				username: 'ryoppippi',
+			},
+		}),
 	],
 });

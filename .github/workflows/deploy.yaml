@@ -25,9 +25,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           cache: pnpm
       - run: pnpm install --frozen-lockfile
-      - run: |
-          mv .env.example .env
-          pnpm run build
+      - run: pnpm run build
       - run: pnpm run deploy
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}

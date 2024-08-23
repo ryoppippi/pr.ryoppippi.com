@@ -1,8 +1,8 @@
 import { json } from '@sveltejs/kit';
 import { Octokit } from 'octokit';
 import type { RequestHandler } from './$types';
-import { USERNAME } from '$env/static/private';
 import type { Contributions, PR } from '$lib';
+import { route } from '$lib/ROUTES';
 
 export const prerender = true;
 
@@ -10,7 +10,7 @@ export const GET = (async () => {
 	const octokit = new Octokit();
 	// Fetch user from token
 	const userResponse = await octokit.request('GET /users/{username}', {
-		username: USERNAME,
+		username: route('username'),
 	});
 	const user = {
 		name: userResponse.data.name ?? userResponse.data.login,

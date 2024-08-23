@@ -2,6 +2,8 @@
 	import { joinURL } from 'ufo';
 	import PullRequest from './PullRequest.svelte';
 	import { browser } from '$app/environment';
+	import { route } from '$lib/ROUTES';
+
 	import MoonToSunny from '~icons/line-md/moon-filled-to-sunny-filled-loop-transition';
 	import SunnyToMoon from '~icons/line-md/sunny-filled-loop-to-moon-filled-transition';
 	import GitHub from '~icons/line-md/github-loop';
@@ -81,10 +83,10 @@
 					<MoonToSunny />
 				{/if}
 			</button>
-			<a href='https://github.com/ryoppippi/pr.ryoppippi.com' target='_blank'>
+			<a href={route('repo')} target='_blank'>
 				<GitHub />
 			</a>
-			<a href='/feed.xml'>
+			<a href={route('GET /feed.xml')}>
 				<RSS />
 			</a>
 		</div>

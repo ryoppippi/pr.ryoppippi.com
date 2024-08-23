@@ -18,26 +18,34 @@ https://github.com/user-attachments/assets/d29e0e35-05d5-4271-96dd-981fe29c1f64
 - [unplugin-icons](https://github.com/unplugin/unplugin-icons)
 - [Cloudflare Pages](https://pages.cloudflare.com/)
 
-## Setup
+## 🚀 Setup
 
 ```bash
+# corepack is recommended
+corepack enable
+
 # install dependencies
 pnpm install
-
-# copy .env.example to .env
-cp .env.example .env
-
-# set your GitHub username & DOMAIN into .env
-echo "USERNAME=ryoppippi" > .env
-echo "DOMAIN=https://pr.ryoppippi.com" >> .env
 ```
 
-Then edit asset path in `svelte.config.js` and fix it into your own domain.
+Then edit info in `vite.config.ts`.
+
+```ts
+const config = {
+	// ...
+	LINKS: {
+		domain: `https://pr.ryoppippi.com`, // The hostname of your site
+		repo: 'https://github.com/ryoppippi/pr.ryoppippi.com', // GitHub repository name
+		username: 'ryoppippi', // GitHub username
+	},
+	// ...
+};
+export default config;
+```
 
 ## 🔧 Development
 
 ```bash
-# serve in dev mode, with hot reload at localhost:3000
 pnpm dev
 ```
 
