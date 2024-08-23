@@ -1,6 +1,7 @@
 <script lang='ts'>
 	import { joinURL } from 'ufo';
 	import PullRequest from './PullRequest.svelte';
+	import Head from './Head.svelte';
 	import { browser } from '$app/environment';
 	import { route } from '$lib/ROUTES';
 
@@ -12,9 +13,7 @@
 	const { data } = $props();
 	const user = data.user;
 	const prs = data.prs;
-
 	const userUrl = joinURL('https://github.com', user.username);
-	const faviconURL = `${userUrl}.png`;
 
 	let isDark = $state(browser ? document.documentElement.classList.contains('dark') : true);
 
@@ -26,22 +25,7 @@
 
 </script>
 
-<svelte:head>
-	<title>{user.name} is Contributing...</title>
-	<meta name='theme-color' content='#121212' media='(prefers-color-scheme: dark)' />
-	<meta name='theme-color' content='#ffffff' media='(prefers-color-scheme: light)' />
-	<meta name='description' content="{user.username}'s recent pull requests" />
-	<meta name='twitter:title' content='{user.name} is Contributing...' />
-	<meta name='twitter:card' content='summary_large_image' />
-	<meta name='twitter:description' content="{user.username}'s recent pull requests" />
-	<meta name='twitter:image' content={faviconURL} />
-	<meta name='twitter:image:alt' content='{user.name} is Contributing...' />
-	<meta name='og:title' content='{user.name} is Contributing...' />
-	<meta name='og:description' content="{user.username}'s recent pull requests" />
-	<meta name='og:image' content={faviconURL} />
-	<meta name='og:image:alt' content='{user.name} is Contributing...' />
-	<link href={faviconURL} rel='icon' />
-</svelte:head>
+<Head {user} {userUrl} />
 
 <div
 	fcol
