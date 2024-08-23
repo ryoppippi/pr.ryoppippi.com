@@ -86,9 +86,13 @@ When deploying to Cloudflare Pages from GitHub Actions, follow the steps below:
    - `CLOUDFLARE_ACCOUNT_ID`: Cloudflare account ID
    - `CLOUDFLARE_API_TOKEN`: Cloudflare API token
 
-2. edit info in `vite.config.ts`
+2. edit info in `vite.config.ts`:
 
-3. set `CF` to `env.UPLOAD_TO` in [workflows/deploy.yaml](./.github/workflows/deploy.yml).
+   - `LINKS.domain` should be your Cloudflare Pages domain ( ex. `https://pr.ryoppippi.com` )
+   - `LINKS.repo` should be your forked repository ( ex. `https://github.com/ryoppippi/pr.ryoppippi.com` )
+   - `LINKS.username` should be your GitHub username ( ex. `ryoppippi` )
+
+3. set `CF` to `env.UPLOAD_TO` in [workflows/deploy.yaml](./.github/workflows/deploy.yaml).
 
 4. run the workflow manually or push to the repository.
 
@@ -98,9 +102,13 @@ When deploying to Cloudflare Pages from GitHub Actions, follow the steps below:
 
 You can upload the `build` to GitHub Pages via GitHub Actions.
 
-1. set `GH` to `env.UPLOAD_TO` in [workflows/deploy.yaml](./.github/workflows/deploy.yml).
+1. set `GH` to `env.UPLOAD_TO` in [workflows/deploy.yaml](./.github/workflows/deploy.yaml).
 
-2. edit info in `vite.config.ts`
+2. edit info in `vite.config.ts`:
+
+   - `LINKS.domain` should be `https://<username>.github.io/<repository>`
+   - `LINKS.repo` should be your forked repository ( ex. `https://github.com/ryoppippi/pr.ryoppippi.com` )
+   - `LINKS.username` should be your GitHub username ( ex. `ryoppippi` )
 
 3. run the workflow manually or push to the repository.
 
