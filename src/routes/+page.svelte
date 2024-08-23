@@ -31,9 +31,13 @@
 	<meta name='theme-color' content='#121212' media='(prefers-color-scheme: dark)' />
 	<meta name='theme-color' content='#ffffff' media='(prefers-color-scheme: light)' />
 	<meta name='description' content="{user.username}'s recent pull requests" />
+	<meta name='twitter:title' content='{user.name} is Contributing...' />
 	<meta name='twitter:card' content='summary_large_image' />
+	<meta name='twitter:description' content="{user.username}'s recent pull requests" />
 	<meta name='twitter:image' content={faviconURL} />
 	<meta name='twitter:image:alt' content='{user.name} is Contributing...' />
+	<meta name='og:title' content='{user.name} is Contributing...' />
+	<meta name='og:description' content="{user.username}'s recent pull requests" />
 	<meta name='og:image' content={faviconURL} />
 	<meta name='og:image:alt' content='{user.name} is Contributing...' />
 	<link href={faviconURL} rel='icon' />
