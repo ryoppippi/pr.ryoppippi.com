@@ -24,11 +24,17 @@ https://github.com/user-attachments/assets/d29e0e35-05d5-4271-96dd-981fe29c1f64
 # install dependencies
 pnpm install
 
+# copy .env.example to .env
+cp .env.example .env
+
+# set your GitHub username into .env
+echo "USERNAME=ryoppippi" >> .env
+
 # serve in dev mode, with hot reload at localhost:3000
-GH_TOKEN=(gh auth token) pnpm dev
+pnpm dev
 
 # build for production
-GH_TOKEN=(gh auth token) pnpm build
+pnpm build
 ```
 
 ## Deploy
@@ -39,7 +45,6 @@ pnpm run deploy
 
 If you want to deploy from GitHub Actions, you need to set the following secrets:
 
-- `GH_TOKEN`: GitHub token
 - `CLOUDFLARE_ACCOUNT_ID`: Cloudflare account ID
 - `CLOUDFLARE_API_TOKEN`: Cloudflare API token
 

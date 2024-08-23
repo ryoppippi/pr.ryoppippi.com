@@ -1,17 +1,17 @@
 import { json } from '@sveltejs/kit';
 import { Octokit } from 'octokit';
 import type { RequestHandler } from './$types';
-import { GH_TOKEN } from '$env/static/private';
+import { USERNAME } from '$env/static/private';
 import type { Contributions, PR } from '$lib';
 
 export const prerender = true;
 
 export const GET = (async () => {
-	const octokit = new Octokit({
-		auth: GH_TOKEN,
-	});
+	const octokit = new Octokit();
 	// Fetch user from token
-	const userResponse = await octokit.request('GET /user');
+	const userResponse = await octokit.request('GET /users/{username}', {
+		username: USERNAME,
+	});
 	const user = {
 		name: userResponse.data.name ?? userResponse.data.login,
 		username: userResponse.data.login,
