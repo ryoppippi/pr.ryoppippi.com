@@ -14,6 +14,7 @@
 	const prs = data.prs;
 
 	const userUrl = joinURL('https://github.com', user.username);
+	const faviconURL = `${userUrl}.png`;
 
 	let isDark = $state(browser ? document.documentElement.classList.contains('dark') : true);
 
@@ -22,13 +23,20 @@
 		isDark = document.documentElement.classList.contains('dark');
 		localStorage.theme = isDark ? 'dark' : 'light';
 	}
+
 </script>
 
 <svelte:head>
 	<title>{user.name} is Contributing...</title>
-	<meta name='description' content="{user.name}'s recent pull requests" />
+	<meta name='theme-color' content='#121212' media='(prefers-color-scheme: dark)' />
+	<meta name='theme-color' content='#ffffff' media='(prefers-color-scheme: light)' />
+	<meta name='description' content="{user.username}'s recent pull requests" />
+	<meta name='twitter:card' content='summary_large_image' />
+	<meta name='twitter:image' content={faviconURL} />
 	<meta name='twitter:image:alt' content='{user.name} is Contributing...' />
+	<meta name='og:image' content={faviconURL} />
 	<meta name='og:image:alt' content='{user.name} is Contributing...' />
+	<link href={faviconURL} rel='icon' />
 </svelte:head>
 
 <div
@@ -69,7 +77,7 @@
 			text-center
 		>
 			<a href={userUrl} target='_blank'>
-				{user.username}'s recent pull requests on GitHub
+				{user.name}'s recent pull requests on GitHub
 			</a>
 		</p>
 		<div flex gap-3 justify-center p3>
