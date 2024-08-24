@@ -16,7 +16,7 @@
 	<meta name='theme-color' content='#ffffff' media='(prefers-color-scheme: light)' />
 	<meta name='twitter:title' content={title} />
 	<meta name='twitter:description' content={description} />
-	<meta name='twitter:card' content='summary_large_image' />
+	<meta name='twitter:card' content='summary' />
 	<meta name='twitter:image' content={faviconURL} />
 	<meta name='twitter:image:alt' content={title} />
 	<meta name='og:title' content={title} />
