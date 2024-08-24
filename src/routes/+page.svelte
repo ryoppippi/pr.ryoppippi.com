@@ -14,6 +14,8 @@
 	const user = data.user;
 	const prs = data.prs;
 	const userUrl = joinURL('https://github.com', user.username);
+	const title = `${user.name} is Contributing...`;
+	const description = `${user.username}'s recent pull requests on GitHub`;
 
 	let isDark = $state(browser ? document.documentElement.classList.contains('dark') : true);
 
@@ -25,7 +27,7 @@
 
 </script>
 
-<Head {user} {userUrl} />
+<Head {description} {title} {userUrl} />
 
 <div
 	fcol
@@ -65,7 +67,7 @@
 			text-center
 		>
 			<a href={userUrl} target='_blank'>
-				{user.username}'s recent pull requests on GitHub
+				{description}
 			</a>
 		</p>
 		<div flex gap-3 justify-center p3>

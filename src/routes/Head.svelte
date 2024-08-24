@@ -1,12 +1,9 @@
 <script lang='ts'>
-	import type { User } from '$lib';
 
-	const { user, userUrl }: { user: User; userUrl: string } = $props();
+	const { title, description, userUrl }: { title: string; description: string; userUrl: string } = $props();
 
 	const faviconURL = `${userUrl}.png`;
 
-	const title = `${user.name} is Contributing...`;
-	const description = `${user.username}'s recent pull requests`;
 </script>
 
 {#snippet meta(kind: string, property: string, content: string)}
