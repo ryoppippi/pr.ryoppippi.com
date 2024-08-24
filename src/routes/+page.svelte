@@ -72,6 +72,7 @@
 		</p>
 		<div flex gap-3 justify-center p3>
 			<button
+				aria-label='Toggle Dark Mode'
 				onclick={toggleDarkMode}
 				type='button'
 			>
@@ -81,10 +82,17 @@
 					<MoonToSunny />
 				{/if}
 			</button>
-			<a href={route('repo')} target='_blank'>
+			<a
+				aria-label='GitHub Repository'
+				href={route('repo')}
+				target='_blank'
+			>
 				<GitHub />
 			</a>
-			<a href={route('GET /feed.xml')}>
+			<a
+				aria-label='RSS Feed'
+				href={route('GET /feed.xml')}
+			>
 				<RSS />
 			</a>
 		</div>
