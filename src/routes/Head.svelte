@@ -1,4 +1,5 @@
 <script lang='ts'>
+	import { route } from '$lib/ROUTES';
 
 	const { title, description, userUrl }: { title: string; description: string; userUrl: string } = $props();
 
@@ -14,6 +15,7 @@
 	<title>{title}</title>
 	<meta name='description' content={description} />
 	<link href={faviconURL} rel='icon' />
+	<link href={route('GET /feed.xml')} rel='alternate' title={description} type='application/rss+xml' />
 
 	<meta name='theme-color' content='#121212' media='(prefers-color-scheme: dark)' />
 	<meta name='theme-color' content='#ffffff' media='(prefers-color-scheme: light)' />
