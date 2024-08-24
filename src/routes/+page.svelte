@@ -65,7 +65,7 @@
 			text-center
 		>
 			<a href={userUrl} target='_blank'>
-				{user.name}'s recent pull requests on GitHub
+				{user.username}'s recent pull requests on GitHub
 			</a>
 		</p>
 		<div flex gap-3 justify-center p3>
