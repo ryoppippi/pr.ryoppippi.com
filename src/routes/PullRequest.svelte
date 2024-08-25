@@ -74,8 +74,8 @@
 				href={prURL}
 				target='_blank'
 			>
-				<span opacity-75>{prUserName}</span>
-				<span opacity-50>/</span>
+				<span op75>{prUserName}</span>
+				<span op50>/</span>
 				<span truncate>{prRepoName}</span>
 			</a>
 		</div>
