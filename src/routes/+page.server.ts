@@ -6,5 +6,7 @@ export const load: PageServerLoad = async ({ fetch }) => {
 	const res = await fetch(route('GET /api/contributions'));
 	const { user, prs } = await res.json() as Contributions;
 
-	return { user, prs };
+	const now = new Date().toJSON();
+
+	return { user, prs, now };
 };

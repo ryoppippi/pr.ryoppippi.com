@@ -1,5 +1,6 @@
 <script lang='ts'>
 	import { mode, toggleMode } from 'mode-watcher';
+	import Divider from './Divider.svelte';
 	import { route } from '$lib/ROUTES';
 	import type { User } from '$lib';
 
@@ -79,7 +80,5 @@
 		</a>
 	</div>
 
-	<div p2>
-		<hr ma op25 w-50 />
-	</div>
+	<Divider />
 </div>
