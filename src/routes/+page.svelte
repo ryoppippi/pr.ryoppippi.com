@@ -1,8 +1,8 @@
 <script lang='ts'>
 	import { joinURL } from 'ufo';
+	import { mode, toggleMode } from 'mode-watcher';
 	import PullRequest from './PullRequest.svelte';
 	import Head from './Head.svelte';
-	import { browser } from '$app/environment';
 	import { route } from '$lib/ROUTES';
 
 	import MoonToSunny from '~icons/line-md/moon-filled-to-sunny-filled-loop-transition';
@@ -16,14 +16,6 @@
 	const userUrl = joinURL('https://github.com', user.username);
 	const title = `${user.name} is Contributing...`;
 	const description = `${user.username}'s recent pull requests on GitHub`;
-
-	let isDark = $state(browser ? document.documentElement.classList.contains('dark') : true);
-
-	function toggleDarkMode() {
-		document.documentElement.classList.toggle('dark');
-		isDark = document.documentElement.classList.contains('dark');
-		localStorage.theme = isDark ? 'dark' : 'light';
-	}
 
 </script>
 
@@ -73,10 +65,10 @@
 		<div flex gap-3 justify-center p3>
 			<button
 				aria-label='Toggle Dark Mode'
-				onclick={toggleDarkMode}
+				onclick={toggleMode}
 				type='button'
 			>
-				{#if isDark}
+				{#if $mode === 'dark'}
 					<SunnyToMoon />
 				{:else}
 					<MoonToSunny />

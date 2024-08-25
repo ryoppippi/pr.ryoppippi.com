@@ -17,9 +17,6 @@
 	<link href={faviconURL} rel='icon' />
 	<link href={route('GET /feed.xml')} rel='alternate' title={description} type='application/rss+xml' />
 
-	<meta name='theme-color' content='#121212' media='(prefers-color-scheme: dark)' />
-	<meta name='theme-color' content='#ffffff' media='(prefers-color-scheme: light)' />
-
 	{@render meta('twitter', 'title', title)}
 	{@render meta('twitter', 'description', description)}
 	{@render meta('twitter', 'image', faviconURL)}

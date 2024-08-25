@@ -2,13 +2,13 @@
 	import 'uno.css';
 	import '@unocss/reset/tailwind.css';
 
-	import DarkModeHeader from './DarkModeHeader.svelte';
+	import { ModeWatcher } from 'mode-watcher';
 
 	const { children } = $props();
 
 </script>
 
-<DarkModeHeader />
+<ModeWatcher disableTransitions={false} themeColors={{ dark: '#121212', light: '#ffffff' }} />
 
 {@render children()}
 
