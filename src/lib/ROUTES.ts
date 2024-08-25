@@ -18,6 +18,8 @@ const PAGES = {
 const SERVERS = {
   "prerender /api/contributions": `/api/contributions`,
   "GET /api/contributions": `/api/contributions`,
+  "prerender /api/user": `/api/user`,
+  "GET /api/user": `/api/user`,
   "prerender /feed.xml": `/feed.xml`,
   "GET /feed.xml": `/feed.xml`
 }
@@ -136,7 +138,7 @@ export function route<T extends keyof AllTypes>(key: T, ...params: any[]): strin
 */
 export type KIT_ROUTES = {
   PAGES: { '/': never }
-  SERVERS: { 'prerender /api/contributions': never, 'GET /api/contributions': never, 'prerender /feed.xml': never, 'GET /feed.xml': never }
+  SERVERS: { 'prerender /api/contributions': never, 'GET /api/contributions': never, 'prerender /api/user': never, 'GET /api/user': never, 'prerender /feed.xml': never, 'GET /feed.xml': never }
   ACTIONS: Record<string, never>
   LINKS: { 'domain': never, 'repo': never, 'username': never }
   Params: Record<string, never>
