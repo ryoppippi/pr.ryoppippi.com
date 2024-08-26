@@ -1,9 +1,11 @@
 <script lang='ts'>
 	import { joinURL } from 'ufo';
+	import { MetaTags } from 'svelte-meta-tags';
+
 	import PullRequest from './PullRequest.svelte';
-	import Head from './Head.svelte';
 	import Header from './Header.svelte';
 	import Footer from './Footer.svelte';
+	import { route } from '$lib/ROUTES';
 
 	const { data } = $props();
 	const user = data.user;
@@ -11,9 +13,43 @@
 	const userUrl = joinURL('https://github.com', user.username);
 	const title = `${user.name} is Contributing...`;
 	const description = `${user.username}'s recent pull requests on GitHub`;
+	const faviconURL = `${userUrl}.png`;
 </script>
 
-<Head {description} {title} {userUrl} />
+<MetaTags
+	additionalLinkTags={[
+		{
+			rel: 'alternate',
+			title: description,
+			type: 'application/rss+xml',
+			href: route('GET /feed.xml'),
+		},
+		{
+			rel: 'icon',
+			href: `${userUrl}.png`,
+		},
+	]}
+	{description}
+	openGraph={{
+		url: route('domain'),
+		title,
+		description,
+		images: [
+			{
+				url: faviconURL,
+				alt: title,
+			},
+		],
+	}}
+	{title}
+	twitter={{
+		title,
+		description,
+		image: faviconURL,
+		imageAlt: title,
+		cardType: 'summary',
+	}}
+/>
 
 <div
 	fcol
