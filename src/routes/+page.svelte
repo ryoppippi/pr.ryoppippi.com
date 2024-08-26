@@ -26,7 +26,7 @@
 		},
 		{
 			rel: 'icon',
-			href: `${userUrl}.png`,
+			href: faviconURL,
 		},
 	]}
 	{description}
