@@ -3,9 +3,9 @@
 ![Screenshot](https://github.com/user-attachments/assets/aeb193b5-7afe-4ef2-8078-28f54249f490)
 
 <details>
-<summary>...with nice icons!</summary>
+<summary>Video</summary>
 
-https://github.com/user-attachments/assets/d29e0e35-05d5-4271-96dd-981fe29c1f64
+https://github.com/user-attachments/assets/cea80c3d-ba87-480a-8090-bb611dc2a2db
 
 </details>
 
