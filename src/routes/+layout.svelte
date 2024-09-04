@@ -2,18 +2,13 @@
 	import 'uno.css';
 	import '@unocss/reset/tailwind.css';
 
-	import { ModeWatcher } from 'mode-watcher';
-	import { CheckTransitions } from '$lib/logic.svelte';
+	import DarkMode from './DarkMode.svelte';
 
 	const { children } = $props();
 
-	const ct = new CheckTransitions();
-
-	$inspect(ct.isAppearanceTransition);
 </script>
 
-<!-- disable transition when reducing motion & transition api is available -->
-<ModeWatcher disableTransitions={ct.isAppearanceTransition} themeColors={{ dark: '#121212', light: '#ffffff' }} />
+<DarkMode />
 
 {@render children()}
 

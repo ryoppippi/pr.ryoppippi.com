@@ -1,6 +1,7 @@
 <script lang='ts'>
 	import { mode } from 'mode-watcher';
 	import Divider from './Divider.svelte';
+	import { toggleDark } from './DarkMode.svelte';
 	import { route } from '$lib/ROUTES';
 	import type { User } from '$lib';
 
@@ -8,7 +9,6 @@
 	import SunnyToMoon from '~icons/line-md/sunny-filled-loop-to-moon-filled-transition';
 	import GitHub from '~icons/line-md/github-loop';
 	import RSS from '~icons/line-md/rss';
-	import { toggleDark } from '$lib/logic.svelte';
 
 	const {
 		user,
