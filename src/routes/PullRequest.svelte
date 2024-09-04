@@ -5,7 +5,7 @@
 
 	import PullRequestIcon from '~icons/ph/git-pull-request-duotone';
 
-	const { pr }: { pr: PR } = $props();
+	const { pr, count }: { pr: PR; count: number } = $props();
 
 	const prURL = joinURL('https://github.com', pr.repo);
 	const prUserName = pr.repo.split('/').at(0) ?? '';
@@ -13,9 +13,12 @@
 </script>
 
 <div
+	style:--stagger={count}
+	data-animate
 	flex
 	gap-4
 	items-center
+	op='0 motion-reduce:100'
 >
 	<a
 		border='~ gray-200 dark:gray-800'

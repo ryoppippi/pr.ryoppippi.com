@@ -61,8 +61,8 @@
 >
 	<Header {description} {user} {userUrl} />
 
-	{#each prs as pr (pr.url)}
-		<PullRequest {pr} />
+	{#each prs as pr, count (pr.url)}
+		<PullRequest {count} {pr} />
 	{/each}
 
 	<Footer {...data} />
