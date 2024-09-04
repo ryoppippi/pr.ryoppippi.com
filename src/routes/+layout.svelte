@@ -2,13 +2,13 @@
 	import 'uno.css';
 	import '@unocss/reset/tailwind.css';
 
-	import DarkMode from './DarkMode.svelte';
+	import DarkMode from '$lib/DarkMode';
 
 	const { children } = $props();
 
 </script>
 
-<DarkMode />
+<DarkMode themeColors={{ dark: '#121212', light: '#ffffff' }} />
 
 {@render children()}
 

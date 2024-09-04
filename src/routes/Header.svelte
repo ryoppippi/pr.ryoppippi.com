@@ -1,12 +1,9 @@
 <script lang='ts'>
-	import { mode } from 'mode-watcher';
 	import Divider from './Divider.svelte';
-	import { toggleDark } from './DarkMode.svelte';
+	import * as DarkMode from '$lib/DarkMode';
 	import { route } from '$lib/ROUTES';
 	import type { User } from '$lib';
 
-	import MoonToSunny from '~icons/line-md/moon-filled-to-sunny-filled-loop-transition';
-	import SunnyToMoon from '~icons/line-md/sunny-filled-loop-to-moon-filled-transition';
 	import GitHub from '~icons/line-md/github-loop';
 	import RSS from '~icons/line-md/rss';
 
@@ -55,17 +52,7 @@
 		</a>
 	</p>
 	<div flex gap-3 justify-center p3>
-		<button
-			aria-label='Toggle Dark Mode'
-			onclick={toggleDark}
-			type='button'
-		>
-			{#if $mode === 'dark'}
-				<SunnyToMoon />
-			{:else}
-				<MoonToSunny />
-			{/if}
-		</button>
+		<DarkMode.ToggleButton />
 		<a
 			aria-label='GitHub Repository'
 			href={route('repo')}
