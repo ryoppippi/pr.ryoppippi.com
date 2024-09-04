@@ -1,5 +1,5 @@
 <script lang='ts'>
-	import { mode, toggleMode } from 'mode-watcher';
+	import { mode } from 'mode-watcher';
 	import Divider from './Divider.svelte';
 	import { route } from '$lib/ROUTES';
 	import type { User } from '$lib';
@@ -8,6 +8,7 @@
 	import SunnyToMoon from '~icons/line-md/sunny-filled-loop-to-moon-filled-transition';
 	import GitHub from '~icons/line-md/github-loop';
 	import RSS from '~icons/line-md/rss';
+	import { toggleDark } from '$lib/logic.svelte';
 
 	const {
 		user,
@@ -56,7 +57,7 @@
 	<div flex gap-3 justify-center p3>
 		<button
 			aria-label='Toggle Dark Mode'
-			onclick={toggleMode}
+			onclick={toggleDark}
 			type='button'
 		>
 			{#if $mode === 'dark'}
