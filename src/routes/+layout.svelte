@@ -35,35 +35,5 @@
   .dark::view-transition-new(root) {
     z-index: 1;
   }
-
-  @keyframes enter {
-    0% {
-      opacity: 0;
-      transform: translateY(10px);
-    }
-
-    to {
-      opacity: 1;
-      transform: none;
-    }
-  }
-
-  [data-animate] {
-    --stagger: 0;
-    --delay: 60ms;
-    --start: 0ms;
-  }
-
-  @media (prefers-reduced-motion: no-preference) {
-    [data-animate] {
-      animation: enter 0.6s both;
-      animation-iteration-count: 1;
-      animation-delay: calc(var(--stagger) * var(--delay) + var(--start));
-    }
-  }
-
-  [data-animation-controller='false'] [data-animate] {
-    animation: none;
-  }
 }
 </style>

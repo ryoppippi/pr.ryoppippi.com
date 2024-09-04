@@ -18,7 +18,6 @@
 	flex
 	gap-4
 	items-center
-	op='0 motion-reduce:100'
 >
 	<a
 		border='~ gray-200 dark:gray-800'
@@ -107,7 +106,38 @@
 </div>
 
 <style>
-	a {
-		--at-apply: hover:underline;
+a {
+	--at-apply: hover:underline;
+}
+
+@keyframes enter {
+0% {
+	opacity: 0;
+	transform: translateY(10px);
+}
+
+to {
+	opacity: 1;
+	transform: none;
+}
+}
+
+[data-animate] {
+	--stagger: 0;
+	--delay: 60ms;
+	--start: 0ms;
+}
+
+[data-animate] {
+	opacity: 0;
+	animation: enter 0.6s both;
+	animation-iteration-count: 1;
+	animation-delay: calc(var(--stagger) * var(--delay) + var(--start));
+}
+
+@media (prefers-reduced-motion: reduce) {
+	[data-animate] {
+		animation: none;
 	}
+}
 </style>
