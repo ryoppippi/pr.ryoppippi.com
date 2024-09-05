@@ -5,8 +5,13 @@
 
 	const ct = new CheckTransitions();
 
-	const { ...modeWatcherProps }: ComponentProps<ModeWatcher> = $props();
+	const { themeColors, ...modeWatcherProps }: ComponentProps<ModeWatcher> = $props();
 </script>
+
+<svelte:head>
+	<meta name='theme-color' content={themeColors?.light} media='(prefers-color-scheme: light)' />
+	<meta name='theme-color' content={themeColors?.dark} media='(prefers-color-scheme: dark)' />
+</svelte:head>
 
 <!-- disable transition when reducing motion & transition api is available -->
 <ModeWatcher disableTransitions={ct.isAppearanceTransition} {...modeWatcherProps} />
