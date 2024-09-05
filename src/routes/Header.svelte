@@ -2,7 +2,7 @@
 	import Divider from './Divider.svelte';
 	import * as DarkMode from '$lib/DarkMode';
 	import { route } from '$lib/ROUTES';
-	import type { User } from '$lib';
+	import type { User } from '$lib/types.js';
 
 	import GitHub from '~icons/line-md/github-loop';
 	import RSS from '~icons/line-md/rss';

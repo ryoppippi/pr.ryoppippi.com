@@ -2,21 +2,20 @@ import { Feed } from 'feed';
 import { joinURL } from 'ufo';
 import { error } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
-import type { Contributions } from '$lib';
 import { route } from '$lib/ROUTES';
+import { getPRs, getUser } from '$lib';
 
 export const prerender = true;
 
 const DOMAIN = route('domain');
 
-export const GET = (async ({ fetch }) => {
+export const GET = (async () => {
 	if (!URL.canParse(DOMAIN)) {
 		return error(500, 'Invalid domain');
 	}
 
 	const domain = new URL(DOMAIN).origin;
-	const res = await fetch(route('GET /api/contributions'));
-	const { user, prs } = await res.json() as Contributions;
+	const [user, prs] = await Promise.all([getUser(), getPRs()]);
 
 	const feed = new Feed({
 		title: `${user.name} is contributing...`,

@@ -1,11 +1,8 @@
 import type { PageServerLoad } from './$types';
-import type { Contributions } from '$lib';
-import { route } from '$lib/ROUTES';
+import { getPRs, getUser } from '$lib';
 
-export const load: PageServerLoad = async ({ fetch }) => {
-	const res = await fetch(route('GET /api/contributions'));
-	const { user, prs } = await res.json() as Contributions;
-
+export const load: PageServerLoad = async () => {
+	const [user, prs] = await Promise.all([getUser(), getPRs()]);
 	const now = new Date().toJSON();
 
 	return { user, prs, now };
