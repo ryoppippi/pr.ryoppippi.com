@@ -124,7 +124,7 @@ to {
 
 [data-animate] {
 	--stagger: 0;
-	--delay: 60ms;
+	--delay: 80ms;
 	--start: 0ms;
 }
 
