@@ -1,14 +1,6 @@
-import { mode as modeStore, toggleMode } from 'mode-watcher';
-
-import { fromStore } from 'svelte/store';
 import { on } from 'svelte/events';
+import { withoutTransition } from './without-transition';
 import { browser } from '$app/environment';
-
-export const mode = fromStore(modeStore);
-
-export function isDark() {
-	return mode.current === 'dark';
-}
 
 /**
  * check if the browser supports appearance transition
@@ -24,7 +16,7 @@ export class CheckTransitions {
 			return;
 		}
 
-		// @ts-expect-error experimental API
+		// @ts-expect-error: Transition API
 		this.#isViewTransitionAvailable = document.startViewTransition != null;
 		this.#mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 		this.#isReduced = this.#mediaQuery.matches;
@@ -40,12 +32,30 @@ export class CheckTransitions {
 	}
 }
 
+let _isDark = $state.raw(browser && document.documentElement.classList.contains('dark'));
+const ct = new CheckTransitions();
+
+export function isDark() {
+	return _isDark;
+}
+
+export function toggleMode(): void {
+	if (_isDark) {
+		document.documentElement.classList.remove('dark');
+		localStorage.setItem('theme', 'light');
+	}
+	else {
+		document.documentElement.classList.add('dark');
+		localStorage.setItem('theme', 'dark');
+	}
+	_isDark = !_isDark;
+}
+
 /**
  * Credit to [@hooray](https://github.com/hooray)
  * @see https://github.com/vuejs/vitepress/pull/2347
  */
 export function toggleDark(event: MouseEvent) {
-	const ct = new CheckTransitions();
 	if (!ct.isAppearanceTransition) {
 		toggleMode();
 		return;
@@ -58,28 +68,31 @@ export function toggleDark(event: MouseEvent) {
 		Math.max(y, innerHeight - y),
 	);
 		// @ts-expect-error: Transition API
+
 	// eslint-disable-next-line ts/no-unsafe-call, ts/no-unsafe-assignment
 	const transition = document.startViewTransition(() => toggleMode());
 
-	// eslint-disable-next-line ts/no-unsafe-call, ts/no-unsafe-member-access
-	transition.ready.then(() => {
+	const transitionAction = () => {
 		const clipPath = [
 			`circle(0px at ${x}px ${y}px)`,
 			`circle(${endRadius}px at ${x}px ${y}px)`,
 		];
 		document.documentElement.animate(
 			{
-				clipPath: isDark()
+				clipPath: _isDark
 					? [...clipPath].reverse()
 					: clipPath,
 			},
 			{
 				duration: 400,
 				easing: 'ease-out',
-				pseudoElement: isDark()
+				pseudoElement: _isDark
 					? '::view-transition-old(root)'
 					: '::view-transition-new(root)',
 			},
 		);
-	});
+	};
+
+	// eslint-disable-next-line ts/no-unsafe-call, ts/no-unsafe-member-access
+	transition.ready.then(() => withoutTransition(transitionAction));
 }

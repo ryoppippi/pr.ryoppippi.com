@@ -8,7 +8,7 @@
 
 </script>
 
-<DarkMode themeColors={{ dark: '#121212', light: '#ffffff' }} />
+<DarkMode />
 
 {@render children()}
 
