@@ -1,46 +1,12 @@
-import { on } from 'svelte/events';
 import { withoutTransition } from './without-transition';
+import { CheckTransitions } from './transition.svelte';
 import { browser } from '$app/environment';
 
-/**
- * check if the browser supports appearance transition
- */
-export class CheckTransitions {
-	#isReduced = $state(false);
-	#isViewTransitionAvailable = $state(false);
-	#mediaQuery: MediaQueryList | undefined = undefined;
-
-	#isAppearanceTransition = $derived(this.#isViewTransitionAvailable && !this.#isReduced);
-	constructor() {
-		if (!browser) {
-			return;
-		}
-
-		// @ts-expect-error: Transition API
-		this.#isViewTransitionAvailable = document.startViewTransition != null;
-		this.#mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
-		this.#isReduced = this.#mediaQuery.matches;
-
-		on(this.#mediaQuery, 'change', (_event) => {
-			const event = _event as MediaQueryListEvent;
-			this.#isReduced = event.matches;
-		});
-	}
-
-	get isAppearanceTransition() {
-		return this.#isAppearanceTransition;
-	}
-}
-
-let _isDark = $state.raw(browser && document.documentElement.classList.contains('dark'));
+let isDark = $state(true);
 const ct = new CheckTransitions();
 
-export function isDark() {
-	return _isDark;
-}
-
-export function toggleMode(): void {
-	if (_isDark) {
+function toggleMode(): void {
+	if (isDark) {
 		document.documentElement.classList.remove('dark');
 		localStorage.setItem('theme', 'light');
 	}
@@ -48,14 +14,14 @@ export function toggleMode(): void {
 		document.documentElement.classList.add('dark');
 		localStorage.setItem('theme', 'dark');
 	}
-	_isDark = !_isDark;
+	isDark = !isDark;
 }
 
 /**
  * Credit to [@hooray](https://github.com/hooray)
  * @see https://github.com/vuejs/vitepress/pull/2347
  */
-export function toggleDark(event: MouseEvent) {
+function toggleDark(event: MouseEvent) {
 	if (!ct.isAppearanceTransition) {
 		toggleMode();
 		return;
@@ -67,8 +33,7 @@ export function toggleDark(event: MouseEvent) {
 		Math.max(x, innerWidth - x),
 		Math.max(y, innerHeight - y),
 	);
-		// @ts-expect-error: Transition API
-
+	// @ts-expect-error: Transition API
 	// eslint-disable-next-line ts/no-unsafe-call, ts/no-unsafe-assignment
 	const transition = document.startViewTransition(() => toggleMode());
 
@@ -79,14 +44,14 @@ export function toggleDark(event: MouseEvent) {
 		];
 		document.documentElement.animate(
 			{
-				clipPath: _isDark
+				clipPath: isDark
 					? [...clipPath].reverse()
 					: clipPath,
 			},
 			{
 				duration: 400,
 				easing: 'ease-out',
-				pseudoElement: _isDark
+				pseudoElement: isDark
 					? '::view-transition-old(root)'
 					: '::view-transition-new(root)',
 			},
@@ -95,4 +60,15 @@ export function toggleDark(event: MouseEvent) {
 
 	// eslint-disable-next-line ts/no-unsafe-call, ts/no-unsafe-member-access
 	transition.ready.then(() => withoutTransition(transitionAction));
+}
+
+export function useDarkMode() {
+	if (browser) {
+		isDark = document.documentElement.classList.contains('dark');
+	}
+	return {
+		isDark,
+		toggleMode,
+		toggleDark,
+	};
 }
