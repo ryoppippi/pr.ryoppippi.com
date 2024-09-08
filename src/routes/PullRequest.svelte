@@ -133,11 +133,6 @@ to {
 	animation: enter 0.6s both;
 	animation-iteration-count: 1;
 	animation-delay: calc(var(--stagger) * var(--delay) + var(--start));
-}
-
-@media (prefers-reduced-motion: reduce) {
-	[data-animate] {
-		animation: none;
-	}
+	--at-apply: motion-reduce:animate-none;
 }
 </style>
