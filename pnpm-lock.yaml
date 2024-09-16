@@ -9,8 +9,8 @@ importers:
   .:
     devDependencies:
       '@antfu/ni':
-        specifier: ^0.22.4
-        version: 0.22.4
+        specifier: ^0.23.0
+        version: 0.23.0
       '@iconify-json/line-md':
         specifier: ^1.2.1
         version: 1.2.1
@@ -151,8 +151,8 @@ packages:
   '@antfu/install-pkg@0.4.1':
     resolution: {integrity: sha512-T7yB5QNG29afhWVkVq7XeIMBa5U/vs9mX69YqayXypPRmYzUmzwnYltplHmPtZ4HPCn+sQKeXW8I47wCbuBOjw==}
 
-  '@antfu/ni@0.22.4':
-    resolution: {integrity: sha512-uCzh43cmUwQQcgv2BPyo0JWOMgXhcaE+F2I6Ucmfc7f9ir52lfA4OtZXdfL5D8cMa5GAwuCSNqOshIol8YN82g==}
+  '@antfu/ni@0.23.0':
+    resolution: {integrity: sha512-R5/GkA3PfGewAXLzz6lN5XagunF6PKeDtWt8dbZQXvHfebLS0qEczV+Azg/d+tKgSh6kRBpxvu8oSjARdPtw0A==}
     hasBin: true
 
   '@antfu/utils@0.7.10':
@@ -3302,7 +3302,7 @@ snapshots:
       package-manager-detector: 0.2.0
       tinyexec: 0.3.0
 
-  '@antfu/ni@0.22.4': {}
+  '@antfu/ni@0.23.0': {}
 
   '@antfu/utils@0.7.10': {}
 
