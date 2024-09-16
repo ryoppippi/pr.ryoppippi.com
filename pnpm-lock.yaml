@@ -87,8 +87,8 @@ importers:
         specifier: ^5.4.5
         version: 5.4.5(@types/node@22.4.2)
       vite-plugin-kit-routes:
-        specifier: ^0.6.9
-        version: 0.6.9
+        specifier: ^0.6.10
+        version: 0.6.10
       wrangler:
         specifier: ^3.72.1
         version: 3.72.1
@@ -862,12 +862,12 @@ packages:
   '@jsr/ryoppippi__eslint-config@0.0.23':
     resolution: {integrity: sha512-2YGVhLJ1FEkbLzHyFoahaiIqOKZjW04Pi1j3mutgGOKIgOBvtjjQUkxsGB0BUyemgesfA5NS11X+QmemrIsQKQ==, tarball: https://npm.jsr.io/~/11/@jsr/ryoppippi__eslint-config/0.0.23.tgz}
 
-  '@kitql/helpers@0.8.9':
-    resolution: {integrity: sha512-uDBFBvCYUT4UaZZKv7gJejQvbrOp4YyI1S0Z92DPiMbyLq0DPDXz3Lt2ZqUZKlQrinBX+W1TO6w0RudEX6Q6WA==}
+  '@kitql/helpers@0.8.10':
+    resolution: {integrity: sha512-r9m0eQyjy3Z2sdeXA8wRGl2tgKtZ9puPuZ3vm9Cv3WMMWVmbKVzUJvF+4UucsHzT9xECFbO9lcQu7lIb774PPQ==}
     engines: {node: ^16.14 || >=18}
 
-  '@kitql/internals@0.9.8':
-    resolution: {integrity: sha512-0aTyYAaO9u2rjILeWhZKzZ+jCPSY27d4cmVwHo2Ssuf6kqw6ZPvOlhJP8Gv4/L+Bv439PtoL9fsTuWRAeGecuQ==}
+  '@kitql/internals@0.9.9':
+    resolution: {integrity: sha512-bacdzSXFNwH35B54VWWafIaYKCmlpZLd9BlPKTLGgRtN/5w2sjT5/xtIV2Qx9xVKYiVIkMYR6447eM2dXnHF1w==}
     engines: {node: ^16.14 || >=18}
 
   '@nodelib/fs.scandir@2.1.5':
@@ -1458,9 +1458,6 @@ packages:
   argparse@2.0.1:
     resolution: {integrity: sha512-8+9WqebbFzpX9OR+Wa6O29asIogeRMzcGtAINdpMHHyAg10f05aSFVBbcEqGf/PXw1EjAZ+q2/bEBg3DvurK3Q==}
 
-  aria-query@5.3.0:
-    resolution: {integrity: sha512-b0P0sZPKtyu8HkeRAfCq0IfURZK+SuwMjY1UXGBU27wpAiTwQAIlq56IbIO+ytk/JjS1fMR14ee5WBBfKi5J6A==}
-
   aria-query@5.3.1:
     resolution: {integrity: sha512-Z/ZeOgVl7bcSYZ/u/rh0fOpvEpq//LZmdbkXyc7syVzjPAhfOa9ebsdTSjEBDU4vs5nC98Kfduj1uFo0qyET3g==}
     engines: {node: '>= 0.4'}
@@ -1677,10 +1674,6 @@ packages:
 
   defu@6.1.4:
     resolution: {integrity: sha512-mEQCMmwJu317oSz8CwdIOdwf3xMif1ttiM8LTufzc3g6kR+9Pe236twL8j3IYT1F7GfRgGcW6MWxzZjLIkuHIg==}
-
-  dequal@2.0.3:
-    resolution: {integrity: sha512-0je+qPKHEMohvfRTCEo3CrPG6cAzAYgmzKyxRiYSSDkS6eGJdyVJm7WaYA5ECaAD9wLB2T4EEeymA5aFVcYXCA==}
-    engines: {node: '>=6'}
 
   destr@2.0.3:
     resolution: {integrity: sha512-2N3BOUU4gYMpTP24s5rF5iP7BDr7uNTCs4ozw3kf/eKfvWSIu93GEBi5m427YoyJoeOzQ5smuu4nNAPGb8idSQ==}
@@ -2353,12 +2346,12 @@ packages:
   micromark@2.11.4:
     resolution: {integrity: sha512-+WoovN/ppKolQOFIAajxi7Lu9kInbPxFuTBVEavFcL8eAfVstoc5MocPmqBeAdBOJV00uaVjegzH4+MA0DN/uA==}
 
-  micromatch@4.0.5:
-    resolution: {integrity: sha512-DMy+ERcEW2q8Z2Po+WNXuw3c5YaUSFjAO5GsJqfEl7UjvtIuFKO6ZrKvcItdy98dwFI2N1tg3zNIdKaQT+aNdA==}
-    engines: {node: '>=8.6'}
-
   micromatch@4.0.7:
     resolution: {integrity: sha512-LPP/3KorzCwBxfeUuZmaR6bG2kdeHSbe0P2tY3FLRU4vYrjYz5hI4QZwV0njUx3jeuKe67YukQ1LSPZBKDqO/Q==}
+    engines: {node: '>=8.6'}
+
+  micromatch@4.0.8:
+    resolution: {integrity: sha512-PXwfBhYu0hBCPw8Dn0E+WDYb7af3dSLVWKi3HGv84IdF4TyFoC0ysxFd0Goxw7nSv4T/PzEJQxsYsEiFCKo2BA==}
     engines: {node: '>=8.6'}
 
   mime@3.0.0:
@@ -3068,12 +3061,12 @@ packages:
   validate-npm-package-license@3.0.4:
     resolution: {integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==}
 
-  vite-plugin-kit-routes@0.6.9:
-    resolution: {integrity: sha512-A3iJLe7eNHWnnsUXi2fN8pG4pRAez1zftPt2rtbtXQV9r/F1SH4lsFGrYlXwS/S7KT5ai86YWxu5iU4ck43wig==}
+  vite-plugin-kit-routes@0.6.10:
+    resolution: {integrity: sha512-Fea0iz4eHQ0CAUFiuFwf2cBnjLZS9PFpSEXGL7ipbKAlNaf5iDjPpxFncxsUH1g6YxsAZRbbulXkKU6PDVycKA==}
     engines: {node: ^16.14 || >=18}
 
-  vite-plugin-watch-and-run@1.7.0:
-    resolution: {integrity: sha512-f6TUUxDvOeFPMJ1/NDK8N1y/65w8h4jPZGsuOOYVnaK4lkutN95rTNAunsr0fcgTVo1BRUMxDTY7iFlsGuiCig==}
+  vite-plugin-watch-and-run@1.7.1:
+    resolution: {integrity: sha512-knLbovXBUwVrm0q4+LcpIhqTAZRoWVv5m8xRn42dy8hrF3rgJ7ucxm1d99KecED87NZI7v5oH3Pc2sPDcwJKEQ==}
     engines: {node: ^16.14 || >=18}
 
   vite@5.4.5:
@@ -3902,14 +3895,14 @@ snapshots:
       - typescript
       - vitest
 
-  '@kitql/helpers@0.8.9':
+  '@kitql/helpers@0.8.10':
     dependencies:
       esm-env: 1.0.0
 
-  '@kitql/internals@0.9.8':
+  '@kitql/internals@0.9.9':
     dependencies:
       '@babel/parser': 7.25.3
-      '@kitql/helpers': 0.8.9
+      '@kitql/helpers': 0.8.10
       recast: 0.23.9
       svelte: 4.2.1
 
@@ -4557,7 +4550,7 @@ snapshots:
       '@vue/shared': 3.4.38
       entities: 4.5.0
       estree-walker: 2.0.2
-      source-map-js: 1.2.0
+      source-map-js: 1.2.1
 
   '@vue/compiler-dom@3.4.38':
     dependencies:
@@ -4574,7 +4567,7 @@ snapshots:
       estree-walker: 2.0.2
       magic-string: 0.30.11
       postcss: 8.4.47
-      source-map-js: 1.2.0
+      source-map-js: 1.2.1
 
   '@vue/compiler-ssr@3.4.38':
     dependencies:
@@ -4663,10 +4656,6 @@ snapshots:
   are-docs-informative@0.0.2: {}
 
   argparse@2.0.1: {}
-
-  aria-query@5.3.0:
-    dependencies:
-      dequal: 2.0.3
 
   aria-query@5.3.1: {}
 
@@ -4853,8 +4842,6 @@ snapshots:
   deepmerge@4.3.1: {}
 
   defu@6.1.4: {}
-
-  dequal@2.0.3: {}
 
   destr@2.0.3: {}
 
@@ -5641,12 +5628,12 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  micromatch@4.0.5:
+  micromatch@4.0.7:
     dependencies:
       braces: 3.0.3
       picomatch: 2.3.1
 
-  micromatch@4.0.7:
+  micromatch@4.0.8:
     dependencies:
       braces: 3.0.3
       picomatch: 2.3.1
@@ -6202,7 +6189,7 @@ snapshots:
       '@jridgewell/sourcemap-codec': 1.5.0
       '@jridgewell/trace-mapping': 0.3.25
       acorn: 8.12.1
-      aria-query: 5.3.0
+      aria-query: 5.3.1
       axobject-query: 3.2.4
       code-red: 1.0.4
       css-tree: 2.3.1
@@ -6402,18 +6389,18 @@ snapshots:
       spdx-correct: 3.2.0
       spdx-expression-parse: 3.0.1
 
-  vite-plugin-kit-routes@0.6.9:
+  vite-plugin-kit-routes@0.6.10:
     dependencies:
       '@babel/parser': 7.25.3
-      '@kitql/helpers': 0.8.9
-      '@kitql/internals': 0.9.8
+      '@kitql/helpers': 0.8.10
+      '@kitql/internals': 0.9.9
       recast: 0.23.9
-      vite-plugin-watch-and-run: 1.7.0
+      vite-plugin-watch-and-run: 1.7.1
 
-  vite-plugin-watch-and-run@1.7.0:
+  vite-plugin-watch-and-run@1.7.1:
     dependencies:
-      '@kitql/helpers': 0.8.9
-      micromatch: 4.0.5
+      '@kitql/helpers': 0.8.10
+      micromatch: 4.0.8
 
   vite@5.4.5(@types/node@22.4.2):
     dependencies:
