@@ -17,14 +17,20 @@ export async function getUser(): Promise<User> {
 	};
 }
 
-export async function getPRs(): Promise<PR[]> {
+/**
+ * Fetches the pull requests of the user
+ * @param includeYourOwnPRs - Include the user's own pull requests
+ */
+export async function getPRs(includeYourOwnPRs = false): Promise<PR[]> {
 	const octokit = useOctokit();
 
 	const user = await getUser();
 
 	// Fetch pull requests from user
 	const { data } = await octokit.request('GET /search/issues', {
-		q: `type:pr+author:"${user.username}"+-user:"${user.username}"`,
+		q: includeYourOwnPRs
+			? `type:pr+author:"${user.username}"`
+			: `type:pr+author:"${user.username}"+-user:"${user.username}"`,
 		per_page: 50,
 		page: 1,
 	});
@@ -38,3 +44,5 @@ export async function getPRs(): Promise<PR[]> {
 		number: pr.number,
 	}));
 }
+
+export const isIncludeYourOwnPRs = route('includeYourOwnPRs') === 'true';

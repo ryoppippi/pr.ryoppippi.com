@@ -23,6 +23,7 @@ export default defineConfig({
 				domain: `https://pr.ryoppippi.com`,
 				repo: 'https://github.com/ryoppippi/pr.ryoppippi.com',
 				username: 'ryoppippi',
+				includeYourOwnPRs: 'true', // Include your own PRs 'true' or 'false'
 			},
 		}),
 	],

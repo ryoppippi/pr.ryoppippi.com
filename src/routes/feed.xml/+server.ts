@@ -3,7 +3,7 @@ import { joinURL } from 'ufo';
 import { error } from '@sveltejs/kit';
 import type { RequestHandler } from './$types';
 import { route } from '$lib/ROUTES';
-import { getPRs, getUser } from '$lib';
+import { getPRs, getUser, isIncludeYourOwnPRs } from '$lib';
 
 export const prerender = true;
 
@@ -15,7 +15,10 @@ export const GET = (async () => {
 	}
 
 	const domain = new URL(DOMAIN).origin;
-	const [user, prs] = await Promise.all([getUser(), getPRs()]);
+	const [user, prs] = await Promise.all([
+		getUser(),
+		getPRs(isIncludeYourOwnPRs),
+	]);
 
 	const feed = new Feed({
 		title: `${user.name} is contributing...`,
