@@ -20,9 +20,6 @@ https://github.com/user-attachments/assets/cea80c3d-ba87-480a-8090-bb611dc2a2db
 ## 🚀 Setup
 
 ```bash
-# corepack is recommended
-corepack enable
-
 # install dependencies
 pnpm install
 ```
@@ -36,6 +33,7 @@ const config = {
 		domain: `https://pr.ryoppippi.com`, // The hostname of your site
 		repo: 'https://github.com/ryoppippi/pr.ryoppippi.com', // GitHub repository name ( will be the link of octocat icon 🐱 )
 		username: 'ryoppippi', // GitHub username
+		includeYourOwnPRs: 'true', // Include your own PRs 'true' or 'false'
 	},
 	// ...
 };
