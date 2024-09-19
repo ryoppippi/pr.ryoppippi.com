@@ -128,6 +128,12 @@ to {
 	--start: 0ms;
 }
 
+@media (width < 640px) {
+	[data-animate] {
+		--delay: 150ms
+	}
+}
+
 [data-animate] {
 	opacity: 0;
 	animation: enter 0.6s both;
