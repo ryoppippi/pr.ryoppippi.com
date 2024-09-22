@@ -14,6 +14,7 @@
 
 <div
 	style:--stagger={count}
+	class='[--delay:80ms] sm:[--delay:150ms]'
 	data-animate
 	flex
 	gap-4
@@ -126,12 +127,6 @@ to {
 	--stagger: 0;
 	--delay: 80ms;
 	--start: 0ms;
-}
-
-@media (width < 640px) {
-	[data-animate] {
-		--delay: 150ms
-	}
 }
 
 [data-animate] {
