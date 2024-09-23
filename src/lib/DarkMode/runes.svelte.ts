@@ -33,8 +33,7 @@ function toggleDark(event: MouseEvent) {
 		Math.max(x, innerWidth - x),
 		Math.max(y, innerHeight - y),
 	);
-	// @ts-expect-error: Transition API
-	// eslint-disable-next-line ts/no-unsafe-call, ts/no-unsafe-assignment
+
 	const transition = document.startViewTransition(() => toggleMode());
 
 	const transitionAction = () => {
@@ -58,7 +57,7 @@ function toggleDark(event: MouseEvent) {
 		);
 	};
 
-	// eslint-disable-next-line ts/no-unsafe-call, ts/no-unsafe-member-access
+	// eslint-disable-next-line ts/no-floating-promises
 	transition.ready.then(() => withoutTransition(transitionAction));
 }
 

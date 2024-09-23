@@ -15,7 +15,6 @@ export class CheckTransitions {
 			return;
 		}
 
-		// @ts-expect-error: Transition API
 		this.#isViewTransitionAvailable = document.startViewTransition != null;
 		this.#mediaQuery = window.matchMedia('(prefers-reduced-motion: reduce)');
 		this.#isReduced = this.#mediaQuery.matches;
