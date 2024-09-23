@@ -12,7 +12,8 @@
 		"check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "eslint --cache .",
-		"format": "nr lint --fix"
+		"format": "nr lint --fix",
+		"preinstall": "npx only-allow pnpm"
 	},
 	"devDependencies": {
 		"@antfu/ni": "^0.23.0",
