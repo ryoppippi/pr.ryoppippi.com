@@ -43,7 +43,7 @@
 		"unocss": "^0.62.4",
 		"unplugin-icons": "^0.19.3",
 		"vite": "^5.4.7",
-		"vite-plugin-kit-routes": "^0.6.10",
+		"vite-plugin-kit-routes": "^0.6.11",
 		"wrangler": "^3.78.3"
 	}
 }
