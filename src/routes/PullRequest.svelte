@@ -21,6 +21,7 @@
 	items-center
 >
 	<a
+		aria-label="{prUserName}'s profile"
 		border='~ gray-200 dark:gray-800'
 		href={prURL}
 		overflow-hidden
