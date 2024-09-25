@@ -34,7 +34,8 @@ const LINKS = {
   "domain": `https://pr.ryoppippi.com`,
   "repo": `https://github.com/ryoppippi/pr.ryoppippi.com`,
   "username": `ryoppippi`,
-  "includeYourOwnPRs": `true`
+  "includeYourOwnPRs": `true`,
+  "hideList": `ryoppippi/ryoppippi.com`
 }
 
 type ParamValue = string | number | undefined
@@ -137,6 +138,6 @@ export type KIT_ROUTES = {
   PAGES: { '/': never }
   SERVERS: { 'prerender /feed.xml': never, 'GET /feed.xml': never }
   ACTIONS: Record<string, never>
-  LINKS: { 'domain': never, 'repo': never, 'username': never, 'includeYourOwnPRs': never }
+  LINKS: { 'domain': never, 'repo': never, 'username': never, 'includeYourOwnPRs': never, 'hideList': never }
   Params: Record<string, never>
 }

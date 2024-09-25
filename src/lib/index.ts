@@ -35,6 +35,8 @@ export async function getPRs(includeYourOwnPRs = false): Promise<PR[]> {
 		page: 1,
 	});
 
+	const hideList = route('hideList').split(',');
+
 	return data.items.filter(pr => !(pr.state === 'closed' && pr.pull_request?.merged_at == null)).map(pr => ({
 		repo: pr.repository_url.split('/').slice(-2).join('/'),
 		title: pr.title,
@@ -42,7 +44,7 @@ export async function getPRs(includeYourOwnPRs = false): Promise<PR[]> {
 		created_at: pr.created_at,
 		state: pr.pull_request?.merged_at != null ? 'merged' : pr.state as PR['state'],
 		number: pr.number,
-	}));
+	})).filter(pr => !hideList.some(hide => pr.repo.includes(hide)));
 }
 
 export const isIncludeYourOwnPRs = route('includeYourOwnPRs') === 'true';
