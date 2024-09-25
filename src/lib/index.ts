@@ -31,7 +31,7 @@ export async function getPRs(includeYourOwnPRs = false): Promise<PR[]> {
 		q: includeYourOwnPRs
 			? `type:pr+author:"${user.username}"`
 			: `type:pr+author:"${user.username}"+-user:"${user.username}"`,
-		per_page: 50,
+		per_page: 100,
 		page: 1,
 	});
 
