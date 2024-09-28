@@ -8,7 +8,7 @@
 
 <div op50 text-center>
 	<Divider />
-	<div flex='~ gap-1 wrap justify-center' v-if='data?.lastUpdated'>
+	<div flex='~ gap-1 wrap justify-center'>
 		<span op75>Last Updated:</span>
 		<time datetime={now.toString()}>
 			{formatTimeAgo(new Date(now))}
