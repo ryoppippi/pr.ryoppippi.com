@@ -14,11 +14,10 @@
 
 <div
 	style:--stagger={count}
-	class='[--delay:80ms] sm:[--delay:150ms]'
 	flex
 	gap-4
 	items-center
-	sliding-animation
+	sliding-animation='~ delay-base'
 >
 	<a
 		aria-label="{prUserName}'s profile"
