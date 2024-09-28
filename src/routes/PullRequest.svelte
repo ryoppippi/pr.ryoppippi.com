@@ -15,10 +15,10 @@
 <div
 	style:--stagger={count}
 	class='[--delay:80ms] sm:[--delay:150ms]'
-	data-animate
 	flex
 	gap-4
 	items-center
+	sliding-animation
 >
 	<a
 		aria-label="{prUserName}'s profile"
@@ -110,31 +110,5 @@
 <style>
 a {
 	--at-apply: hover:underline;
-}
-
-@keyframes enter {
-0% {
-	opacity: 0;
-	transform: translateY(10px);
-}
-
-to {
-	opacity: 1;
-	transform: none;
-}
-}
-
-[data-animate] {
-	--stagger: 0;
-	--delay: 80ms;
-	--start: 0ms;
-}
-
-[data-animate] {
-	opacity: 0;
-	animation: enter 0.6s both;
-	animation-iteration-count: 1;
-	animation-delay: calc(var(--stagger) * var(--delay) + var(--start));
-	--at-apply: motion-reduce:animate-none;
 }
 </style>
