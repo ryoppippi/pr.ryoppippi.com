@@ -44,6 +44,6 @@
 		"unplugin-icons": "^0.19.3",
 		"vite": "^5.4.8",
 		"vite-plugin-kit-routes": "^0.6.11",
-		"wrangler": "^3.78.9"
+		"wrangler": "^3.78.12"
 	}
 }
