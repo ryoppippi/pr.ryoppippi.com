@@ -7,11 +7,14 @@ import {
 	transformerVariantGroup,
 } from 'unocss';
 
+import { presetRyoppippi } from '@ryoppippi/unocss-preset';
+
 export default defineConfig({
 	presets: [
 		presetUno(),
 		presetAttributify(),
 		presetTypography(),
+		presetRyoppippi(),
 	],
 	transformers: [
 		transformerDirectives(),
@@ -24,33 +27,5 @@ export default defineConfig({
 		'sliding-animation-delay-base': '[--delay:80ms] sm:[--delay:150ms]',
 	},
 	rules: [
-		[/^sliding-animation$/, function* ([,], { symbols }) {
-			yield `
-@keyframes enter {
-	0% {
-		opacity: 0;
-		transform: translateY(10px);
-	}
-
-	to {
-		opacity: 1;
-		transform: none;
-	}
-}
-`;
-
-			yield {
-				'opacity': 0,
-				'animation': `enter 0.6s both`,
-				'animation-iteration-count': 1,
-				'animation-delay': `calc(var(--stagger, 0) * var(--delay, 80ms) + var(--start, 0ms))`,
-			};
-
-			yield {
-				[symbols.parent]: `@media (prefers-reduced-motion: reduce)`,
-				animation: 'none',
-			};
-		}],
 	],
-
 });

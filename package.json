@@ -20,13 +20,14 @@
 		"@iconify-json/line-md": "^1.2.1",
 		"@iconify-json/ph": "^1.2.0",
 		"@ryoppippi/eslint-config": "npm:@jsr/ryoppippi__eslint-config@^0.0.23",
+		"@ryoppippi/unocss-preset": "npm:@jsr/ryoppippi__unocss-preset@^1.0.3",
 		"@sveltejs/adapter-auto": "^3.2.5",
 		"@sveltejs/adapter-static": "^3.0.5",
 		"@sveltejs/kit": "^2.6.1",
 		"@sveltejs/vite-plugin-svelte": "4.0.0-next.7",
 		"@types/dom-view-transitions": "^1.0.5",
-		"@unocss/extractor-svelte": "^0.63.0",
-		"@unocss/reset": "^0.63.0",
+		"@unocss/extractor-svelte": "^0.63.1",
+		"@unocss/reset": "^0.63.1",
 		"@vueuse/core": "^11.1.0",
 		"eslint": "^9.11.1",
 		"eslint-plugin-format": "^0.1.2",
@@ -40,10 +41,10 @@
 		"typescript": "^5.6.2",
 		"typescript-svelte-plugin": "^0.3.42",
 		"ufo": "^1.5.4",
-		"unocss": "^0.63.0",
+		"unocss": "^0.63.1",
 		"unplugin-icons": "^0.19.3",
 		"vite": "^5.4.8",
 		"vite-plugin-kit-routes": "^0.6.11",
-		"wrangler": "^3.78.12"
+		"wrangler": "^3.79.0"
 	}
 }

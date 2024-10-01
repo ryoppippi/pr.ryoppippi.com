@@ -14,9 +14,8 @@
 
 <div
 	style:--stagger={count}
-	flex
+	fyc
 	gap-4
-	items-center
 	sliding-animation='~ delay-base'
 >
 	<a
@@ -41,8 +40,8 @@
 
 	<div
 		flex='~ 1'
+		fxb
 		gap='2 lg:4'
-		justify-between
 		min-w-0
 	>
 		<div
@@ -51,10 +50,9 @@
 			min-w-0
 		>
 			<a
-				flex
+				fyc
 				gap-1
 				href={pr.url}
-				items-center
 				target='_blank'
 				text='gray-900 dark:white'
 			>
@@ -85,7 +83,7 @@
 
 		<div
 			fcol
-			justify-between
+			fxb
 			shrink-0
 			text-right
 		>
