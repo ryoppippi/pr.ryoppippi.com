@@ -8,7 +8,7 @@
 
 <div op50 text-center>
 	<Divider />
-	<div fw fxc gap-1>
+	<div flex='~ gap-1 wrap justify-center'>
 		<span op75>Last Updated:</span>
 		<time datetime={now.toString()}>
 			{formatTimeAgo(new Date(now))}

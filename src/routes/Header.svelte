@@ -20,11 +20,12 @@
 
 <div fcol>
 	<h1
-		fcc
 		flex='~ gap-2 wrap'
+		items-center
+		justify-center
 		text-3xl>
 		<a
-			fyc
+			flex='~ items-center'
 			gap-2
 			href={userUrl}
 			target='_blank'
@@ -50,7 +51,7 @@
 			{description}
 		</a>
 	</p>
-	<div fxc gap-3 p3>
+	<div flex gap-3 justify-center p3>
 		<DarkMode.ToggleButton />
 		<a
 			aria-label='GitHub Repository'
