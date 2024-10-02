@@ -52,9 +52,8 @@
 />
 
 <div
-	fcol
+	flex='~ col gap-8'
 	font-sans
-	gap-8
 	max-w-2xl
 	mxa
 	p='4 sm:6 lg:8'

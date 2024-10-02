@@ -18,12 +18,11 @@
 	} = $props();
 </script>
 
-<div fcol>
+<div flex='~ col'>
 	<h1
-		flex='~ gap-2 wrap'
-		items-center
-		justify-center
-		text-3xl>
+		flex='~ gap-2 wrap justify-center items-center'
+		text-3xl
+	>
 		<a
 			flex='~ items-center'
 			gap-2
@@ -51,7 +50,10 @@
 			{description}
 		</a>
 	</p>
-	<div flex gap-3 justify-center p3>
+	<div
+		flex='~ gap-3 justify-center'
+		p3
+	>
 		<DarkMode.ToggleButton />
 		<a
 			aria-label='GitHub Repository'

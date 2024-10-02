@@ -14,9 +14,7 @@
 
 <div
 	style:--stagger={count}
-	flex
-	gap-4
-	items-center
+	flex='~ items-center gap-4'
 	sliding-animation='~ delay-base'
 >
 	<a
@@ -40,21 +38,18 @@
 	</a>
 
 	<div
-		flex='~ 1'
+		flex='~ 1 justify-between'
 		gap='2 lg:4'
-		justify-between
 		min-w-0
 	>
 		<div
-			fcol
+			flex='~ col'
 			gap-1
 			min-w-0
 		>
 			<a
-				flex
-				gap-1
+				flex='~ items-center gap-1'
 				href={pr.url}
-				items-center
 				target='_blank'
 				text='gray-900 dark:white'
 			>
@@ -72,8 +67,7 @@
 			</a>
 
 			<a
-				flex
-				gap-1
+				flex='~ gap-1'
 				href={prURL}
 				target='_blank'
 			>
@@ -84,9 +78,7 @@
 		</div>
 
 		<div
-			fcol
-			justify-between
-			shrink-0
+			flex='~ col justify-between shrink-0'
 			text-right
 		>
 			<a
