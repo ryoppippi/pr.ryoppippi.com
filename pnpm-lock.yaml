@@ -15,8 +15,8 @@ importers:
         specifier: ^1.2.2
         version: 1.2.2
       '@iconify-json/ph':
-        specifier: ^1.2.0
-        version: 1.2.0
+        specifier: ^1.2.1
+        version: 1.2.1
       '@ryoppippi/eslint-config':
         specifier: npm:@jsr/ryoppippi__eslint-config@^0.0.23
         version: '@jsr/ryoppippi__eslint-config@0.0.23(@typescript-eslint/utils@8.7.0(eslint@9.12.0(jiti@2.0.0))(typescript@5.6.2))(@vue/compiler-sfc@3.4.38)(eslint-plugin-format@0.1.2(eslint@9.12.0(jiti@2.0.0)))(eslint-plugin-svelte@2.44.1(eslint@9.12.0(jiti@2.0.0))(svelte@5.0.0-next.262))(eslint@9.12.0(jiti@2.0.0))(svelte-eslint-parser@0.41.1(svelte@5.0.0-next.262))(svelte@5.0.0-next.262)(typescript@5.6.2)'
@@ -733,8 +733,8 @@ packages:
   '@iconify-json/line-md@1.2.2':
     resolution: {integrity: sha512-UCYTTO5aARoVbOOPCaomOoXDC8maSolIV8KVDmK9VuzfjpqkMg/vJo/nWaoQPIf310SZjdvAqHvIwsbzr6J+sw==}
 
-  '@iconify-json/ph@1.2.0':
-    resolution: {integrity: sha512-013eLpgTmX1lACOuDnkuhC7gRHyYj9w/j8SyDmlyUYvsKQrwdRsv1otcXtwH3DevuDAzSkreeeRsCeez+gTyVA==}
+  '@iconify-json/ph@1.2.1':
+    resolution: {integrity: sha512-x0DNfwWrS18dbsBYOq3XGiZnGz4CgRyC+YSl/TZvMQiKhIUl1woWqUbMYqqfMNUBzjyk7ulvaRovpRsIlqIf8g==}
 
   '@iconify/types@2.0.0':
     resolution: {integrity: sha512-+wluvCrRhXrhyOmRDJ3q8mux9JkKy5SJ/v8ol2tu4FVjyYvtEzkc/3pK15ET6RKg4b4w4BmTk1+gsCUhf21Ykg==}
@@ -3365,7 +3365,7 @@ snapshots:
     dependencies:
       '@iconify/types': 2.0.0
 
-  '@iconify-json/ph@1.2.0':
+  '@iconify-json/ph@1.2.1':
     dependencies:
       '@iconify/types': 2.0.0
 
