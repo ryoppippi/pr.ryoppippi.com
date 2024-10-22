@@ -30,7 +30,7 @@
 		"@vueuse/core": "^11.1.0",
 		"eslint": "^9.13.0",
 		"eslint-plugin-format": "^0.1.2",
-		"eslint-plugin-svelte": "^2.44.1",
+		"eslint-plugin-svelte": "^2.45.1",
 		"feed": "^4.2.2",
 		"octokit": "^4.0.2",
 		"std-env": "^3.7.0",
