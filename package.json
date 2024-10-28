@@ -42,7 +42,7 @@
 		"ufo": "^1.5.4",
 		"unocss": "^0.63.6",
 		"unplugin-icons": "^0.19.3",
-		"vite": "^5.4.9",
+		"vite": "^5.4.10",
 		"vite-plugin-kit-routes": "^0.6.11",
 		"wrangler": "^3.80.0"
 	}
