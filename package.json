@@ -38,7 +38,7 @@
 		"svelte-check": "^4.0.6",
 		"svelte-meta-tags": "^4.0.4",
 		"typescript": "^5.6.3",
-		"typescript-svelte-plugin": "^0.3.42",
+		"typescript-svelte-plugin": "^0.3.43",
 		"ufo": "^1.5.4",
 		"unocss": "^0.63.6",
 		"unplugin-icons": "^0.20.0",
