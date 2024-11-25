@@ -22,13 +22,13 @@ importers:
         version: '@jsr/ryoppippi__eslint-config@0.0.23(@typescript-eslint/utils@8.7.0(eslint@9.14.0(jiti@2.0.0))(typescript@5.6.3))(@vue/compiler-sfc@3.4.38)(eslint-plugin-format@0.1.2(eslint@9.14.0(jiti@2.0.0)))(eslint-plugin-svelte@2.46.0(eslint@9.14.0(jiti@2.0.0))(svelte@5.1.13))(eslint@9.14.0(jiti@2.0.0))(svelte-eslint-parser@0.41.1(svelte@5.1.13))(svelte@5.1.13)(typescript@5.6.3)'
       '@sveltejs/adapter-auto':
         specifier: ^3.3.1
-        version: 3.3.1(@sveltejs/kit@2.8.1(@sveltejs/vite-plugin-svelte@4.0.1(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0)))(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0)))
+        version: 3.3.1(@sveltejs/kit@2.8.2(@sveltejs/vite-plugin-svelte@4.0.1(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0)))(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0)))
       '@sveltejs/adapter-static':
         specifier: ^3.0.6
-        version: 3.0.6(@sveltejs/kit@2.8.1(@sveltejs/vite-plugin-svelte@4.0.1(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0)))(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0)))
+        version: 3.0.6(@sveltejs/kit@2.8.2(@sveltejs/vite-plugin-svelte@4.0.1(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0)))(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0)))
       '@sveltejs/kit':
-        specifier: ^2.8.1
-        version: 2.8.1(@sveltejs/vite-plugin-svelte@4.0.1(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0)))(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0))
+        specifier: ^2.8.2
+        version: 2.8.2(@sveltejs/vite-plugin-svelte@4.0.1(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0)))(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0))
       '@sveltejs/vite-plugin-svelte':
         specifier: 4.0.1
         version: 4.0.1(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0))
@@ -1013,8 +1013,8 @@ packages:
     peerDependencies:
       '@sveltejs/kit': ^2.0.0
 
-  '@sveltejs/kit@2.8.1':
-    resolution: {integrity: sha512-uuOfFwZ4xvnfPsiTB6a4H1ljjTUksGhWnYq5X/Y9z4x5+3uM2Md8q/YVeHL+7w+mygAwoEFdgKZ8YkUuk+VKww==}
+  '@sveltejs/kit@2.8.2':
+    resolution: {integrity: sha512-c9My0AnojYtaa96XDAcxcMUdMd3iIhWfrj6BLNtOFz55lMtA/Jima54ZLcYcvfMqei3c86fGRXYa2aIHO+vzFg==}
     engines: {node: '>=18.13'}
     hasBin: true
     peerDependencies:
@@ -3708,16 +3708,16 @@ snapshots:
       - supports-color
       - typescript
 
-  '@sveltejs/adapter-auto@3.3.1(@sveltejs/kit@2.8.1(@sveltejs/vite-plugin-svelte@4.0.1(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0)))(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0)))':
+  '@sveltejs/adapter-auto@3.3.1(@sveltejs/kit@2.8.2(@sveltejs/vite-plugin-svelte@4.0.1(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0)))(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0)))':
     dependencies:
-      '@sveltejs/kit': 2.8.1(@sveltejs/vite-plugin-svelte@4.0.1(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0)))(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0))
+      '@sveltejs/kit': 2.8.2(@sveltejs/vite-plugin-svelte@4.0.1(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0)))(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0))
       import-meta-resolve: 4.1.0
 
-  '@sveltejs/adapter-static@3.0.6(@sveltejs/kit@2.8.1(@sveltejs/vite-plugin-svelte@4.0.1(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0)))(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0)))':
+  '@sveltejs/adapter-static@3.0.6(@sveltejs/kit@2.8.2(@sveltejs/vite-plugin-svelte@4.0.1(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0)))(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0)))':
     dependencies:
-      '@sveltejs/kit': 2.8.1(@sveltejs/vite-plugin-svelte@4.0.1(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0)))(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0))
+      '@sveltejs/kit': 2.8.2(@sveltejs/vite-plugin-svelte@4.0.1(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0)))(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0))
 
-  '@sveltejs/kit@2.8.1(@sveltejs/vite-plugin-svelte@4.0.1(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0)))(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0))':
+  '@sveltejs/kit@2.8.2(@sveltejs/vite-plugin-svelte@4.0.1(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0)))(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0))':
     dependencies:
       '@sveltejs/vite-plugin-svelte': 4.0.1(svelte@5.1.13)(vite@5.4.11(@types/node@22.7.0))
       '@types/cookie': 0.6.0
