@@ -75,8 +75,8 @@ importers:
         specifier: ^5.7.2
         version: 5.7.2
       typescript-svelte-plugin:
-        specifier: ^0.3.43
-        version: 0.3.43(svelte@5.2.11)(typescript@5.7.2)
+        specifier: ^0.3.44
+        version: 0.3.44(svelte@5.2.11)(typescript@5.7.2)
       ufo:
         specifier: ^1.5.4
         version: 1.5.4
@@ -2630,8 +2630,8 @@ packages:
     peerDependencies:
       svelte: ^5.0.0
 
-  svelte2tsx@0.7.23:
-    resolution: {integrity: sha512-LUVKEHlblBYvzOXdpMHhyMle7iSZ/qr71gGhf1AIrsk1j0FjwTLXp9QuSmPop4C4IlL5BSGFS95Kr78Rb9Eyuw==}
+  svelte2tsx@0.7.30:
+    resolution: {integrity: sha512-sHXK/vw/sVJmFuPSq6zeKrtuZKvo0jJyEi8ybN0dfrqSYVvHu8zFbO0zQKAL8y/fYackYojH41EJGe6v8rd5fw==}
     peerDependencies:
       svelte: ^3.55 || ^4.0.0-next.0 || ^4.0 || ^5.0.0-next.0
       typescript: ^4.9.4 || ^5.0.0
@@ -2721,8 +2721,8 @@ packages:
     resolution: {integrity: sha512-4dbzIzqvjtgiM5rw1k5rEHtBANKmdudhGyBEajN01fEyhaAIhsoKNy6y7+IN93IfpFtwY9iqi7kD+xwKhQsNJA==}
     engines: {node: '>=8'}
 
-  typescript-svelte-plugin@0.3.43:
-    resolution: {integrity: sha512-n7WBWB+y91YOniN6RloG7jujsidwDn4F8ttDoC3r8gJT+t2IZUE6+ktwXnlwhCa8IuRB0nr7sT+wV4RL7reJTg==}
+  typescript-svelte-plugin@0.3.44:
+    resolution: {integrity: sha512-EO/wj/ir9rwz+xJ3VI47K+vwvNC+iAZBgQiyv3MmhJcUSt11YxvbotL78jxXdytui/DpUPSEOhuDnLw+LTNaeA==}
 
   typescript@5.7.2:
     resolution: {integrity: sha512-i5t66RHxDvVN40HfDd1PsEThGNnlMCMT3jMUuoh9/0TaqWevNontacunWyN02LA9/fIbEWlcHZcgTKb9QoaLfg==}
@@ -5575,7 +5575,7 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  svelte2tsx@0.7.23(svelte@5.2.11)(typescript@5.7.2):
+  svelte2tsx@0.7.30(svelte@5.2.11)(typescript@5.7.2):
     dependencies:
       dedent-js: 1.0.1
       pascal-case: 3.1.2
@@ -5667,10 +5667,10 @@ snapshots:
 
   type-fest@0.8.1: {}
 
-  typescript-svelte-plugin@0.3.43(svelte@5.2.11)(typescript@5.7.2):
+  typescript-svelte-plugin@0.3.44(svelte@5.2.11)(typescript@5.7.2):
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.0
-      svelte2tsx: 0.7.23(svelte@5.2.11)(typescript@5.7.2)
+      svelte2tsx: 0.7.30(svelte@5.2.11)(typescript@5.7.2)
     transitivePeerDependencies:
       - svelte
       - typescript
