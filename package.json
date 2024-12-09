@@ -40,7 +40,7 @@
 		"typescript": "^5.7.2",
 		"typescript-svelte-plugin": "^0.3.44",
 		"ufo": "^1.5.4",
-		"unocss": "^0.64.1",
+		"unocss": "^0.65.1",
 		"unplugin-icons": "^0.20.2",
 		"vite": "^5.4.11",
 		"vite-plugin-kit-routes": "^0.7.0",
