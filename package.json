@@ -41,7 +41,7 @@
 		"typescript-svelte-plugin": "^0.3.44",
 		"ufo": "^1.5.4",
 		"unocss": "^0.65.1",
-		"unplugin-icons": "^0.20.2",
+		"unplugin-icons": "^0.21.0",
 		"vite": "^5.4.11",
 		"vite-plugin-kit-routes": "^0.7.0",
 		"wrangler": "^3.91.0"

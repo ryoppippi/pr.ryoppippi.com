@@ -84,8 +84,8 @@ importers:
         specifier: ^0.65.1
         version: 0.65.1(postcss@8.4.47)(rollup@4.22.4)(vite@5.4.11(@types/node@22.7.0))(vue@3.5.13(typescript@5.7.2))
       unplugin-icons:
-        specifier: ^0.20.2
-        version: 0.20.2(@vue/compiler-sfc@3.5.13)(svelte@5.8.1)
+        specifier: ^0.21.0
+        version: 0.21.0(@vue/compiler-sfc@3.5.13)(svelte@5.8.1)
       vite:
         specifier: ^5.4.11
         version: 5.4.11(@types/node@22.7.0)
@@ -2769,8 +2769,8 @@ packages:
       vite:
         optional: true
 
-  unplugin-icons@0.20.2:
-    resolution: {integrity: sha512-Ak6TKAiO812aIUrCelrBSTQbYC4FiqawnFrAusP/hjmB8f9cAug9jr381ItvLl+Asi4IVcjoOiPbpy9CfFGKvQ==}
+  unplugin-icons@0.21.0:
+    resolution: {integrity: sha512-sRic+yj7cCbpDFwrRj+m55ogOZi6PQRDc/WUEmjHLAnc90v0g5UVxE0cVAZgBOsAPCieizZJui/sgrCYrVx8mQ==}
     peerDependencies:
       '@svgr/core': '>=7.0.0'
       '@svgx/core': ^1.0.1
@@ -3416,7 +3416,7 @@ snapshots:
       debug: 4.3.7
       kolorist: 1.8.0
       local-pkg: 0.5.1
-      mlly: 1.7.1
+      mlly: 1.7.3
     transitivePeerDependencies:
       - supports-color
 
@@ -5742,7 +5742,7 @@ snapshots:
       - supports-color
       - vue
 
-  unplugin-icons@0.20.2(@vue/compiler-sfc@3.5.13)(svelte@5.8.1):
+  unplugin-icons@0.21.0(@vue/compiler-sfc@3.5.13)(svelte@5.8.1):
     dependencies:
       '@antfu/install-pkg': 0.5.0
       '@antfu/utils': 0.7.10
