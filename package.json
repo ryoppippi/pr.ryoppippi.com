@@ -23,7 +23,7 @@
 		"@sveltejs/adapter-auto": "^3.3.1",
 		"@sveltejs/adapter-static": "^3.0.6",
 		"@sveltejs/kit": "^2.11.1",
-		"@sveltejs/vite-plugin-svelte": "5.0.2",
+		"@sveltejs/vite-plugin-svelte": "5.0.3",
 		"@types/dom-view-transitions": "^1.0.5",
 		"@unocss/extractor-svelte": "^0.65.1",
 		"@unocss/reset": "^0.65.1",
