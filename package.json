@@ -22,7 +22,7 @@
 		"@ryoppippi/eslint-config": "npm:@jsr/ryoppippi__eslint-config@^0.0.23",
 		"@sveltejs/adapter-auto": "^3.3.1",
 		"@sveltejs/adapter-static": "^3.0.8",
-		"@sveltejs/kit": "^2.11.1",
+		"@sveltejs/kit": "^2.15.1",
 		"@sveltejs/vite-plugin-svelte": "5.0.3",
 		"@types/dom-view-transitions": "^1.0.5",
 		"@unocss/extractor-svelte": "^0.65.3",
