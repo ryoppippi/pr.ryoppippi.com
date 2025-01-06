@@ -34,7 +34,7 @@
 		"feed": "^4.2.2",
 		"octokit": "^4.0.3",
 		"std-env": "^3.8.0",
-		"svelte": "5.12.0",
+		"svelte": "5.16.1",
 		"svelte-check": "^4.1.1",
 		"svelte-meta-tags": "^4.0.4",
 		"typescript": "^5.7.2",
