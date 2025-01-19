@@ -54,8 +54,10 @@
 				text='gray-900 dark:white'
 			>
 				<span
-					class:mergedPR={pr.state === 'merged'}
-					class:openPR={pr.state === 'open'}
+					class={{
+						mergedPR: pr.state === 'merged',
+						openPR: pr.state === 'open',
+					}}
 					shrink-0
 					size-5
 				>
