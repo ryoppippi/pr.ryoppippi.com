@@ -36,7 +36,7 @@
 		"std-env": "^3.8.0",
 		"svelte": "5.16.1",
 		"svelte-check": "^4.1.4",
-		"svelte-fancy-darkmode": "^0.1.0",
+		"svelte-fancy-darkmode": "^0.2.0",
 		"svelte-meta-tags": "^4.0.4",
 		"typescript": "^5.7.3",
 		"typescript-svelte-plugin": "^0.3.45",
