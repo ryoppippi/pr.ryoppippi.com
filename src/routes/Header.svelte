@@ -58,11 +58,11 @@
 	>
 		<DarkMode.ToggleButton>
 			{#snippet darkIcon()}
-				<MoonToSunny />
+				<SunnyToMoon />
 			{/snippet}
 
 			{#snippet lightIcon()}
-				<SunnyToMoon />
+				<MoonToSunny />
 			{/snippet}
 		</DarkMode.ToggleButton>
 		<a
