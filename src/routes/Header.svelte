@@ -1,8 +1,10 @@
 <script lang='ts'>
+	import * as DarkMode from 'svelte-fancy-darkmode';
 	import Divider from './Divider.svelte';
-	import * as DarkMode from '$lib/DarkMode';
 	import { route } from '$lib/ROUTES';
 	import type { User } from '$lib/types.js';
+	import MoonToSunny from '~icons/line-md/moon-filled-to-sunny-filled-loop-transition';
+	import SunnyToMoon from '~icons/line-md/sunny-filled-loop-to-moon-filled-transition';
 
 	import GitHub from '~icons/line-md/github-loop';
 	import RSS from '~icons/line-md/rss';
@@ -54,7 +56,15 @@
 		flex='~ gap-3 justify-center'
 		p3
 	>
-		<DarkMode.ToggleButton />
+		<DarkMode.ToggleButton>
+			{#snippet darkIcon()}
+				<MoonToSunny />
+			{/snippet}
+
+			{#snippet lightIcon()}
+				<SunnyToMoon />
+			{/snippet}
+		</DarkMode.ToggleButton>
 		<a
 			aria-label='GitHub Repository'
 			href={route('repo')}

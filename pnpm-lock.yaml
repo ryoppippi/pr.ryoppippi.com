@@ -68,6 +68,9 @@ importers:
       svelte-check:
         specifier: ^4.1.4
         version: 4.1.4(picomatch@4.0.2)(svelte@5.16.1)(typescript@5.7.3)
+      svelte-fancy-darkmode:
+        specifier: ^0.1.0
+        version: 0.1.0(svelte@5.16.1)
       svelte-meta-tags:
         specifier: ^4.0.4
         version: 4.0.4(svelte@5.16.1)(typescript@5.7.3)
@@ -2640,6 +2643,11 @@ packages:
       svelte:
         optional: true
 
+  svelte-fancy-darkmode@0.1.0:
+    resolution: {integrity: sha512-mYU6YyDjTE2zZXIUz+T+5gQR7mBPCFN0tyyTsBg/kH5fUvRUOqnx0ve5w6FjA4rs2d3UVE8FSnVbHNS130nBmQ==}
+    peerDependencies:
+      svelte: ^5.19.2
+
   svelte-meta-tags@4.0.4:
     resolution: {integrity: sha512-i0vgxGreM3lXTTxLSuPQLE1n56KAFACHWIXRj7fJCTpd/5D16O97Ha/OXDZS4Lsk+D347VEK4LeMoacsftbeKw==}
     peerDependencies:
@@ -3491,7 +3499,7 @@ snapshots:
 
   '@kitql/helpers@0.8.11':
     dependencies:
-      esm-env: 1.2.1
+      esm-env: 1.2.2
 
   '@kitql/internals@0.10.1':
     dependencies:
@@ -5590,6 +5598,11 @@ snapshots:
       postcss: 8.4.47
       postcss-scss: 4.0.9(postcss@8.4.47)
     optionalDependencies:
+      svelte: 5.16.1
+
+  svelte-fancy-darkmode@0.1.0(svelte@5.16.1):
+    dependencies:
+      esm-env: 1.2.2
       svelte: 5.16.1
 
   svelte-meta-tags@4.0.4(svelte@5.16.1)(typescript@5.7.3):
