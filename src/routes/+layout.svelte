@@ -2,11 +2,13 @@
 	import 'uno.css';
 	import '@unocss/reset/tailwind.css';
 
+	import * as DarkMode from 'svelte-fancy-darkmode';
+
 	const { children } = $props();
 
 </script>
 
-<DarkModeHeader themeColors={{ dark: '#121212', light: '#ffffff' }} />
+<DarkMode.Header themeColors={{ dark: '#121212', light: '#ffffff' }} />
 
 {@render children()}
 
