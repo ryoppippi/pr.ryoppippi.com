@@ -16,7 +16,7 @@
 		"preinstall": "npx only-allow pnpm"
 	},
 	"devDependencies": {
-		"@antfu/ni": "^0.23.2",
+		"@antfu/ni": "^23.3.1",
 		"@iconify-json/line-md": "^1.2.5",
 		"@iconify-json/ph": "^1.2.2",
 		"@ryoppippi/eslint-config": "npm:@jsr/ryoppippi__eslint-config@^0.0.23",
