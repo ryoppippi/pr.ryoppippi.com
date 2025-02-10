@@ -57,8 +57,8 @@ importers:
         specifier: ^4.2.2
         version: 4.2.2
       octokit:
-        specifier: ^4.1.0
-        version: 4.1.0
+        specifier: ^4.1.1
+        version: 4.1.1
       std-env:
         specifier: ^3.8.0
         version: 3.8.0
@@ -808,8 +808,8 @@ packages:
     resolution: {integrity: sha512-oGB+UxlgWcgQkgwo8GcEGwemoTFt3FIO9ababBmaGwXIoBKZ+GTy0pP185beGg7Llih/NSHSV2XAs1lnznocSg==}
     engines: {node: '>= 8'}
 
-  '@octokit/app@15.1.2':
-    resolution: {integrity: sha512-6aKmKvqnJKoVK+kx0mLlBMKmQYoziPw4Rd/PWr0j65QVQlrDXlu6hGU8fmTXt7tNkf/DsubdIaTT4fkoWzCh5g==}
+  '@octokit/app@15.1.3':
+    resolution: {integrity: sha512-injaSv2CN8wZrhhnVky3HcQVEy4rRoIAm+OeCwNQzgQJn1OTglfT7RyMDaCbkiNWXDR0tkWLkWMv4duTTj765g==}
     engines: {node: '>= 18'}
 
   '@octokit/auth-app@7.1.4':
@@ -863,8 +863,8 @@ packages:
   '@octokit/openapi-types@23.0.1':
     resolution: {integrity: sha512-izFjMJ1sir0jn0ldEKhZ7xegCTj/ObmEDlEfpFrx4k/JyZSMRHbO3/rBwgE7f3m2DHt+RrNGIVw4wSmwnm3t/g==}
 
-  '@octokit/openapi-webhooks-types@8.5.1':
-    resolution: {integrity: sha512-i3h1b5zpGSB39ffBbYdSGuAd0NhBAwPyA3QV3LYi/lx4lsbZiu7u2UHgXVUR6EpvOI8REOuVh1DZTRfHoJDvuQ==}
+  '@octokit/openapi-webhooks-types@9.1.0':
+    resolution: {integrity: sha512-bO1D2jLdU8qEvqmbWjNxJzDYSFT4wesiYKIKP6f4LaM0XUGtn/0LBv/20hu9YqcnpdX38X5o/xANTMtIAqdwYw==}
 
   '@octokit/plugin-paginate-graphql@5.2.4':
     resolution: {integrity: sha512-pLZES1jWaOynXKHOqdnwZ5ULeVR6tVVCMm+AUbp0htdcyXDU95WbkYdU4R2ej1wKj5Tu94Mee2Ne0PjPO9cCyA==}
@@ -907,12 +907,12 @@ packages:
   '@octokit/types@13.7.0':
     resolution: {integrity: sha512-BXfRP+3P3IN6fd4uF3SniaHKOO4UXWBfkdR3vA8mIvaoO/wLjGN5qivUtW0QRitBHHMcfC41SLhNVYIZZE+wkA==}
 
-  '@octokit/webhooks-methods@5.1.0':
-    resolution: {integrity: sha512-yFZa3UH11VIxYnnoOYCVoJ3q4ChuSOk2IVBBQ0O3xtKX4x9bmKb/1t+Mxixv2iUhzMdOl1qeWJqEhouXXzB3rQ==}
+  '@octokit/webhooks-methods@5.1.1':
+    resolution: {integrity: sha512-NGlEHZDseJTCj8TMMFehzwa9g7On4KJMPVHDSrHxCQumL6uSQR8wIkP/qesv52fXqV1BPf4pTxwtS31ldAt9Xg==}
     engines: {node: '>= 18'}
 
-  '@octokit/webhooks@13.4.2':
-    resolution: {integrity: sha512-fakbgkCScapQXPxyqx2jZs/Y3jGlyezwUp7ATL7oLAGJ0+SqBKWKstoKZpiQ+REeHutKpYjY9UtxdLSurwl2Tg==}
+  '@octokit/webhooks@13.6.0':
+    resolution: {integrity: sha512-qoYP1g6ZP01m8LtKjC+NLuAqRbiVzS5VmnwoEYlrQr6TaLRtb5yAMxWCq5/AqfrUF2Wx6ZQ9IJ4mAFytEn7J9A==}
     engines: {node: '>= 18'}
 
   '@pkgr/core@0.1.1':
@@ -2245,8 +2245,8 @@ packages:
   nth-check@2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
 
-  octokit@4.1.0:
-    resolution: {integrity: sha512-/UrQAOSvkc+lUUWKNzy4ByAgYU9KpFzZQt8DnC962YmQuDiZb1SNJ90YukCCK5aMzKqqCA+z1kkAlmzYvdYKag==}
+  octokit@4.1.1:
+    resolution: {integrity: sha512-GMjkrTnGk2PB9MKnK5SVDj4wSrnVX39vldKvYIC3MVNDQY1nZ6ufPrGCUFsQ645q5q+PG+CHUWRB6ZH8MBcyFg==}
     engines: {node: '>= 18'}
 
   ofetch@1.4.1:
@@ -3507,7 +3507,7 @@ snapshots:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.17.1
 
-  '@octokit/app@15.1.2':
+  '@octokit/app@15.1.3':
     dependencies:
       '@octokit/auth-app': 7.1.4
       '@octokit/auth-unauthenticated': 6.1.1
@@ -3515,7 +3515,7 @@ snapshots:
       '@octokit/oauth-app': 7.1.5
       '@octokit/plugin-paginate-rest': 11.4.0(@octokit/core@6.1.3)
       '@octokit/types': 13.7.0
-      '@octokit/webhooks': 13.4.2
+      '@octokit/webhooks': 13.6.0
 
   '@octokit/auth-app@7.1.4':
     dependencies:
@@ -3601,7 +3601,7 @@ snapshots:
 
   '@octokit/openapi-types@23.0.1': {}
 
-  '@octokit/openapi-webhooks-types@8.5.1': {}
+  '@octokit/openapi-webhooks-types@9.1.0': {}
 
   '@octokit/plugin-paginate-graphql@5.2.4(@octokit/core@6.1.3)':
     dependencies:
@@ -3646,13 +3646,13 @@ snapshots:
     dependencies:
       '@octokit/openapi-types': 23.0.1
 
-  '@octokit/webhooks-methods@5.1.0': {}
+  '@octokit/webhooks-methods@5.1.1': {}
 
-  '@octokit/webhooks@13.4.2':
+  '@octokit/webhooks@13.6.0':
     dependencies:
-      '@octokit/openapi-webhooks-types': 8.5.1
+      '@octokit/openapi-webhooks-types': 9.1.0
       '@octokit/request-error': 6.1.6
-      '@octokit/webhooks-methods': 5.1.0
+      '@octokit/webhooks-methods': 5.1.1
 
   '@pkgr/core@0.1.1': {}
 
@@ -5169,9 +5169,9 @@ snapshots:
     dependencies:
       boolbase: 1.0.0
 
-  octokit@4.1.0:
+  octokit@4.1.1:
     dependencies:
-      '@octokit/app': 15.1.2
+      '@octokit/app': 15.1.3
       '@octokit/core': 6.1.3
       '@octokit/oauth-app': 7.1.5
       '@octokit/plugin-paginate-graphql': 5.2.4(@octokit/core@6.1.3)
