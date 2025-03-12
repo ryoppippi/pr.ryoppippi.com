@@ -1,6 +1,16 @@
+import { minimatch } from 'minimatch';
 import { useOctokit } from './octokit.server';
 import { route } from './ROUTES';
 import type { PR, User } from './types';
+
+/**
+ * Checks if a target string is hidden by a list of patterns
+ * @param target - The target string
+ * @param hideList - The list of patterns to hide
+ */
+function isHidden(target: string, hideList: string[]): boolean {
+	return hideList.some(pattern => minimatch(target, pattern));
+}
 
 export async function getUser(): Promise<User> {
 	const octokit = useOctokit();
@@ -44,7 +54,7 @@ export async function getPRs(includeYourOwnPRs = false): Promise<PR[]> {
 		created_at: pr.created_at,
 		state: pr.pull_request?.merged_at != null ? 'merged' : pr.state as PR['state'],
 		number: pr.number,
-	})).filter(pr => !hideList.some(hide => pr.repo.includes(hide)));
+	})).filter(pr => !isHidden(pr.repo, hideList));
 }
 
 export const isIncludeYourOwnPRs = route('includeYourOwnPRs') === 'true';

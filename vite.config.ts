@@ -24,7 +24,7 @@ export default defineConfig({
 				repo: 'https://github.com/ryoppippi/pr.ryoppippi.com',
 				username: 'ryoppippi',
 				includeYourOwnPRs: 'true', // Include your own PRs 'true' or 'false'
-				hideList: 'ryoppippi/ryoppippi.com,ryoppippi/talks,ryoppippi/cv',
+				hideList: 'ryoppippi/ryoppippi.com,ryoppippi/talks,ryoppippi/cv,wrtnlabs/*',
 			},
 		}),
 	],
