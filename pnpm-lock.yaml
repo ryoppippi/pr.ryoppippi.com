@@ -99,8 +99,8 @@ importers:
         specifier: ^0.8.4
         version: 0.8.4(@sveltejs/kit@2.19.2(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.23.0)(vite@6.2.2(@types/node@22.7.0)(jiti@2.4.2)(tsx@4.19.2)(yaml@2.5.1)))(svelte@5.23.0)(vite@6.2.2(@types/node@22.7.0)(jiti@2.4.2)(tsx@4.19.2)(yaml@2.5.1)))
       wrangler:
-        specifier: ^3.114.1
-        version: 3.114.1
+        specifier: ^3.114.2
+        version: 3.114.2
 
 packages:
 
@@ -2330,8 +2330,8 @@ packages:
     resolution: {integrity: sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==}
     engines: {node: '>=4'}
 
-  miniflare@3.20250310.0:
-    resolution: {integrity: sha512-TQAxoo2ZiQYjiOJoK3bbcyjKD/u1E3akYOeSHc2Zcp1sLVydrgzSjmxtrn65/3BfDIrUgfYHyy9wspT6wzBy/A==}
+  miniflare@3.20250310.1:
+    resolution: {integrity: sha512-c9QPrgBUFzjL4pYvW6GIUw+NqeYlZGVHASKJqjIXB1WVsl14nYfpfHphYK8tluKaBqwA9NFyO5dC2zatJkC/mA==}
     engines: {node: '>=16.13'}
     hasBin: true
 
@@ -3087,8 +3087,8 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
 
-  wrangler@3.114.1:
-    resolution: {integrity: sha512-GuS6SrnAZZDiNb20Vf2Ww0KCfnctHUEzi5GyML1i2brfQPI6BikgI/W/u6XDtYtah0OkbIWIiNJ+SdhWT7KEcw==}
+  wrangler@3.114.2:
+    resolution: {integrity: sha512-sOaHzB+5i8TXhbfAjWfXdEczuDxeU2M7cSYHWmvvG/oRIajcMGCX98qsUXn0SPDrQwTRHFNFR/OruPiIOj8SHA==}
     engines: {node: '>=16.17.0'}
     hasBin: true
     peerDependencies:
@@ -5377,7 +5377,7 @@ snapshots:
 
   min-indent@1.0.1: {}
 
-  miniflare@3.20250310.0:
+  miniflare@3.20250310.1:
     dependencies:
       '@cspotcode/source-map-support': 0.8.1
       acorn: 8.14.0
@@ -6190,7 +6190,7 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20250310.0
       '@cloudflare/workerd-windows-64': 1.20250310.0
 
-  wrangler@3.114.1:
+  wrangler@3.114.2:
     dependencies:
       '@cloudflare/kv-asset-handler': 0.3.4
       '@cloudflare/unenv-preset': 2.0.2(unenv@2.0.0-rc.14)(workerd@1.20250310.0)
@@ -6198,7 +6198,7 @@ snapshots:
       '@esbuild-plugins/node-modules-polyfill': 0.2.2(esbuild@0.17.19)
       blake3-wasm: 2.1.5
       esbuild: 0.17.19
-      miniflare: 3.20250310.0
+      miniflare: 3.20250310.1
       path-to-regexp: 6.3.0
       unenv: 2.0.0-rc.14
       workerd: 1.20250310.0
