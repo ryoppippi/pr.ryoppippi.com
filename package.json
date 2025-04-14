@@ -17,7 +17,7 @@
 	},
 	"devDependencies": {
 		"@antfu/ni": "^24.3.0",
-		"@iconify-json/line-md": "^1.2.6",
+		"@iconify-json/line-md": "^1.2.7",
 		"@iconify-json/ph": "^1.2.2",
 		"@ryoppippi/eslint-config": "npm:@jsr/ryoppippi__eslint-config@^0.0.23",
 		"@sveltejs/adapter-auto": "^5.0.0",
