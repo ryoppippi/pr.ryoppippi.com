@@ -34,7 +34,7 @@
 		"feed": "^4.2.2",
 		"minimatch": "^10.0.1",
 		"octokit": "^4.1.3",
-		"std-env": "^3.8.1",
+		"std-env": "^3.9.0",
 		"svelte": "5.25.6",
 		"svelte-check": "^4.1.6",
 		"svelte-fancy-darkmode": "^1.1.2",
