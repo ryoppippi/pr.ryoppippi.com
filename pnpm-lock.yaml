@@ -63,8 +63,8 @@ importers:
         specifier: ^4.1.3
         version: 4.1.3
       std-env:
-        specifier: ^3.8.1
-        version: 3.8.1
+        specifier: ^3.9.0
+        version: 3.9.0
       svelte:
         specifier: 5.25.6
         version: 5.25.6
@@ -2771,8 +2771,8 @@ packages:
   stacktracey@2.1.8:
     resolution: {integrity: sha512-Kpij9riA+UNg7TnphqjH7/CzctQ/owJGNbFkfEeve4Z4uxT5+JapVLFXcsurIfN34gnTWZNJ/f7NMG0E8JDzTw==}
 
-  std-env@3.8.1:
-    resolution: {integrity: sha512-vj5lIj3Mwf9D79hBkltk5qmkFI+biIKWS2IBxEyEU3AX1tUf7AoL8nSazCOiiqQsGKIq01SClsKEzweu34uwvA==}
+  std-env@3.9.0:
+    resolution: {integrity: sha512-UGvjygr6F6tpH7o2qyqR6QYpwraIjKSdtzyBdyytFOHmPZY917kwdwLG0RbOjWOnKmnm3PeHjaoLLMie7kPLQw==}
 
   stoppable@1.1.0:
     resolution: {integrity: sha512-KXDYZ9dszj6bzvnEMRYvxgeTHU74QBFL54XKtP3nyMuJ81CFYtABZ3bAzL2EdFUaEwJOBOgENyFj3R7oTzDyyw==}
@@ -5932,7 +5932,7 @@ snapshots:
       as-table: 1.0.55
       get-source: 2.0.12
 
-  std-env@3.8.1: {}
+  std-env@3.9.0: {}
 
   stoppable@1.1.0: {}
 
