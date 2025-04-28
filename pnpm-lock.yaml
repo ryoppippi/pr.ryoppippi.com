@@ -99,8 +99,8 @@ importers:
         specifier: ^0.8.4
         version: 0.8.4(@sveltejs/kit@2.20.7(@sveltejs/vite-plugin-svelte@5.0.3(svelte@5.28.2)(vite@6.3.3(@types/node@22.7.0)(jiti@2.4.2)(tsx@4.19.2)(yaml@2.5.1)))(svelte@5.28.2)(vite@6.3.3(@types/node@22.7.0)(jiti@2.4.2)(tsx@4.19.2)(yaml@2.5.1)))
       wrangler:
-        specifier: ^3.114.6
-        version: 3.114.6
+        specifier: ^3.114.7
+        version: 3.114.7
 
 packages:
 
@@ -3139,8 +3139,8 @@ packages:
     engines: {node: '>=16'}
     hasBin: true
 
-  wrangler@3.114.6:
-    resolution: {integrity: sha512-05Ov/Bg8BQEy+/x/aRTeEUiXYspCiE0wmdgg4TIQwYLeEZaoBLE6KhqxEiLd8WNea0IRpzpBQOtAZ64Tjl0znQ==}
+  wrangler@3.114.7:
+    resolution: {integrity: sha512-awyHVA9JwcEpyysh7Kn69NoIe2SwXYt8pOjNX3p/4RsOa68qtct+QbhUCwPFPyDDH9lg1VgvTjCFfFbXBLMk6w==}
     engines: {node: '>=16.17.0'}
     hasBin: true
     peerDependencies:
@@ -6315,7 +6315,7 @@ snapshots:
       '@cloudflare/workerd-linux-arm64': 1.20250408.0
       '@cloudflare/workerd-windows-64': 1.20250408.0
 
-  wrangler@3.114.6:
+  wrangler@3.114.7:
     dependencies:
       '@cloudflare/kv-asset-handler': 0.3.4
       '@cloudflare/unenv-preset': 2.0.2(unenv@2.0.0-rc.14)(workerd@1.20250408.0)
