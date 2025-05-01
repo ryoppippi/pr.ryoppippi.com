@@ -3,7 +3,7 @@
 	"type": "module",
 	"version": "0.0.1",
 	"private": true,
-	"packageManager": "pnpm@10.9.0",
+	"packageManager": "pnpm@10.10.0",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -19,7 +19,7 @@
 		"@antfu/ni": "^24.3.0",
 		"@iconify-json/line-md": "^1.2.7",
 		"@iconify-json/ph": "^1.2.2",
-		"@ryoppippi/eslint-config": "npm:@jsr/ryoppippi__eslint-config@^0.0.23",
+		"@ryoppippi/eslint-config": "^0.3.7",
 		"@sveltejs/adapter-auto": "^6.0.0",
 		"@sveltejs/adapter-static": "^3.0.8",
 		"@sveltejs/kit": "^2.20.7",
@@ -47,15 +47,5 @@
 		"vite": "^6.3.3",
 		"vite-plugin-kit-routes": "^0.8.4",
 		"wrangler": "^3.114.7"
-	},
-	"pnpm": {
-		"executionEnv": {
-			"nodeVersion": "22.14.0"
-		},
-		"onlyBuiltDependencies": [
-			"esbuild",
-			"sharp",
-			"workerd"
-		]
 	}
 }
