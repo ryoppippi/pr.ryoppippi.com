@@ -1,13 +1,13 @@
 <script lang='ts'>
-	import * as DarkMode from 'svelte-fancy-darkmode';
-	import Divider from './Divider.svelte';
-	import { route } from '$lib/ROUTES';
 	import type { User } from '$lib/types.js';
-	import MoonToSunny from '~icons/line-md/moon-filled-to-sunny-filled-loop-transition';
-	import SunnyToMoon from '~icons/line-md/sunny-filled-loop-to-moon-filled-transition';
-
+	import { route } from '$lib/ROUTES';
+	import * as DarkMode from 'svelte-fancy-darkmode';
 	import GitHub from '~icons/line-md/github-loop';
+	import MoonToSunny from '~icons/line-md/moon-filled-to-sunny-filled-loop-transition';
 	import RSS from '~icons/line-md/rss';
+
+	import SunnyToMoon from '~icons/line-md/sunny-filled-loop-to-moon-filled-transition';
+	import Divider from './Divider.svelte';
 
 	const {
 		user,

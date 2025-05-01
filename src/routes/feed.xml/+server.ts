@@ -1,9 +1,9 @@
+import type { RequestHandler } from './$types';
+import { getPRs, getUser, isIncludeYourOwnPRs } from '$lib';
+import { route } from '$lib/ROUTES';
+import { error } from '@sveltejs/kit';
 import { Feed } from 'feed';
 import { joinURL } from 'ufo';
-import { error } from '@sveltejs/kit';
-import type { RequestHandler } from './$types';
-import { route } from '$lib/ROUTES';
-import { getPRs, getUser, isIncludeYourOwnPRs } from '$lib';
 
 export const prerender = true;
 

@@ -1,7 +1,7 @@
+import type { PR, User } from './types';
 import { minimatch } from 'minimatch';
 import { useOctokit } from './octokit.server';
 import { route } from './ROUTES';
-import type { PR, User } from './types';
 
 /**
  * Checks if a target string is hidden by a list of patterns

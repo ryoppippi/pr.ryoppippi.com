@@ -1,6 +1,6 @@
-import { Octokit } from 'octokit';
 import { building } from '$app/environment';
 import { env } from '$env/dynamic/private';
+import { Octokit } from 'octokit';
 
 let octokit: Octokit | undefined;
 

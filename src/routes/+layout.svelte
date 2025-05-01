@@ -1,8 +1,8 @@
 <script lang='ts'>
-	import 'uno.css';
-	import '@unocss/reset/tailwind.css';
-
 	import * as DarkMode from 'svelte-fancy-darkmode';
+	import 'uno.css';
+
+	import '@unocss/reset/tailwind.css';
 
 	const { children } = $props();
 

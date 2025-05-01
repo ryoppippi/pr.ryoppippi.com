@@ -1,11 +1,11 @@
 <script lang='ts'>
-	import { joinURL } from 'ufo';
+	import { route } from '$lib/ROUTES';
 	import { MetaTags } from 'svelte-meta-tags';
 
-	import PullRequest from './PullRequest.svelte';
-	import Header from './Header.svelte';
+	import { joinURL } from 'ufo';
 	import Footer from './Footer.svelte';
-	import { route } from '$lib/ROUTES';
+	import Header from './Header.svelte';
+	import PullRequest from './PullRequest.svelte';
 
 	const { data } = $props();
 	const user = data.user;

@@ -1,7 +1,7 @@
 <script lang='ts'>
-	import { joinURL } from 'ufo';
-	import { formatTimeAgo } from '@vueuse/core';
 	import type { PR } from '$lib/types.js';
+	import { formatTimeAgo } from '@vueuse/core';
+	import { joinURL } from 'ufo';
 
 	import PullRequestIcon from '~icons/ph/git-pull-request-duotone';
 
