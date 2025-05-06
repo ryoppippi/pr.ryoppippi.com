@@ -30,7 +30,7 @@
 		"@vueuse/core": "^13.1.0",
 		"eslint": "^9.26.0",
 		"eslint-plugin-format": "^1.0.1",
-		"eslint-plugin-svelte": "^2.46.1",
+		"eslint-plugin-svelte": "^3.5.1",
 		"feed": "^4.2.2",
 		"minimatch": "^10.0.1",
 		"octokit": "^4.1.3",
