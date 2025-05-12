@@ -25,7 +25,7 @@
 		"@sveltejs/kit": "^2.20.8",
 		"@sveltejs/vite-plugin-svelte": "5.0.3",
 		"@types/dom-view-transitions": "^1.0.6",
-		"@unocss/extractor-svelte": "^66.0.0",
+		"@unocss/extractor-svelte": "^66.1.1",
 		"@unocss/reset": "^66.0.0",
 		"@vueuse/core": "^13.1.0",
 		"eslint": "^9.26.0",
