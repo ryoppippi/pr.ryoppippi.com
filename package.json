@@ -38,7 +38,7 @@
 		"svelte": "5.28.2",
 		"svelte-check": "^4.1.7",
 		"svelte-fancy-darkmode": "^1.1.2",
-		"svelte-meta-tags": "^4.2.0",
+		"svelte-meta-tags": "^4.3.0",
 		"typescript": "^5.8.3",
 		"typescript-svelte-plugin": "^0.3.46",
 		"ufo": "^1.6.1",
