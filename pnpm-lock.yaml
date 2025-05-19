@@ -39,8 +39,8 @@ importers:
         specifier: ^66.1.2
         version: 66.1.2
       '@unocss/reset':
-        specifier: ^66.1.1
-        version: 66.1.1
+        specifier: ^66.1.2
+        version: 66.1.2
       '@vueuse/core':
         specifier: ^13.1.0
         version: 13.1.0(vue@3.5.13(typescript@5.8.3))
@@ -1433,8 +1433,8 @@ packages:
   '@unocss/reset@66.0.0':
     resolution: {integrity: sha512-YLFz/5yT7mFJC8JSmIUA5+bS3CBCJbtztOw+8rWzjQr/BEVSGuihWUUpI2Df6VVxXIXxKanZR6mIl59yvf+GEA==}
 
-  '@unocss/reset@66.1.1':
-    resolution: {integrity: sha512-WrI3sStMd/EXTcb3SaTVH10Wc9NKutW4+/HktQy470wEpncXdvihrXgCYwJH6LEEL4KOto3o+KKSD5xenWE7Aw==}
+  '@unocss/reset@66.1.2':
+    resolution: {integrity: sha512-njNy/QCpuPKBFeEvhYGwwCe3t8R8JTxONsyUB9NsFOamkF13DSlEB4Yy/QLQfIinbbmx0F/wiej/JGOJk1ecDg==}
 
   '@unocss/rule-utils@66.0.0':
     resolution: {integrity: sha512-UJ51YHbwxYTGyj35ugsPlOT4gaa7tCbXdywZ3m5Nn0JgywwIqGmBFyiN9ZjHBHfJuDxmmPd6lxojoBscih/WMQ==}
@@ -4793,7 +4793,7 @@ snapshots:
 
   '@unocss/reset@66.0.0': {}
 
-  '@unocss/reset@66.1.1': {}
+  '@unocss/reset@66.1.2': {}
 
   '@unocss/rule-utils@66.0.0':
     dependencies:
