@@ -40,7 +40,7 @@
 		"svelte-fancy-darkmode": "^1.1.2",
 		"svelte-meta-tags": "^4.3.0",
 		"typescript": "^5.8.3",
-		"typescript-svelte-plugin": "^0.3.46",
+		"typescript-svelte-plugin": "^0.3.47",
 		"ufo": "^1.6.1",
 		"unocss": "^66.0.0",
 		"unplugin-icons": "^22.1.0",

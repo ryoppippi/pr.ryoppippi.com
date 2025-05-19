@@ -81,8 +81,8 @@ importers:
         specifier: ^5.8.3
         version: 5.8.3
       typescript-svelte-plugin:
-        specifier: ^0.3.46
-        version: 0.3.46(svelte@5.28.2)(typescript@5.8.3)
+        specifier: ^0.3.47
+        version: 0.3.47(svelte@5.28.2)(typescript@5.8.3)
       ufo:
         specifier: ^1.6.1
         version: 1.6.1
@@ -3284,8 +3284,8 @@ packages:
     resolution: {integrity: sha512-OZs6gsjF4vMp32qrCbiVSkrFmXtG/AZhY3t0iAMrMBiAZyV9oALtXO8hsrHbMXF9x6L3grlFuwW2oAz7cav+Gw==}
     engines: {node: '>= 0.6'}
 
-  typescript-svelte-plugin@0.3.46:
-    resolution: {integrity: sha512-6GUb+nafp00/WEOKztBddyCsrJNHbIqO32kPfhDFybWqhj89AxUhwedVE2g4rug2E48d40AgG2jLYW611esJAg==}
+  typescript-svelte-plugin@0.3.47:
+    resolution: {integrity: sha512-q7NpMvWokP8n0MfAhB375K3PT+1iYuPC/wFYxOTWMiraCkA81GDA8X/b2DfdiuESfDTJ1VANUR2PqdE8pEqXxg==}
 
   typescript@5.8.3:
     resolution: {integrity: sha512-p1diW6TqL9L07nNxvRMM7hMMw4c5XOo/1ibL4aAIGmSAt9slTE1Xgw5KWuof2uTOvCg9BY7ZRi+GaF+7sfgPeQ==}
@@ -5008,7 +5008,7 @@ snapshots:
 
   ast-types@0.16.1:
     dependencies:
-      tslib: 2.7.0
+      tslib: 2.8.1
 
   axobject-query@4.1.0: {}
 
@@ -6400,7 +6400,7 @@ snapshots:
   no-case@3.0.4:
     dependencies:
       lower-case: 2.0.2
-      tslib: 2.7.0
+      tslib: 2.8.1
 
   node-fetch-native@1.6.4: {}
 
@@ -6495,7 +6495,7 @@ snapshots:
   pascal-case@3.1.2:
     dependencies:
       no-case: 3.0.4
-      tslib: 2.7.0
+      tslib: 2.8.1
 
   path-exists@4.0.0: {}
 
@@ -6995,7 +6995,7 @@ snapshots:
       media-typer: 1.1.0
       mime-types: 3.0.1
 
-  typescript-svelte-plugin@0.3.46(svelte@5.28.2)(typescript@5.8.3):
+  typescript-svelte-plugin@0.3.47(svelte@5.28.2)(typescript@5.8.3):
     dependencies:
       '@jridgewell/sourcemap-codec': 1.5.0
       svelte2tsx: 0.7.35(svelte@5.28.2)(typescript@5.8.3)
