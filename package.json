@@ -28,7 +28,7 @@
 		"@unocss/extractor-svelte": "^66.1.2",
 		"@unocss/reset": "^66.1.2",
 		"@vueuse/core": "^13.2.0",
-		"eslint": "^9.26.0",
+		"eslint": "^9.27.0",
 		"eslint-plugin-format": "^1.0.1",
 		"eslint-plugin-svelte": "^3.5.1",
 		"feed": "^4.2.2",
