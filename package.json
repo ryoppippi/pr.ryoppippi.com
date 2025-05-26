@@ -33,7 +33,7 @@
 		"eslint-plugin-svelte": "^3.5.1",
 		"feed": "^4.2.2",
 		"minimatch": "^10.0.1",
-		"octokit": "^4.1.3",
+		"octokit": "^4.1.4",
 		"std-env": "^3.9.0",
 		"svelte": "5.28.2",
 		"svelte-check": "^4.1.7",
