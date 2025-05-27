@@ -35,7 +35,7 @@ const LINKS = {
   "repo": `https://github.com/ryoppippi/pr.ryoppippi.com`,
   "username": `ryoppippi`,
   "includeYourOwnPRs": `true`,
-  "hideList": `ryoppippi/ryoppippi.com,ryoppippi/talks,ryoppippi/cv,wrtnlabs/*`
+  "hideList": `ryoppippi/ryoppippi.com,ryoppippi/talks,ryoppippi/cv,samchon/openapi,wrtnlabs/*`
 }
 
 type ParamValue = string | number | undefined
