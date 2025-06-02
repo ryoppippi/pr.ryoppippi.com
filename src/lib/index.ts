@@ -43,6 +43,7 @@ export async function getPRs(includeYourOwnPRs = false): Promise<PR[]> {
 			: `type:pr+author:"${user.username}"+-user:"${user.username}"`,
 		per_page: 100,
 		page: 1,
+		advanced_search: 'true',
 	});
 
 	const hideList = route('hideList').split(',');
