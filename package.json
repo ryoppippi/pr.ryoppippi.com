@@ -45,7 +45,7 @@
 		"unocss": "^66.0.0",
 		"unplugin-icons": "^22.1.0",
 		"vite": "npm:rolldown-vite@latest",
-		"vite-plugin-kit-routes": "^0.8.4",
+		"vite-plugin-kit-routes": "^0.8.5",
 		"wrangler": "^4.14.4"
 	}
 }
