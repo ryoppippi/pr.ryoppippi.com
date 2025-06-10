@@ -35,7 +35,7 @@
 		"minimatch": "^10.0.1",
 		"octokit": "^4.1.4",
 		"std-env": "^3.9.0",
-		"svelte": "5.33.11",
+		"svelte": "5.33.17",
 		"svelte-check": "^4.2.1",
 		"svelte-fancy-darkmode": "^1.1.4",
 		"svelte-meta-tags": "^4.3.0",
