@@ -32,7 +32,7 @@
 		"eslint-plugin-format": "^1.0.1",
 		"eslint-plugin-svelte": "^3.9.2",
 		"feed": "^4.2.2",
-		"minimatch": "^10.0.1",
+		"minimatch": "^10.0.3",
 		"octokit": "^4.1.4",
 		"std-env": "^3.9.0",
 		"svelte": "5.33.17",
