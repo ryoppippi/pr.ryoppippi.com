@@ -1,5 +1,6 @@
 import { sveltekit } from '@sveltejs/kit/vite';
 import extractorSvelte from '@unocss/extractor-svelte';
+import * as devalue from 'devalue';
 import { isDevelopment } from 'std-env';
 import UnoCSS from 'unocss/vite';
 import Icons from 'unplugin-icons/vite';
@@ -24,14 +25,14 @@ export default defineConfig({
 				repo: 'https://github.com/ryoppippi/pr.ryoppippi.com',
 				username: 'ryoppippi',
 				includeYourOwnPRs: 'true', // Include your own PRs 'true' or 'false'
-				hideList: [
+				hideList: devalue.stringify([
 					'ryoppippi/ryoppippi.com',
 					'ryoppippi/talks',
 					'ryoppippi/cv',
 					'samchon/*',
 					'wrtnlabs/*',
 					'StackOneHQ/*',
-				].join(','),
+				]),
 			},
 		}),
 	],
