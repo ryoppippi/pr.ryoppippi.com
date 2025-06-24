@@ -37,7 +37,7 @@
 		"octokit": "^4.1.4",
 		"std-env": "^3.9.0",
 		"svelte": "5.33.17",
-		"svelte-check": "^4.2.1",
+		"svelte-check": "^4.2.2",
 		"svelte-fancy-darkmode": "^1.1.4",
 		"svelte-meta-tags": "^4.4.0",
 		"typescript": "^5.8.3",
