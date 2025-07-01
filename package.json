@@ -27,7 +27,7 @@
 		"@types/dom-view-transitions": "^1.0.6",
 		"@unocss/extractor-svelte": "^66.3.2",
 		"@unocss/reset": "^66.3.2",
-		"@vueuse/core": "^13.3.0",
+		"@vueuse/core": "^13.4.0",
 		"devalue": "^5.1.1",
 		"eslint": "^9.28.0",
 		"eslint-plugin-format": "^1.0.1",
