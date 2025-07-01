@@ -1,0 +1,10 @@
+{
+  "name": "pr-ryoppippi",
+  "compatibility_date": "2025-01-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "main": ".cloudflare/worker.js",
+  "assets": {
+    "directory": ".cloudflare/public",
+    "binding": "ASSETS"
+  }
+}
