@@ -5,11 +5,10 @@ import { error } from '@sveltejs/kit';
 import { Feed } from 'feed';
 import { joinURL } from 'ufo';
 
-export const prerender = true;
 
 const DOMAIN = route('domain');
 
-export const GET = (async () => {
+export const GET = (async ({ platform }) => {
 	if (!URL.canParse(DOMAIN)) {
 		return error(500, 'Invalid domain');
 	}
@@ -44,9 +43,24 @@ export const GET = (async () => {
 		});
 	}
 
-	return new Response(feed.rss2(), {
+	const xml = feed.rss2();
+	const response = new Response(xml, {
 		headers: {
 			'Content-Type': 'application/xml',
+			'Cache-Control': 'public, max-age=300, s-maxage=300' // Cache for 5 minutes
 		},
 	});
+
+	// Use Cloudflare Cache API if available
+	if (platform?.caches) {
+		const cache = platform.caches.default;
+		const cacheKey = new Request(joinURL(domain, 'feed.xml'), {
+			method: 'GET',
+		});
+		
+		// Store in cache
+		platform.context.waitUntil(cache.put(cacheKey, response.clone()));
+	}
+
+	return response;
 }) satisfies RequestHandler;
