@@ -17,6 +17,7 @@
 	},
 	"devDependencies": {
 		"@antfu/ni": "^24.4.0",
+		"@cloudflare/workers-types": "^4.20250701.0",
 		"@iconify-json/line-md": "^1.2.8",
 		"@iconify-json/ph": "^1.2.2",
 		"@ryoppippi/eslint-config": "^0.3.7",

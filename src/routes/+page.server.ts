@@ -10,7 +10,7 @@ export const load: PageServerLoad = async ({ setHeaders }) => {
 
 	// Cache for 5 minutes (300 seconds)
 	setHeaders({
-		'cache-control': 'public, max-age=300, s-maxage=300'
+		'cache-control': 'public, max-age=300, s-maxage=300',
 	});
 
 	return { user, prs, now };

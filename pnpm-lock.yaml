@@ -11,6 +11,9 @@ importers:
       '@antfu/ni':
         specifier: ^24.4.0
         version: 24.4.0
+      '@cloudflare/workers-types':
+        specifier: ^4.20250701.0
+        version: 4.20250701.0
       '@iconify-json/line-md':
         specifier: ^1.2.8
         version: 1.2.8

@@ -5,7 +5,6 @@ import { error } from '@sveltejs/kit';
 import { Feed } from 'feed';
 import { joinURL } from 'ufo';
 
-
 const DOMAIN = route('domain');
 
 export const GET = (async ({ platform }) => {
@@ -47,19 +46,21 @@ export const GET = (async ({ platform }) => {
 	const response = new Response(xml, {
 		headers: {
 			'Content-Type': 'application/xml',
-			'Cache-Control': 'public, max-age=300, s-maxage=300' // Cache for 5 minutes
+			'Cache-Control': 'public, max-age=300, s-maxage=300', // Cache for 5 minutes
 		},
 	});
 
 	// Use Cloudflare Cache API if available
-	if (platform?.caches) {
-		const cache = platform.caches.default;
+	if (platform?.context != null) {
+		const context = platform.context as ExecutionContext;
 		const cacheKey = new Request(joinURL(domain, 'feed.xml'), {
 			method: 'GET',
 		});
-		
-		// Store in cache
-		platform.context.waitUntil(cache.put(cacheKey, response.clone()));
+
+		// Store in cache using global caches
+		context.waitUntil(
+			caches.open('default').then(async cache => cache.put(cacheKey, response.clone())),
+		);
 	}
 
 	return response;
