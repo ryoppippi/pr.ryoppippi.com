@@ -7,7 +7,7 @@ import { joinURL } from 'ufo';
 
 const DOMAIN = route('domain');
 
-export const GET = (async ({ platform }) => {
+export const GET = (async () => {
 	if (!URL.canParse(DOMAIN)) {
 		return error(500, 'Invalid domain');
 	}
