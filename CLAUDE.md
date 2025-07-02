@@ -97,7 +97,7 @@ kitRoutes({
 - `rg` - fast grep replacement for searching code
 - `fd` - fast find replacement for file discovery
 - `bat` - cat replacement with syntax highlighting
-- `eza` - ls replacement with git integration  
+- `eza` - ls replacement with git integration
 - `bunx` - npx replacement for running packages
 - `jq` - JSON processor for API responses
 - `typos` - spell checker for documentation
