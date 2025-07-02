@@ -11,8 +11,7 @@ declare global {
 		// interface PageState {}
 		interface Platform {
 			env: Env;
-			cf: CfProperties;
-			ctx: ExecutionContext;
+			context: ExecutionContext;
 		}
 	}
 }

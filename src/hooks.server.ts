@@ -16,7 +16,7 @@ export const handle: Handle = async ({ event, resolve }) => {
 	const cacheMaxAgeSec = 60 * 15; // 15 minutes
 	response.headers.set('Cache-Control', `public, max-age=${cacheMaxAgeSec}, s-maxage=${cacheMaxAgeSec}`);
 
-	event.platform?.ctx.waitUntil(
+	event.platform?.context.waitUntil(
 		cache.put(event.request, response.clone()), // Clone the response to avoid consuming it
 	);
 	return response;
