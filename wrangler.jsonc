@@ -1,6 +1,9 @@
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
 	"name": "pr-ryoppippi",
+	"build": {
+		"command": "pnpm build"
+	},
 	"compatibility_date": "2025-01-01",
 	"compatibility_flags": [
 		"nodejs_compat"
