@@ -6,6 +6,7 @@ node_modules
 /.svelte-kit
 /.cloudflare
 /build
+/.wrangler
 
 # OS
 .DS_Store
