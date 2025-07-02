@@ -10,13 +10,9 @@ declare global {
 		// interface PageData {}
 		// interface PageState {}
 		interface Platform {
-			env?: {
-				GITHUB_TOKEN?: string;
-				[key: string]: unknown;
-			};
-			context?: ExecutionContext;
-			caches?: CacheStorage;
-			cf?: IncomingRequestCfProperties;
+			env: Env;
+			cf: CfProperties;
+			ctx: ExecutionContext;
 		}
 	}
 }

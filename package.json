@@ -13,7 +13,9 @@
 		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
 		"lint": "eslint --cache .",
 		"format": "nr lint --fix",
-		"preinstall": "npx only-allow pnpm"
+		"preinstall": "npx only-allow pnpm",
+		"cf-types": "wrangler types ./src/worker-configuration.d.ts",
+		"prepare": "nr cf-types"
 	},
 	"devDependencies": {
 		"@antfu/ni": "^24.4.0",
