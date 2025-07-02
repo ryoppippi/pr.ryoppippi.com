@@ -67,7 +67,7 @@ pnpm preview
 
 ## 💻 Deploy
 
-This repository supports two deployment destinations: [Cloudflare Pages](https://pages.cloudflare.com/) and [GitHub Pages](https://pages.github.com/).
+This repository supports two deployment destinations: [Cloudflare Pages](https://pages.cloudflare.com/).
 
 ### Cloudflare Pages
 
@@ -76,41 +76,6 @@ Run the following command:
 ```bash
 pnpm run deploy
 ```
-
-When deploying to Cloudflare Pages from GitHub Actions, follow the steps below:
-
-1. set the following secrets to your repository:
-
-   - `CLOUDFLARE_ACCOUNT_ID`: Cloudflare account ID
-   - `CLOUDFLARE_API_TOKEN`: Cloudflare API token
-
-2. edit info in `vite.config.ts`:
-
-   - `LINKS.domain` should be your Cloudflare Pages domain ( ex. `https://pr.ryoppippi.com` )
-   - `LINKS.repo` should be your forked repository ( ex. `https://github.com/ryoppippi/pr.ryoppippi.com` )
-   - `LINKS.username` should be your GitHub username ( ex. `ryoppippi` )
-
-3. set `CF` to `env.UPLOAD_TO` in [workflows/deploy.yaml](./.github/workflows/deploy.yaml).
-
-4. run the workflow manually or push to the repository.
-
-5. enjoy!
-
-### GitHub Pages
-
-You can upload the `build` to GitHub Pages via GitHub Actions.
-
-1. set `GH` to `env.UPLOAD_TO` in [workflows/deploy.yaml](./.github/workflows/deploy.yaml).
-
-2. edit info in `vite.config.ts`:
-
-   - `LINKS.domain` should be `https://<username>.github.io/<repository>`
-   - `LINKS.repo` should be your forked repository ( ex. `https://github.com/ryoppippi/pr.ryoppippi.com` )
-   - `LINKS.username` should be your GitHub username ( ex. `ryoppippi` )
-
-3. run the workflow manually or push to the repository.
-
-4. enjoy!
 
 ## Inspired by
 

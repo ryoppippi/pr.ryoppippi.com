@@ -1,0 +1,16 @@
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "pr-ryoppippi",
+	"build": {
+		"command": "pnpm build"
+	},
+	"compatibility_date": "2025-06-19",
+	"compatibility_flags": [
+		"nodejs_compat"
+	],
+	"main": ".cloudflare/worker.js",
+	"assets": {
+		"directory": ".cloudflare/public",
+		"binding": "ASSETS"
+	}
+}

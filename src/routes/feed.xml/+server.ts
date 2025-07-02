@@ -5,8 +5,6 @@ import { error } from '@sveltejs/kit';
 import { Feed } from 'feed';
 import { joinURL } from 'ufo';
 
-export const prerender = true;
-
 const DOMAIN = route('domain');
 
 export const GET = (async () => {
@@ -44,9 +42,12 @@ export const GET = (async () => {
 		});
 	}
 
-	return new Response(feed.rss2(), {
+	const xml = feed.rss2();
+	const response = new Response(xml, {
 		headers: {
 			'Content-Type': 'application/xml',
 		},
 	});
+
+	return response;
 }) satisfies RequestHandler;
