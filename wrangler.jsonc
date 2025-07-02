@@ -4,7 +4,7 @@
 	"build": {
 		"command": "pnpm build"
 	},
-	"compatibility_date": "2025-01-01",
+	"compatibility_date": "2025-06-19",
 	"compatibility_flags": [
 		"nodejs_compat"
 	],
