@@ -16,7 +16,6 @@ const PAGES = {
  * SERVERS
  */
 const SERVERS = {
-  "prerender /feed.xml": `/feed.xml`,
   "GET /feed.xml": `/feed.xml`
 }
 
@@ -35,10 +34,10 @@ const LINKS = {
   "repo": `https://github.com/ryoppippi/pr.ryoppippi.com`,
   "username": `ryoppippi`,
   "includeYourOwnPRs": `true`,
-  "hideList": `ryoppippi/ryoppippi.com,ryoppippi/talks,ryoppippi/cv,samchon/openapi,wrtnlabs/*`
+  "hideList": `ryoppippi/ryoppippi.com,ryoppippi/talks,ryoppippi/cv,samchon/*,wrtnlabs/*,StackOneHQ/*`
 }
 
-type ParamValue = string | number | undefined
+type ParamValue = string | number | boolean | null | undefined
 
 /**
  * Append search params to a string
@@ -144,7 +143,7 @@ export function route<T extends keyof AllTypes>(key: T, ...params: any[]): strin
 */
 export type KIT_ROUTES = {
   PAGES: { '/': never }
-  SERVERS: { 'prerender /feed.xml': never, 'GET /feed.xml': never }
+  SERVERS: { 'GET /feed.xml': never }
   ACTIONS: Record<string, never>
   LINKS: { 'domain': never, 'repo': never, 'username': never, 'includeYourOwnPRs': never, 'hideList': never }
   Params: Record<string, never>

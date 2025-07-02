@@ -1,5 +1,4 @@
 import type { PR, User } from './types';
-import * as devalue from 'devalue';
 import { minimatch } from 'minimatch';
 import { useOctokit } from './octokit.server';
 import { route } from './ROUTES';
@@ -47,7 +46,7 @@ export async function getPRs(includeYourOwnPRs = false): Promise<PR[]> {
 		advanced_search: 'true',
 	});
 
-	const hideList = devalue.parse(route('hideList')) as string[];
+	const hideList = route('hideList').split(',');
 
 	return data.items.filter(pr => !(pr.state === 'closed' && pr.pull_request?.merged_at == null)).map(pr => ({
 		repo: pr.repository_url.split('/').slice(-2).join('/'),

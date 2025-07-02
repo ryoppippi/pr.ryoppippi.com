@@ -30,7 +30,6 @@
 		"@unocss/extractor-svelte": "^66.3.2",
 		"@unocss/reset": "^66.3.2",
 		"@vueuse/core": "^13.5.0",
-		"devalue": "^5.1.1",
 		"eslint": "^9.30.1",
 		"eslint-plugin-format": "^1.0.1",
 		"eslint-plugin-svelte": "^3.10.1",
