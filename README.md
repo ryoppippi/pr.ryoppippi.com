@@ -67,9 +67,9 @@ pnpm preview
 
 ## 💻 Deploy
 
-This repository supports two deployment destinations: [Cloudflare Pages](https://pages.cloudflare.com/).
+This repository supports deployment to Cloudflare Workers.
 
-### Cloudflare Pages
+### Cloudflare Workers
 
 Run the following command:
 
