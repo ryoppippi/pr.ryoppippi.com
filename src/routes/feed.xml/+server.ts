@@ -46,24 +46,8 @@ export const GET = (async ({ platform }) => {
 	const response = new Response(xml, {
 		headers: {
 			'Content-Type': 'application/xml',
-			'Cache-Control': 'public, max-age=300, s-maxage=300', // Cache for 5 minutes
 		},
 	});
-
-	// Use Cloudflare Cache API if available
-	if (platform?.context != null) {
-		// eslint-disable-next-line ts/no-unsafe-assignment
-		const context = platform.context as any;
-		const cacheKey = new Request(joinURL(domain, 'feed.xml'), {
-			method: 'GET',
-		});
-
-		// Store in cache using global caches
-		// eslint-disable-next-line ts/no-unsafe-call, ts/no-unsafe-member-access
-		context.waitUntil(
-			caches.open('default').then(async cache => cache.put(cacheKey, response.clone())),
-		);
-	}
 
 	return response;
 }) satisfies RequestHandler;
