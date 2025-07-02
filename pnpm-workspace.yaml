@@ -1,6 +1,8 @@
 onlyBuiltDependencies:
   - esbuild
   - sharp
+  - simple-git-hooks
   - unrs-resolver
   - workerd
+
 useNodeVersion: 22.14.0
