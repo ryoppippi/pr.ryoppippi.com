@@ -1,23 +1,14 @@
 import type { Handle } from '@sveltejs/kit';
+import { CACHE_DURATION_SECONDS } from '$lib/consts';
 
 export const handle: Handle = async ({ event, resolve }) => {
-	if (globalThis.caches == null) {
-		return resolve(event);
-	}
-
-	const cache = await caches.open('sveltekit-cache');
-
-	const cachedResponse = await cache.match(event.request.url);
-	if (cachedResponse != null) {
-		return cachedResponse;
-	}
 	const response = await resolve(event);
 
-	const cacheMaxAgeSec = 60 * 15; // 15 minutes
-	response.headers.set('Cache-Control', `public, max-age=${cacheMaxAgeSec}, s-maxage=${cacheMaxAgeSec}`);
+	// Set cache headers for all responses
+	// Individual pages can override this with setHeaders
+	if (!response.headers.has('cache-control')) {
+		response.headers.set('cache-control', `public, max-age=${CACHE_DURATION_SECONDS}, s-maxage=${CACHE_DURATION_SECONDS}`);
+	}
 
-	event.platform?.context.waitUntil(
-		cache.put(event.request, response.clone()), // Clone the response to avoid consuming it
-	);
 	return response;
 };

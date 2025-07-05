@@ -9,6 +9,7 @@
 		"build": "vite build",
 		"preview": "nr build && wrangler dev",
 		"deploy": "nr build && wrangler deploy",
+		"deploy:non-production": "nr build && wrangler versions upload",
 		"sync": "nr /^sync:/",
 		"sync:svelte": "svelte-kit sync",
 		"sync:wrangler": "nr cf-types",

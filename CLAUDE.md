@@ -34,6 +34,26 @@ pnpm format
 pnpm deploy
 ```
 
+## Important: Always run before committing
+
+**ALWAYS** run these commands before creating a pull request:
+
+```bash
+pnpm lint
+pnpm check
+```
+
+These ensure code quality and type safety. If any errors occur, fix them before committing.
+
+**ALSO** run these commands **after making any changes** to ensure everything still works:
+
+```bash
+pnpm format  # Auto-fixes formatting issues (includes lint --fix)
+pnpm check   # Validates TypeScript types
+```
+
+**Note**: `pnpm format` internally calls `pnpm lint --fix`, so you don't need to run both. Always run `pnpm format` first, then `pnpm check`.
+
 ## Architecture
 
 ### Data Flow
@@ -55,6 +75,14 @@ pnpm deploy
 - Uses UnoCSS (atomic CSS) with Svelte extractor
 - Dark mode support via svelte-fancy-darkmode
 - Custom animations defined in `uno.config.ts`
+
+### Deployment Platform
+
+**IMPORTANT**: This application runs on Cloudflare Workers, not a traditional Node.js server. This affects:
+
+- Available APIs (use Cloudflare Workers APIs, not Node.js APIs)
+- Caching strategy (use Cloudflare Cache API with waitUntil)
+- Runtime environment (edge computing, not server)
 
 ### Important Configuration
 
