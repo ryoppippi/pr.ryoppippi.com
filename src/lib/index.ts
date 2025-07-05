@@ -1,10 +1,9 @@
 import type { RequestEvent } from '@sveltejs/kit';
 import type { PR, User } from './types';
 import { minimatch } from 'minimatch';
+import { CACHE_DURATION_SECONDS } from './consts';
 import { useOctokit } from './octokit.server';
 import { route } from './ROUTES';
-
-const CACHE_DURATION = 5 * 60; // 5 minutes in seconds
 
 /**
  * Checks if a target string is hidden by a list of patterns
@@ -49,7 +48,7 @@ export async function getUser(event?: RequestEvent): Promise<User & { fetchedAt:
 		const response = new Response(JSON.stringify(user), {
 			headers: {
 				'content-type': 'application/json',
-				'cache-control': `public, max-age=${CACHE_DURATION}`,
+				'cache-control': `public, max-age=${CACHE_DURATION_SECONDS}`,
 			},
 		});
 		// Use waitUntil to cache the response without blocking the main response
@@ -114,7 +113,7 @@ export async function getPRs(includeYourOwnPRs = false, event?: RequestEvent): P
 		const response = new Response(JSON.stringify(result), {
 			headers: {
 				'content-type': 'application/json',
-				'cache-control': `public, max-age=${CACHE_DURATION}`,
+				'cache-control': `public, max-age=${CACHE_DURATION_SECONDS}`,
 			},
 		});
 		// Use waitUntil to cache the response without blocking the main response
