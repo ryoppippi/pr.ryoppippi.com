@@ -1,20 +1,47 @@
-<div
-	bg-white
-	border='1 gray-300 dark:gray-700'
-	p='4 sm:6'
-	rounded-lg
-	dark:bg-gray-800
-	shadow-sm
+<div flex='~ items-center gap-4'
 >
-	<div flex='~ col gap-3'>
-		<div animate-pulse bg-gray-200 h-4 dark:bg-gray-700 rounded w='3/4' />
-		<div flex='~ items-center gap-3'>
-			<div animate-pulse bg-gray-200 h-3 rounded w-20 dark:bg-gray-700 />
-			<div animate-pulse bg-gray-200 h-3 rounded w-24 dark:bg-gray-700 />
+	<!-- Avatar skeleton -->
+	<div
+		animate-pulse
+		bg-gray-100
+		dark:bg-gray-800
+		rounded-md
+		shrink-0
+		size-12
+	/>
+
+	<div
+		flex='~ 1 justify-between'
+		gap='2 lg:4'
+		min-w-0
+	>
+		<div
+			flex='~ col'
+			gap-1
+			min-w-0
+		>
+			<!-- PR title skeleton -->
+			<div flex='~ items-center gap-1'>
+				<div animate-pulse bg-gray-100 dark:bg-gray-800 rounded shrink-0 size-5 />
+				<div animate-pulse bg-gray-100 dark:bg-gray-800 h-5 rounded w='75%' />
+			</div>
+
+			<!-- Repo name skeleton -->
+			<div flex='~ gap-1'>
+				<div animate-pulse bg-gray-100 dark:bg-gray-800 h-4 rounded w-16 />
+				<div animate-pulse bg-gray-100 dark:bg-gray-800 h-4 rounded w-20 />
+			</div>
 		</div>
-		<div flex='~ gap-2'>
-			<div animate-pulse bg-gray-200 h-6 rounded w-16 dark:bg-gray-700 />
-			<div animate-pulse bg-gray-200 h-6 rounded w-20 dark:bg-gray-700 />
+
+		<div
+			flex='~ col justify-between shrink-0'
+			text-right
+		>
+			<!-- PR number skeleton -->
+			<div animate-pulse bg-gray-100 dark:bg-gray-800 h-5 ml-auto rounded w-12 />
+
+			<!-- Time skeleton -->
+			<div animate-pulse bg-gray-100 dark:bg-gray-800 h-4 ml-auto rounded w-20 />
 		</div>
 	</div>
 </div>

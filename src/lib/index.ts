@@ -1,11 +1,10 @@
+import type { RequestEvent } from '@sveltejs/kit';
 import type { PR, User } from './types';
 import { minimatch } from 'minimatch';
 import { useOctokit } from './octokit.server';
 import { route } from './ROUTES';
 
-// Simple in-memory cache
-const cache = new Map<string, { data: any; timestamp: number; expiresAt: number }>();
-const CACHE_DURATION = 5 * 60 * 1000; // 5 minutes in milliseconds
+const CACHE_DURATION = 5 * 60; // 5 minutes in seconds
 
 /**
  * Checks if a target string is hidden by a list of patterns
@@ -16,13 +15,17 @@ function isHidden(target: string, hideList: string[]): boolean {
 	return hideList.some(pattern => minimatch(target, pattern));
 }
 
-export async function getUser(): Promise<User & { fetchedAt: string }> {
-	const cacheKey = `user:${route('username')}`;
-	const cached = cache.get(cacheKey);
+export async function getUser(event?: RequestEvent): Promise<User & { fetchedAt: string }> {
+	const cacheKey = new URL(`https://cache.pr.ryoppippi.com/user/${route('username')}`).toString();
 	const now = Date.now();
 
-	if (cached != null && cached.expiresAt > now) {
-		return cached.data as User & { fetchedAt: string };
+	// Try to get from Cloudflare Cache if available
+	if (globalThis.caches != null) {
+		const cache = await caches.open('github-data');
+		const cachedResponse = await cache.match(cacheKey);
+		if (cachedResponse != null) {
+			return cachedResponse.json();
+		}
 	}
 
 	const octokit = useOctokit();
@@ -39,11 +42,19 @@ export async function getUser(): Promise<User & { fetchedAt: string }> {
 		fetchedAt: new Date(now).toJSON(),
 	};
 
-	cache.set(cacheKey, {
-		data: user,
-		timestamp: now,
-		expiresAt: now + CACHE_DURATION,
-	});
+	// Cache in Cloudflare Cache if available
+	if (globalThis.caches != null && event?.platform?.context != null) {
+		const cache = await caches.open('github-data');
+		const response = new Response(JSON.stringify(user), {
+			headers: {
+				'content-type': 'application/json',
+				'cache-control': `public, max-age=${CACHE_DURATION}`,
+			},
+		});
+		// Use waitUntil to cache the response without blocking the main response
+		// This allows the cache write to happen asynchronously after the response is sent
+		event.platform.context.waitUntil(cache.put(cacheKey, response));
+	}
 
 	return user;
 }
@@ -52,18 +63,22 @@ export async function getUser(): Promise<User & { fetchedAt: string }> {
  * Fetches the pull requests of the user
  * @param includeYourOwnPRs - Include the user's own pull requests
  */
-export async function getPRs(includeYourOwnPRs = false): Promise<{ prs: PR[]; fetchedAt: string }> {
-	const cacheKey = `prs:${route('username')}:${includeYourOwnPRs}`;
-	const cached = cache.get(cacheKey);
+export async function getPRs(includeYourOwnPRs = false, event?: RequestEvent): Promise<{ prs: PR[]; fetchedAt: string }> {
+	const cacheKey = new URL(`https://cache.pr.ryoppippi.com/prs/${route('username')}/${includeYourOwnPRs}`).toString();
 	const now = Date.now();
 
-	if (cached != null && cached.expiresAt > now) {
-		return cached.data as { prs: PR[]; fetchedAt: string };
+	// Try to get from Cloudflare Cache if available
+	if (globalThis.caches != null) {
+		const cache = await caches.open('github-data');
+		const cachedResponse = await cache.match(cacheKey);
+		if (cachedResponse != null) {
+			return cachedResponse.json();
+		}
 	}
 
 	const octokit = useOctokit();
 
-	const user = await getUser();
+	const user = await getUser(event);
 
 	// Fetch pull requests from user
 	const { data } = await octokit.request('GET /search/issues', {
@@ -91,11 +106,19 @@ export async function getPRs(includeYourOwnPRs = false): Promise<{ prs: PR[]; fe
 		fetchedAt: new Date(now).toJSON(),
 	};
 
-	cache.set(cacheKey, {
-		data: result,
-		timestamp: now,
-		expiresAt: now + CACHE_DURATION,
-	});
+	// Cache in Cloudflare Cache if available
+	if (globalThis.caches != null && event?.platform?.context != null) {
+		const cache = await caches.open('github-data');
+		const response = new Response(JSON.stringify(result), {
+			headers: {
+				'content-type': 'application/json',
+				'cache-control': `public, max-age=${CACHE_DURATION}`,
+			},
+		});
+		// Use waitUntil to cache the response without blocking the main response
+		// This allows the cache write to happen asynchronously after the response is sent
+		event.platform.context.waitUntil(cache.put(cacheKey, response));
+	}
 
 	return result;
 }

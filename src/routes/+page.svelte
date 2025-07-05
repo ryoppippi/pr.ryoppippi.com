@@ -75,11 +75,15 @@
 		{#each Array.from({ length: 5 }) as _, i (i)}
 			<PullRequestSkeleton />
 		{/each}
-	{:then prs}
-		{#each prs as pr, count (pr.url)}
+	{:then prData}
+		{#each prData.prs as pr, count (pr.url)}
 			<PullRequest {count} {pr} />
 		{/each}
 	{/await}
 
-	<Footer now={data.now} />
+	{#await Promise.all([data.streamed.user, data.streamed.prs])}
+		<!-- Wait for data to show footer -->
+	{:then [_user, prData]}
+		<Footer fetchedAt={prData.fetchedAt} />
+	{/await}
 </div>

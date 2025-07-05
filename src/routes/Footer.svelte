@@ -2,7 +2,7 @@
 	import { formatTimeAgo } from '@vueuse/core';
 	import Divider from './Divider.svelte';
 
-	const { now }: { now: string } = $props();
+	const { fetchedAt }: { fetchedAt: string } = $props();
 
 </script>
 
@@ -10,8 +10,8 @@
 	<Divider />
 	<div flex='~ gap-1 wrap justify-center'>
 		<span op75>Last Updated:</span>
-		<time datetime={now.toString()}>
-			{formatTimeAgo(new Date(now))}
+		<time datetime={fetchedAt.toString()}>
+			{formatTimeAgo(new Date(fetchedAt))}
 		</time>
 	</div>
 	<span op75>
