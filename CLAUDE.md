@@ -48,10 +48,11 @@ These ensure code quality and type safety. If any errors occur, fix them before 
 **ALSO** run these commands **after making any changes** to ensure everything still works:
 
 ```bash
-pnpm format  # Auto-fixes formatting issues
-pnpm lint    # Checks for linting errors
+pnpm format  # Auto-fixes formatting issues (includes lint --fix)
 pnpm check   # Validates TypeScript types
 ```
+
+**Note**: `pnpm format` internally calls `pnpm lint --fix`, so you don't need to run both. Always run `pnpm format` first, then `pnpm check`.
 
 ## Architecture
 
