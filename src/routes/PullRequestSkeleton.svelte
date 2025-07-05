@@ -1,10 +1,10 @@
 <div flex='~ items-center gap-4'
 >
 	<!-- Avatar skeleton -->
+	<!-- svelte-ignore element_invalid_self_closing_tag -->
 	<div
 		animate-pulse
-		bg-gray-100
-		dark:bg-gray-800
+		bg='gray-100 dark:gray-800'
 		rounded-md
 		shrink-0
 		size-12
@@ -22,14 +22,18 @@
 		>
 			<!-- PR title skeleton -->
 			<div flex='~ items-center gap-1'>
-				<div animate-pulse bg-gray-100 dark:bg-gray-800 rounded shrink-0 size-5 />
-				<div animate-pulse bg-gray-100 dark:bg-gray-800 h-5 rounded w='75%' />
+				<!-- svelte-ignore element_invalid_self_closing_tag -->
+				<div animate-pulse bg='gray-100 dark:gray-800' rounded shrink-0 size-5 />
+				<!-- svelte-ignore element_invalid_self_closing_tag -->
+				<div animate-pulse bg='gray-100 dark:gray-800' h-5 rounded w='75%' />
 			</div>
 
 			<!-- Repo name skeleton -->
 			<div flex='~ gap-1'>
-				<div animate-pulse bg-gray-100 dark:bg-gray-800 h-4 rounded w-16 />
-				<div animate-pulse bg-gray-100 dark:bg-gray-800 h-4 rounded w-20 />
+				<!-- svelte-ignore element_invalid_self_closing_tag -->
+				<div animate-pulse bg='gray-100 dark:gray-800' h-4 rounded w-16 />
+				<!-- svelte-ignore element_invalid_self_closing_tag -->
+				<div animate-pulse bg='gray-100 dark:gray-800' h-4 rounded w-20 />
 			</div>
 		</div>
 
@@ -38,10 +42,12 @@
 			text-right
 		>
 			<!-- PR number skeleton -->
-			<div animate-pulse bg-gray-100 dark:bg-gray-800 h-5 ml-auto rounded w-12 />
+			<!-- svelte-ignore element_invalid_self_closing_tag -->
+			<div animate-pulse bg='gray-100 dark:gray-800' h-5 ml-auto rounded w-12 />
 
 			<!-- Time skeleton -->
-			<div animate-pulse bg-gray-100 dark:bg-gray-800 h-4 ml-auto rounded w-20 />
+			<!-- svelte-ignore element_invalid_self_closing_tag -->
+			<div animate-pulse bg='gray-100 dark:gray-800' h-4 ml-auto rounded w-20 />
 		</div>
 	</div>
 </div>

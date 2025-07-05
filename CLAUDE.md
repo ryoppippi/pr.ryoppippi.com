@@ -76,6 +76,24 @@ pnpm check   # Validates TypeScript types
 - Dark mode support via svelte-fancy-darkmode
 - Custom animations defined in `uno.config.ts`
 
+#### UnoCSS Attributify Mode Guidelines
+
+**IMPORTANT**: When using UnoCSS Attributify mode in Svelte:
+
+1. **Avoid colon syntax in attribute names**: `dark:bg-gray-800` is NOT valid as an attribute name
+2. **Use bg attribute syntax**: `bg='gray-100 dark:gray-800'` instead of `bg-gray-100 dark:bg-gray-800`
+3. **Add svelte-ignore comments**: Use `<!-- svelte-ignore element_invalid_self_closing_tag -->` for self-closing div tags
+4. **Examples**:
+
+   ```svelte
+   <!-- ❌ Wrong: causes Svelte directive confusion -->
+   <div bg-gray-100 dark:bg-gray-800 />
+
+   <!-- ✅ Correct: use bg attribute with proper syntax -->
+   <!-- svelte-ignore element_invalid_self_closing_tag -->
+   <div bg='gray-100 dark:gray-800' />
+   ```
+
 ### Deployment Platform
 
 **IMPORTANT**: This application runs on Cloudflare Workers, not a traditional Node.js server. This affects:
