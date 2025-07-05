@@ -7,15 +7,15 @@ import { joinURL } from 'ufo';
 
 const DOMAIN = route('domain');
 
-export const GET = (async () => {
+export const GET = (async (event) => {
 	if (!URL.canParse(DOMAIN)) {
 		return error(500, 'Invalid domain');
 	}
 
 	const domain = new URL(DOMAIN).origin;
-	const [user, prs] = await Promise.all([
-		getUser(),
-		getPRs(isIncludeYourOwnPRs),
+	const [user, prData] = await Promise.all([
+		getUser(event),
+		getPRs(isIncludeYourOwnPRs, event),
 	]);
 
 	const feed = new Feed({
@@ -32,7 +32,7 @@ export const GET = (async () => {
 		},
 	});
 
-	for (const pr of prs) {
+	for (const pr of prData.prs) {
 		feed.addItem({
 			link: pr.url,
 			date: new Date(pr.created_at),
