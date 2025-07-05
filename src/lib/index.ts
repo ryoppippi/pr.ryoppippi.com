@@ -17,7 +17,6 @@ function isHidden(target: string, hideList: string[]): boolean {
 
 export async function getUser(event?: RequestEvent): Promise<User & { fetchedAt: string }> {
 	const cacheKey = new URL(`https://cache.pr.ryoppippi.com/user/${route('username')}`).toString();
-	const now = Date.now();
 
 	// Try to get from Cloudflare Cache if available
 	if (globalThis.caches != null) {
@@ -27,6 +26,8 @@ export async function getUser(event?: RequestEvent): Promise<User & { fetchedAt:
 			return cachedResponse.json();
 		}
 	}
+
+	const fetchedAt = new Date().toJSON();
 
 	const octokit = useOctokit();
 
@@ -39,7 +40,7 @@ export async function getUser(event?: RequestEvent): Promise<User & { fetchedAt:
 		name: userResponse.data.name ?? userResponse.data.login,
 		username: userResponse.data.login,
 		avatar: userResponse.data.avatar_url,
-		fetchedAt: new Date(now).toJSON(),
+		fetchedAt,
 	};
 
 	// Cache in Cloudflare Cache if available
@@ -65,7 +66,6 @@ export async function getUser(event?: RequestEvent): Promise<User & { fetchedAt:
  */
 export async function getPRs(includeYourOwnPRs = false, event?: RequestEvent): Promise<{ prs: PR[]; fetchedAt: string }> {
 	const cacheKey = new URL(`https://cache.pr.ryoppippi.com/prs/${route('username')}/${includeYourOwnPRs}`).toString();
-	const now = Date.now();
 
 	// Try to get from Cloudflare Cache if available
 	if (globalThis.caches != null) {
@@ -75,6 +75,8 @@ export async function getPRs(includeYourOwnPRs = false, event?: RequestEvent): P
 			return cachedResponse.json();
 		}
 	}
+
+	const fetchedAt = new Date().toJSON();
 
 	const octokit = useOctokit();
 
@@ -103,7 +105,7 @@ export async function getPRs(includeYourOwnPRs = false, event?: RequestEvent): P
 
 	const result = {
 		prs,
-		fetchedAt: new Date(now).toJSON(),
+		fetchedAt,
 	};
 
 	// Cache in Cloudflare Cache if available
