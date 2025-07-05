@@ -45,6 +45,14 @@ pnpm check
 
 These ensure code quality and type safety. If any errors occur, fix them before committing.
 
+**ALSO** run these commands **after making any changes** to ensure everything still works:
+
+```bash
+pnpm format  # Auto-fixes formatting issues
+pnpm lint    # Checks for linting errors
+pnpm check   # Validates TypeScript types
+```
+
 ## Architecture
 
 ### Data Flow
