@@ -53,7 +53,7 @@
 		"typescript": "^5.8.3",
 		"typescript-svelte-plugin": "^0.3.49",
 		"ufo": "^1.6.1",
-		"unocss": "^66.3.2",
+		"unocss": "^66.3.3",
 		"unplugin-icons": "^22.1.0",
 		"vite": "npm:rolldown-vite@latest",
 		"vite-plugin-kit-routes": "^1.0.2",
