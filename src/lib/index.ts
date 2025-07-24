@@ -5,6 +5,15 @@ import { CACHE_DURATION_SECONDS } from './consts';
 import { useOctokit } from './octokit.server';
 import { route } from './ROUTES';
 
+const HIDE_LIST = [
+	'ryoppippi/ryoppippi.com',
+	'ryoppippi/talks',
+	'ryoppippi/cv',
+	'samchon/*',
+	'wrtnlabs/*',
+	'StackOneHQ/*',
+];
+
 /**
  * Checks if a target string is hidden by a list of patterns
  * @param target - The target string
@@ -91,8 +100,6 @@ export async function getPRs(includeYourOwnPRs = false, event?: RequestEvent): P
 		advanced_search: 'true',
 	});
 
-	const hideList = route('hideList').split(',');
-
 	const prs = data.items.filter(pr => !(pr.state === 'closed' && pr.pull_request?.merged_at == null)).map(pr => ({
 		repo: pr.repository_url.split('/').slice(-2).join('/'),
 		title: pr.title,
@@ -100,7 +107,7 @@ export async function getPRs(includeYourOwnPRs = false, event?: RequestEvent): P
 		created_at: pr.created_at,
 		state: pr.pull_request?.merged_at != null ? 'merged' : pr.state as PR['state'],
 		number: pr.number,
-	})).filter(pr => !isHidden(pr.repo, hideList));
+	})).filter(pr => !isHidden(pr.repo, HIDE_LIST));
 
 	const result = {
 		prs,
