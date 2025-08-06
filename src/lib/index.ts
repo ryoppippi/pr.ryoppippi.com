@@ -14,20 +14,7 @@ function isHidden(target: string, hideList: string[]): boolean {
 	return hideList.some(pattern => minimatch(target, pattern));
 }
 
-export async function getUser(event?: RequestEvent): Promise<User & { fetchedAt: string }> {
-	const cacheKey = new URL(`https://cache.pr.ryoppippi.com/user/${route('username')}`).toString();
-
-	// Try to get from Cloudflare Cache if available
-	if (globalThis.caches != null) {
-		const cache = await caches.open('github-data');
-		const cachedResponse = await cache.match(cacheKey);
-		if (cachedResponse != null) {
-			return cachedResponse.json();
-		}
-	}
-
-	const fetchedAt = new Date().toJSON();
-
+export async function getUser(): Promise<User> {
 	const octokit = useOctokit();
 
 	// Fetch user from token
@@ -39,22 +26,7 @@ export async function getUser(event?: RequestEvent): Promise<User & { fetchedAt:
 		name: userResponse.data.name ?? userResponse.data.login,
 		username: userResponse.data.login,
 		avatar: userResponse.data.avatar_url,
-		fetchedAt,
 	};
-
-	// Cache in Cloudflare Cache if available
-	if (globalThis.caches != null && event?.platform?.context != null) {
-		const cache = await caches.open('github-data');
-		const response = new Response(JSON.stringify(user), {
-			headers: {
-				'content-type': 'application/json',
-				'cache-control': `public, max-age=${CACHE_DURATION_SECONDS}`,
-			},
-		});
-		// Use waitUntil to cache the response without blocking the main response
-		// This allows the cache write to happen asynchronously after the response is sent
-		event.platform.context.waitUntil(cache.put(cacheKey, response));
-	}
 
 	return user;
 }
