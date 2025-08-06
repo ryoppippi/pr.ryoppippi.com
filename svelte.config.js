@@ -9,6 +9,9 @@ const config = {
 	preprocess: vitePreprocess(),
 
 	kit: {
+		experimental: {
+			remoteFunctions: true,
+		},
 		typescript: {
 			config(config) {
 				config.include.push(path.join(import.meta.dirname, 'uno.config.ts'));
