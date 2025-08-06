@@ -1,23 +1,18 @@
 <script lang='ts'>
-	import type { User } from '$lib/types.js';
+	import { getUser } from '$lib/api.remote';
 	import { route } from '$lib/ROUTES';
 	import * as DarkMode from 'svelte-fancy-darkmode';
+	import { joinURL } from 'ufo';
 	import GitHub from '~icons/line-md/github-loop';
 	import MoonToSunny from '~icons/line-md/moon-filled-to-sunny-filled-loop-transition';
-	import RSS from '~icons/line-md/rss';
 
+	import RSS from '~icons/line-md/rss';
 	import SunnyToMoon from '~icons/line-md/sunny-filled-loop-to-moon-filled-transition';
 	import Divider from './Divider.svelte';
 
-	const {
-		user,
-		userUrl,
-		description,
-	}: {
-		user: User;
-		userUrl: string;
-		description: string;
-	} = $props();
+	const user = await getUser();
+	const userUrl = joinURL('https://github.com', user.username);
+	const description = `${user.username}'s recent pull requests on GitHub`;
 </script>
 
 <div flex='~ col'>

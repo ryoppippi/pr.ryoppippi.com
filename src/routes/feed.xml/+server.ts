@@ -3,7 +3,6 @@ import {
 	getPRs,
 	getUser,
 } from '$lib/api.remote';
-import { isIncludeYourOwnPRs } from '$lib/consts';
 import { route } from '$lib/ROUTES';
 import { error } from '@sveltejs/kit';
 import { Feed } from 'feed';
@@ -17,9 +16,9 @@ export const GET = (async () => {
 	}
 
 	const domain = new URL(DOMAIN).origin;
-	const [user, prData] = await Promise.all([
+	const [user, prs] = await Promise.all([
 		getUser(),
-		getPRs({ isIncludeYourOwnPRs }),
+		getPRs(),
 	]);
 
 	const feed = new Feed({
@@ -36,7 +35,7 @@ export const GET = (async () => {
 		},
 	});
 
-	for (const pr of prData.prs) {
+	for (const pr of prs) {
 		if (pr == null) {
 			continue;
 		}

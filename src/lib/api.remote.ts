@@ -35,7 +35,8 @@ export const getUser = prerender(async () => {
  * Fetches the pull requests of the user
  * @param includeYourOwnPRs - Include the user's own pull requests
  */
-export const getPRs = query('unchecked', async ({ isIncludeYourOwnPRs = false }: { isIncludeYourOwnPRs?: boolean }): Promise<{ prs: PR[]; fetchedAt: string }> => {
+export const getPRs = query(async (): Promise<PR[]> => {
+	const isIncludeYourOwnPRs = route('includeYourOwnPRs') === 'true';
 	const { platform } = getRequestEvent();
 	const cacheKey = new URL(`https://cache.pr.ryoppippi.com/prs/${route('username')}/${isIncludeYourOwnPRs}`).toString();
 
@@ -47,8 +48,6 @@ export const getPRs = query('unchecked', async ({ isIncludeYourOwnPRs = false }:
 			return cachedResponse.json();
 		}
 	}
-
-	const fetchedAt = new Date().toJSON();
 
 	const octokit = useOctokit();
 
@@ -75,15 +74,10 @@ export const getPRs = query('unchecked', async ({ isIncludeYourOwnPRs = false }:
 		number: pr.number,
 	})).filter(pr => !isHidden(pr.repo, hideList));
 
-	const result = {
-		prs,
-		fetchedAt,
-	};
-
 	// Cache in Cloudflare Cache if available
 	if (globalThis.caches != null && platform?.context != null) {
 		const cache = await caches.open('github-data');
-		const response = new Response(JSON.stringify(result), {
+		const response = new Response(JSON.stringify(prs), {
 			headers: {
 				'content-type': 'application/json',
 				'cache-control': `public, max-age=${CACHE_DURATION_SECONDS}`,
@@ -94,5 +88,9 @@ export const getPRs = query('unchecked', async ({ isIncludeYourOwnPRs = false }:
 		platform.context.waitUntil(cache.put(cacheKey, response));
 	}
 
-	return result;
+	return prs;
+});
+
+export const getCurrentTime = query(async () => {
+	return new Date().toJSON();
 });

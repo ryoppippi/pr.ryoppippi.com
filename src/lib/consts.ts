@@ -1,5 +1,3 @@
-import { route } from '$lib/ROUTES';
-
 /**
  * Cache duration constants used across the application
  */
@@ -9,5 +7,3 @@ export const CACHE_DURATION_SECONDS = 15 * 60;
 
 // Cache duration in milliseconds (15 minutes) - for compatibility if needed
 export const CACHE_DURATION_MS = CACHE_DURATION_SECONDS * 1000;
-
-export const isIncludeYourOwnPRs = route('includeYourOwnPRs') === 'true';
