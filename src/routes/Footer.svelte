@@ -1,9 +1,9 @@
 <script lang='ts'>
+	import { getCurrentTime } from '$lib/api.remote';
 	import { formatTimeAgo } from '@vueuse/core';
 	import Divider from './Divider.svelte';
 
-	const { fetchedAt }: { fetchedAt: string } = $props();
-
+	const fetchedAt = await getCurrentTime();
 </script>
 
 <div op50 text-center>

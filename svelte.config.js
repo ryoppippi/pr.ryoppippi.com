@@ -8,7 +8,16 @@ const config = {
 	// for more information about preprocessors
 	preprocess: vitePreprocess(),
 
+	compilerOptions: {
+		experimental: {
+			async: true,
+		},
+	},
+
 	kit: {
+		experimental: {
+			remoteFunctions: true,
+		},
 		typescript: {
 			config(config) {
 				config.include.push(path.join(import.meta.dirname, 'uno.config.ts'));

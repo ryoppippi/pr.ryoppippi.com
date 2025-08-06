@@ -1,5 +1,5 @@
-import type { RequestEvent } from '@sveltejs/kit';
-import type { PR, User } from './types';
+import type { PR } from './types';
+import { getRequestEvent, prerender, query } from '$app/server';
 import { minimatch } from 'minimatch';
 import { CACHE_DURATION_SECONDS } from './consts';
 import { useOctokit } from './octokit.server';
@@ -14,20 +14,7 @@ function isHidden(target: string, hideList: string[]): boolean {
 	return hideList.some(pattern => minimatch(target, pattern));
 }
 
-export async function getUser(event?: RequestEvent): Promise<User & { fetchedAt: string }> {
-	const cacheKey = new URL(`https://cache.pr.ryoppippi.com/user/${route('username')}`).toString();
-
-	// Try to get from Cloudflare Cache if available
-	if (globalThis.caches != null) {
-		const cache = await caches.open('github-data');
-		const cachedResponse = await cache.match(cacheKey);
-		if (cachedResponse != null) {
-			return cachedResponse.json();
-		}
-	}
-
-	const fetchedAt = new Date().toJSON();
-
+export const getUser = prerender(async () => {
 	const octokit = useOctokit();
 
 	// Fetch user from token
@@ -39,32 +26,19 @@ export async function getUser(event?: RequestEvent): Promise<User & { fetchedAt:
 		name: userResponse.data.name ?? userResponse.data.login,
 		username: userResponse.data.login,
 		avatar: userResponse.data.avatar_url,
-		fetchedAt,
 	};
 
-	// Cache in Cloudflare Cache if available
-	if (globalThis.caches != null && event?.platform?.context != null) {
-		const cache = await caches.open('github-data');
-		const response = new Response(JSON.stringify(user), {
-			headers: {
-				'content-type': 'application/json',
-				'cache-control': `public, max-age=${CACHE_DURATION_SECONDS}`,
-			},
-		});
-		// Use waitUntil to cache the response without blocking the main response
-		// This allows the cache write to happen asynchronously after the response is sent
-		event.platform.context.waitUntil(cache.put(cacheKey, response));
-	}
-
 	return user;
-}
+});
 
 /**
  * Fetches the pull requests of the user
  * @param includeYourOwnPRs - Include the user's own pull requests
  */
-export async function getPRs(includeYourOwnPRs = false, event?: RequestEvent): Promise<{ prs: PR[]; fetchedAt: string }> {
-	const cacheKey = new URL(`https://cache.pr.ryoppippi.com/prs/${route('username')}/${includeYourOwnPRs}`).toString();
+export const getPRs = query(async (): Promise<PR[]> => {
+	const isIncludeYourOwnPRs = route('includeYourOwnPRs') === 'true';
+	const { platform } = getRequestEvent();
+	const cacheKey = new URL(`https://cache.pr.ryoppippi.com/prs/${route('username')}/${isIncludeYourOwnPRs}`).toString();
 
 	// Try to get from Cloudflare Cache if available
 	if (globalThis.caches != null) {
@@ -75,15 +49,13 @@ export async function getPRs(includeYourOwnPRs = false, event?: RequestEvent): P
 		}
 	}
 
-	const fetchedAt = new Date().toJSON();
-
 	const octokit = useOctokit();
 
-	const user = await getUser(event);
+	const user = await getUser();
 
 	// Fetch pull requests from user
 	const { data } = await octokit.request('GET /search/issues', {
-		q: includeYourOwnPRs
+		q: isIncludeYourOwnPRs
 			? `type:pr+author:"${user.username}"`
 			: `type:pr+author:"${user.username}"+-user:"${user.username}"`,
 		per_page: 100,
@@ -102,15 +74,10 @@ export async function getPRs(includeYourOwnPRs = false, event?: RequestEvent): P
 		number: pr.number,
 	})).filter(pr => !isHidden(pr.repo, hideList));
 
-	const result = {
-		prs,
-		fetchedAt,
-	};
-
 	// Cache in Cloudflare Cache if available
-	if (globalThis.caches != null && event?.platform?.context != null) {
+	if (globalThis.caches != null && platform?.context != null) {
 		const cache = await caches.open('github-data');
-		const response = new Response(JSON.stringify(result), {
+		const response = new Response(JSON.stringify(prs), {
 			headers: {
 				'content-type': 'application/json',
 				'cache-control': `public, max-age=${CACHE_DURATION_SECONDS}`,
@@ -118,10 +85,12 @@ export async function getPRs(includeYourOwnPRs = false, event?: RequestEvent): P
 		});
 		// Use waitUntil to cache the response without blocking the main response
 		// This allows the cache write to happen asynchronously after the response is sent
-		event.platform.context.waitUntil(cache.put(cacheKey, response));
+		platform.context.waitUntil(cache.put(cacheKey, response));
 	}
 
-	return result;
-}
+	return prs;
+});
 
-export const isIncludeYourOwnPRs = route('includeYourOwnPRs') === 'true';
+export const getCurrentTime = query(async () => {
+	return new Date().toJSON();
+});
