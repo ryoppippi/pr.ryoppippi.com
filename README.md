@@ -71,6 +71,8 @@ This repository supports deployment to Cloudflare Workers.
 
 ### Cloudflare Workers
 
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/ryoppippi/pr.ryoppippi.com)
+
 Run the following command:
 
 ```bash
