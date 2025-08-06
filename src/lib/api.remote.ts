@@ -96,5 +96,3 @@ export const getPRs = query('unchecked', async ({ isIncludeYourOwnPRs = false }:
 
 	return result;
 });
-
-export const isIncludeYourOwnPRs = route('includeYourOwnPRs') === 'true';

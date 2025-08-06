@@ -1,5 +1,5 @@
 import type { PageServerLoad } from './$types';
-import { getPRs, getUser, isIncludeYourOwnPRs } from '$lib';
+import { getPRs, getUser, isIncludeYourOwnPRs } from '$lib/api.remote';
 import { CACHE_DURATION_SECONDS } from '$lib/consts';
 
 export const load: PageServerLoad = async (event) => {

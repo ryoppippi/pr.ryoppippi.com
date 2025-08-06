@@ -2,8 +2,8 @@ import type { RequestHandler } from './$types';
 import {
 	getPRs,
 	getUser,
-	isIncludeYourOwnPRs,
 } from '$lib/api.remote';
+import { isIncludeYourOwnPRs } from '$lib/consts';
 import { route } from '$lib/ROUTES';
 import { error } from '@sveltejs/kit';
 import { Feed } from 'feed';
