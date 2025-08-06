@@ -1,5 +1,9 @@
 import type { RequestHandler } from './$types';
-import { getPRs, getUser, isIncludeYourOwnPRs } from '$lib';
+import {
+	getPRs,
+	getUser,
+	isIncludeYourOwnPRs,
+} from '$lib/api.remote';
 import { route } from '$lib/ROUTES';
 import { error } from '@sveltejs/kit';
 import { Feed } from 'feed';
@@ -7,15 +11,15 @@ import { joinURL } from 'ufo';
 
 const DOMAIN = route('domain');
 
-export const GET = (async (event) => {
+export const GET = (async () => {
 	if (!URL.canParse(DOMAIN)) {
 		return error(500, 'Invalid domain');
 	}
 
 	const domain = new URL(DOMAIN).origin;
 	const [user, prData] = await Promise.all([
-		getUser(event),
-		getPRs(isIncludeYourOwnPRs, event),
+		getUser(),
+		getPRs({ isIncludeYourOwnPRs }),
 	]);
 
 	const feed = new Feed({
@@ -33,6 +37,9 @@ export const GET = (async (event) => {
 	});
 
 	for (const pr of prData.prs) {
+		if (pr == null) {
+			continue;
+		}
 		feed.addItem({
 			link: pr.url,
 			date: new Date(pr.created_at),
