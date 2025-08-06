@@ -1,5 +1,5 @@
 <script lang='ts'>
-	import { route } from '$lib/ROUTES';
+	import { PUBLIC_DOMAIN } from '$env/static/public';
 	import { MetaTags } from 'svelte-meta-tags';
 
 	import { joinURL } from 'ufo';
@@ -25,7 +25,7 @@
 				rel: 'alternate',
 				title: description,
 				type: 'application/rss+xml',
-				href: route('GET /feed.xml'),
+				href: '/feed.xml',
 			},
 			{
 				rel: 'icon',
@@ -34,7 +34,7 @@
 		]}
 		{description}
 		openGraph={{
-			url: route('domain'),
+			url: PUBLIC_DOMAIN,
 			title,
 			description,
 			images: [

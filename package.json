@@ -56,7 +56,6 @@
 		"unocss": "^66.3.3",
 		"unplugin-icons": "^22.1.0",
 		"vite": "npm:rolldown-vite@latest",
-		"vite-plugin-kit-routes": "^1.0.2",
 		"wrangler": "^4.23.0"
 	},
 	"simple-git-hooks": {

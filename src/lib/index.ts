@@ -1,9 +1,9 @@
 import type { RequestEvent } from '@sveltejs/kit';
 import type { PR, User } from './types';
+import { PUBLIC_HIDE_LIST, PUBLIC_INCLUDE_YOUR_OWN_PRS, PUBLIC_USERNAME } from '$env/static/public';
 import { minimatch } from 'minimatch';
 import { CACHE_DURATION_SECONDS } from './consts';
 import { useOctokit } from './octokit.server';
-import { route } from './ROUTES';
 
 /**
  * Checks if a target string is hidden by a list of patterns
@@ -15,7 +15,7 @@ function isHidden(target: string, hideList: string[]): boolean {
 }
 
 export async function getUser(event?: RequestEvent): Promise<User & { fetchedAt: string }> {
-	const cacheKey = new URL(`https://cache.pr.ryoppippi.com/user/${route('username')}`).toString();
+	const cacheKey = new URL(`https://cache.pr.ryoppippi.com/user/${PUBLIC_USERNAME}`).toString();
 
 	// Try to get from Cloudflare Cache if available
 	if (globalThis.caches != null) {
@@ -32,7 +32,7 @@ export async function getUser(event?: RequestEvent): Promise<User & { fetchedAt:
 
 	// Fetch user from token
 	const userResponse = await octokit.request('GET /users/{username}', {
-		username: route('username'),
+		username: PUBLIC_USERNAME,
 	});
 
 	const user = {
@@ -64,7 +64,7 @@ export async function getUser(event?: RequestEvent): Promise<User & { fetchedAt:
  * @param includeYourOwnPRs - Include the user's own pull requests
  */
 export async function getPRs(includeYourOwnPRs = false, event?: RequestEvent): Promise<{ prs: PR[]; fetchedAt: string }> {
-	const cacheKey = new URL(`https://cache.pr.ryoppippi.com/prs/${route('username')}/${includeYourOwnPRs}`).toString();
+	const cacheKey = new URL(`https://cache.pr.ryoppippi.com/prs/${PUBLIC_USERNAME}/${includeYourOwnPRs}`).toString();
 
 	// Try to get from Cloudflare Cache if available
 	if (globalThis.caches != null) {
@@ -91,7 +91,7 @@ export async function getPRs(includeYourOwnPRs = false, event?: RequestEvent): P
 		advanced_search: 'true',
 	});
 
-	const hideList = route('hideList').split(',');
+	const hideList = PUBLIC_HIDE_LIST.split(',');
 
 	const prs = data.items.filter(pr => !(pr.state === 'closed' && pr.pull_request?.merged_at == null)).map(pr => ({
 		repo: pr.repository_url.split('/').slice(-2).join('/'),
@@ -124,4 +124,4 @@ export async function getPRs(includeYourOwnPRs = false, event?: RequestEvent): P
 	return result;
 }
 
-export const isIncludeYourOwnPRs = route('includeYourOwnPRs') === 'true';
+export const isIncludeYourOwnPRs = PUBLIC_INCLUDE_YOUR_OWN_PRS === 'true';
