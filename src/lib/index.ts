@@ -1,5 +1,6 @@
 import type { RequestEvent } from '@sveltejs/kit';
 import type { PR, User } from './types';
+import { waitUntil } from 'cloudflare:workers';
 import { minimatch } from 'minimatch';
 import { CACHE_DURATION_SECONDS } from './consts';
 import { useOctokit } from './octokit.server';
@@ -53,7 +54,7 @@ export async function getUser(event?: RequestEvent): Promise<User & { fetchedAt:
 		});
 		// Use waitUntil to cache the response without blocking the main response
 		// This allows the cache write to happen asynchronously after the response is sent
-		event.platform.context.waitUntil(cache.put(cacheKey, response));
+		waitUntil(cache.put(cacheKey, response));
 	}
 
 	return user;
@@ -118,7 +119,7 @@ export async function getPRs(includeYourOwnPRs = false, event?: RequestEvent): P
 		});
 		// Use waitUntil to cache the response without blocking the main response
 		// This allows the cache write to happen asynchronously after the response is sent
-		event.platform.context.waitUntil(cache.put(cacheKey, response));
+		waitUntil(cache.put(cacheKey, response));
 	}
 
 	return result;
