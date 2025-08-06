@@ -37,7 +37,7 @@
 
 		{#snippet pending()}
 			<!-- Show 5 skeleton PRs while loading -->
-			{#each Array.from({ length: 5 }) as _, i (i)}
+			{#each { length: 5 }, i (i)}
 				<PullRequestSkeleton />
 			{/each}
 		{/snippet}
