@@ -54,7 +54,7 @@
 		"ufo": "^1.6.1",
 		"unocss": "^66.4.1",
 		"unplugin-icons": "^22.2.0",
-		"vite": "npm:rolldown-vite@latest",
+		"vite": "^7.0.6",
 		"vite-plugin-kit-routes": "^1.0.2",
 		"wrangler": "^4.28.0"
 	},
