@@ -1,11 +1,11 @@
 import type { RequestHandler } from './$types';
-import { PUBLIC_DOMAIN } from '$env/static/public';
 import { getPRs, getUser, isIncludeYourOwnPRs } from '$lib';
+import { route } from '$lib/ROUTES';
 import { error } from '@sveltejs/kit';
 import { Feed } from 'feed';
 import { joinURL } from 'ufo';
 
-const DOMAIN = PUBLIC_DOMAIN;
+const DOMAIN = route('domain');
 
 export const GET = (async (event) => {
 	if (!URL.canParse(DOMAIN)) {

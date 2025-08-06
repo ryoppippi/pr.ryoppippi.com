@@ -1,6 +1,6 @@
 <script lang='ts'>
 	import type { User } from '$lib/types.js';
-	import { PUBLIC_REPO } from '$env/static/public';
+	import { route } from '$lib/ROUTES';
 	import * as DarkMode from 'svelte-fancy-darkmode';
 	import GitHub from '~icons/line-md/github-loop';
 	import MoonToSunny from '~icons/line-md/moon-filled-to-sunny-filled-loop-transition';
@@ -67,14 +67,14 @@
 		</DarkMode.ToggleButton>
 		<a
 			aria-label='GitHub Repository'
-			href={PUBLIC_REPO}
+			href={route('repo')}
 			target='_blank'
 		>
 			<GitHub />
 		</a>
 		<a
 			aria-label='RSS Feed'
-			href='/feed.xml'
+			href={route('GET /feed.xml')}
 		>
 			<RSS />
 		</a>
