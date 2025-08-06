@@ -57,7 +57,7 @@
 		"unplugin-icons": "^22.1.0",
 		"vite": "npm:rolldown-vite@latest",
 		"vite-plugin-kit-routes": "^1.0.2",
-		"wrangler": "^4.26.0"
+		"wrangler": "^4.23.0"
 	},
 	"simple-git-hooks": {
 		"pre-commit": "pnpm lint-staged"
