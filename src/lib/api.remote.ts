@@ -1,5 +1,5 @@
 import type { PR } from './types';
-import { getRequestEvent, prerender, query } from '$app/server';
+import { getRequestEvent, query } from '$app/server';
 import { minimatch } from 'minimatch';
 import { CACHE_DURATION_SECONDS } from './consts';
 import { useOctokit } from './octokit.server';
@@ -14,7 +14,7 @@ function isHidden(target: string, hideList: string[]): boolean {
 	return hideList.some(pattern => minimatch(target, pattern));
 }
 
-export const getUser = prerender(async () => {
+export const getUser = query(async () => {
 	const octokit = useOctokit();
 
 	// Fetch user from token
