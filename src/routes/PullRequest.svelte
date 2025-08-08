@@ -1,13 +1,12 @@
 <script lang='ts'>
 	import type { PR } from '$lib/types.js';
 	import { formatTimeAgo } from '@vueuse/core';
-	import { joinURL } from 'ufo';
 
 	import PullRequestIcon from '~icons/ph/git-pull-request-duotone';
 
 	const { pr, count }: { pr: PR; count: number } = $props();
 
-	const prURL = joinURL('https://github.com', pr.repo);
+	const prURL = new URL(pr.repo, 'https://github.com/').toString();
 	const prUserName = pr.repo.split('/').at(0) ?? '';
 	const prRepoName = pr.repo.split('/').at(1) ?? '';
 </script>
