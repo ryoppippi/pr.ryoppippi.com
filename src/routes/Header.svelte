@@ -2,7 +2,6 @@
 	import { getUser } from '$lib/api.remote';
 	import { route } from '$lib/ROUTES';
 	import * as DarkMode from 'svelte-fancy-darkmode';
-	import { joinURL } from 'ufo';
 	import GitHub from '~icons/line-md/github-loop';
 	import MoonToSunny from '~icons/line-md/moon-filled-to-sunny-filled-loop-transition';
 
@@ -11,7 +10,7 @@
 	import Divider from './Divider.svelte';
 
 	const user = await getUser();
-	const userUrl = joinURL('https://github.com', user.username);
+	const userUrl = new URL(user.username, 'https://github.com/').toString();
 	const description = `${user.username}'s recent pull requests on GitHub`;
 </script>
 

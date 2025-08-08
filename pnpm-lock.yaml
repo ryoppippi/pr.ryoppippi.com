@@ -89,9 +89,6 @@ importers:
       typescript-svelte-plugin:
         specifier: ^0.3.49
         version: 0.3.49(svelte@5.38.0)(typescript@5.8.3)
-      ufo:
-        specifier: ^1.6.1
-        version: 1.6.1
       unocss:
         specifier: ^66.4.1
         version: 66.4.1(postcss@8.5.6)(vite@7.0.6(@types/node@24.2.0)(jiti@2.4.2)(lightningcss@1.30.1)(tsx@4.19.2)(yaml@2.8.0))

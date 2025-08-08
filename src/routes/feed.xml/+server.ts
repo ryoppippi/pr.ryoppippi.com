@@ -6,7 +6,6 @@ import {
 import { route } from '$lib/ROUTES';
 import { error } from '@sveltejs/kit';
 import { Feed } from 'feed';
-import { joinURL } from 'ufo';
 
 const DOMAIN = route('domain');
 
@@ -27,8 +26,8 @@ export const GET = (async () => {
 		id: domain,
 		link: domain,
 		language: 'en',
-		image: joinURL(domain, 'favicon.png'),
-		favicon: joinURL(domain, 'favicon.png'),
+		image: new URL('favicon.png', domain).toString(),
+		favicon: new URL('favicon.png', domain).toString(),
 		copyright: `MIT 2024 © ${user.name}`,
 		feedLinks: {
 			rss: `${domain}/rss.xml`,
