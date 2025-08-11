@@ -32,7 +32,7 @@
 		"@sveltejs/kit": "^2.27.3",
 		"@sveltejs/vite-plugin-svelte": "5.1.1",
 		"@types/dom-view-transitions": "^1.0.6",
-		"@types/node": "^24.2.0",
+		"@types/node": "^24.2.1",
 		"@unocss/extractor-svelte": "^66.4.1",
 		"@unocss/reset": "^66.4.1",
 		"@vueuse/core": "^13.6.0",
