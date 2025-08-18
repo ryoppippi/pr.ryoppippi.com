@@ -50,7 +50,7 @@
 		"svelte-fancy-darkmode": "^1.1.4",
 		"svelte-meta-tags": "^4.4.0",
 		"typescript": "^5.8.3",
-		"typescript-svelte-plugin": "^0.3.49",
+		"typescript-svelte-plugin": "^0.3.50",
 		"unocss": "^66.4.2",
 		"unplugin-icons": "^22.2.0",
 		"vite": "^7.0.6",
