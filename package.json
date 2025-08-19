@@ -29,7 +29,7 @@
 		"@iconify-json/ph": "^1.2.2",
 		"@ryoppippi/eslint-config": "^0.3.7",
 		"@sveltejs/adapter-cloudflare": "^7.2.1",
-		"@sveltejs/kit": "^2.27.3",
+		"@sveltejs/kit": "^2.31.1",
 		"@sveltejs/vite-plugin-svelte": "5.1.1",
 		"@types/dom-view-transitions": "^1.0.6",
 		"@types/node": "^24.2.1",
