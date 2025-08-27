@@ -4,5 +4,3 @@ onlyBuiltDependencies:
   - simple-git-hooks
   - unrs-resolver
   - workerd
-
-useNodeVersion: 22.14.0
