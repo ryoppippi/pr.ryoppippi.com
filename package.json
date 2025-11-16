@@ -30,7 +30,7 @@
 		"@ryoppippi/eslint-config": "^0.3.7",
 		"@sveltejs/adapter-cloudflare": "^7.2.2",
 		"@sveltejs/kit": "^2.48.5",
-		"@sveltejs/vite-plugin-svelte": "5.1.1",
+		"@sveltejs/vite-plugin-svelte": "6.2.1",
 		"@types/dom-view-transitions": "^1.0.6",
 		"@types/node": "^24.3.0",
 		"@unocss/extractor-svelte": "^66.4.2",
