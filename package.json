@@ -35,7 +35,7 @@
 		"@types/node": "^24.3.0",
 		"@unocss/extractor-svelte": "^66.4.2",
 		"@unocss/reset": "^66.4.2",
-		"@vueuse/core": "^13.7.0",
+		"@vueuse/core": "^14.0.0",
 		"eslint": "^9.34.0",
 		"eslint-plugin-format": "^1.0.1",
 		"eslint-plugin-svelte": "^3.11.0",
