@@ -24,7 +24,7 @@
 		"prepare:types": "nr cf-types"
 	},
 	"devDependencies": {
-		"@antfu/ni": "^25.0.0",
+		"@antfu/ni": "^27.0.1",
 		"@iconify-json/line-md": "^1.2.11",
 		"@iconify-json/ph": "^1.2.2",
 		"@ryoppippi/eslint-config": "^0.3.7",
