@@ -8,12 +8,7 @@
 	import UserSkeleton from './UserSkeleton.svelte';
 </script>
 
-<svelte:boundary>
-	<Meta />
-	{#snippet pending()}
-		<!-- Wait for the data to load... -->
-	{/snippet}
-</svelte:boundary>
+<Meta />
 
 <div
 	flex='~ col gap-8'
@@ -43,10 +38,5 @@
 		{/snippet}
 	</svelte:boundary>
 
-	<svelte:boundary>
-		<Footer />
-		{#snippet pending()}
-			<!-- Wait for the data to load... -->
-		{/snippet}
-	</svelte:boundary>
+	<Footer />
 </div>
