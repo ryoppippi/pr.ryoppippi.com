@@ -44,7 +44,7 @@
 		"minimatch": "^10.2.5",
 		"octokit": "^5.0.5",
 		"simple-git-hooks": "^2.13.1",
-		"std-env": "^3.10.0",
+		"std-env": "^4.0.0",
 		"svelte": "^5.55.1",
 		"svelte-check": "^4.4.6",
 		"svelte-fancy-darkmode": "^1.1.4",
