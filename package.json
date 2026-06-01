@@ -3,7 +3,7 @@
 	"type": "module",
 	"version": "0.0.1",
 	"private": true,
-	"packageManager": "pnpm@10.33.4",
+	"packageManager": "pnpm@10.34.1",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build",
@@ -29,7 +29,7 @@
 		"@iconify-json/ph": "^1.2.2",
 		"@ryoppippi/eslint-config": "^0.4.0",
 		"@sveltejs/adapter-cloudflare": "^7.2.8",
-		"@sveltejs/kit": "^2.60.1",
+		"@sveltejs/kit": "^2.61.1",
 		"@sveltejs/vite-plugin-svelte": "7.1.2",
 		"@types/dom-view-transitions": "^1.0.6",
 		"@types/node": "^24.12.4",
@@ -38,14 +38,14 @@
 		"@vueuse/core": "^13.9.0",
 		"eslint": "^9.39.4",
 		"eslint-plugin-format": "^2.0.1",
-		"eslint-plugin-svelte": "^3.17.1",
+		"eslint-plugin-svelte": "^3.18.0",
 		"feed": "^5.2.1",
 		"lint-staged": "^17.0.5",
 		"minimatch": "^10.2.5",
 		"octokit": "^5.0.5",
 		"simple-git-hooks": "^2.13.1",
 		"std-env": "^4.1.0",
-		"svelte": "^5.55.9",
+		"svelte": "^5.55.10",
 		"svelte-check": "^4.4.8",
 		"svelte-fancy-darkmode": "^1.1.4",
 		"svelte-meta-tags": "^4.7.0",
@@ -55,7 +55,7 @@
 		"unplugin-icons": "^23.0.1",
 		"vite": "8.0.14",
 		"vite-plugin-kit-routes": "^1.0.6",
-		"wrangler": "^4.93.1"
+		"wrangler": "^4.95.0"
 	},
 	"simple-git-hooks": {
 		"pre-commit": "pnpm lint-staged"
