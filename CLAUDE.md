@@ -60,7 +60,7 @@ pnpm check   # Validates TypeScript types
 
 1. **Server-side rendering**: GitHub data is fetched on each request in `src/routes/+page.server.ts`
 2. **Cloudflare Workers deployment**: Site is deployed via `@sveltejs/adapter-cloudflare` with wrangler.jsonc config
-3. **HTTP caching**: Responses are cached for 5 minutes using `cache-control` headers
+3. **HTTP caching**: Workers Cache (enabled via `cache.enabled` in wrangler.jsonc) caches full responses at the edge for 1 hour based on `cache-control` headers set in `src/hooks.server.ts` — cache hits are served without invoking the Worker
 
 ### Key Components
 
@@ -99,7 +99,7 @@ pnpm check   # Validates TypeScript types
 **IMPORTANT**: This application runs on Cloudflare Workers, not a traditional Node.js server. This affects:
 
 - Available APIs (use Cloudflare Workers APIs, not Node.js APIs)
-- Caching strategy (use Cloudflare Cache API with waitUntil)
+- Caching strategy (Workers Cache sits in front of the Worker and caches whole responses via `cache-control` headers — no manual Cache API calls needed)
 - Runtime environment (edge computing, not server)
 
 ### Important Configuration
