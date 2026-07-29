@@ -6,6 +6,9 @@
 		"nodejs_compat"
 	],
 	"main": ".cloudflare/worker.js",
+	"cache": {
+		"enabled": true
+	},
 	"assets": {
 		"directory": ".cloudflare/public",
 		"binding": "ASSETS",

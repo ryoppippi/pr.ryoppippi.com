@@ -1,7 +1,6 @@
 import type { PR } from './types';
-import { getRequestEvent, query } from '$app/server';
+import { query } from '$app/server';
 import { minimatch } from 'minimatch';
-import { CACHE_DURATION_SECONDS } from './consts';
 import { useOctokit } from './octokit.server';
 import { route } from './ROUTES';
 
@@ -37,17 +36,6 @@ export const getUser = query(async () => {
  */
 export const getPRs = query(async (): Promise<PR[]> => {
 	const isIncludeYourOwnPRs = route('includeYourOwnPRs') === 'true';
-	const { platform } = getRequestEvent();
-	const cacheKey = new URL(`https://cache.pr.ryoppippi.com/prs/${route('username')}/${isIncludeYourOwnPRs}`).toString();
-
-	// Try to get from Cloudflare Cache if available
-	if (globalThis.caches != null) {
-		const cache = await caches.open('github-data');
-		const cachedResponse = await cache.match(cacheKey);
-		if (cachedResponse != null) {
-			return cachedResponse.json();
-		}
-	}
 
 	const octokit = useOctokit();
 
@@ -73,20 +61,6 @@ export const getPRs = query(async (): Promise<PR[]> => {
 		state: pr.pull_request?.merged_at != null ? 'merged' : pr.state as PR['state'],
 		number: pr.number,
 	})).filter(pr => !isHidden(pr.repo, hideList));
-
-	// Cache in Cloudflare Cache if available
-	if (globalThis.caches != null && platform?.context != null) {
-		const cache = await caches.open('github-data');
-		const response = new Response(JSON.stringify(prs), {
-			headers: {
-				'content-type': 'application/json',
-				'cache-control': `public, max-age=${CACHE_DURATION_SECONDS}`,
-			},
-		});
-		// Use waitUntil to cache the response without blocking the main response
-		// This allows the cache write to happen asynchronously after the response is sent
-		platform.context.waitUntil(cache.put(cacheKey, response));
-	}
 
 	return prs;
 });
