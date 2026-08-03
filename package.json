@@ -49,7 +49,7 @@
 		"svelte-check": "^4.7.4",
 		"svelte-fancy-darkmode": "^1.1.4",
 		"svelte-meta-tags": "^5.0.2",
-		"typescript": "^6.0.3",
+		"typescript": "^7.0.2",
 		"typescript-svelte-plugin": "^0.3.52",
 		"unocss": "^66.7.5",
 		"unplugin-icons": "^23.0.1",
