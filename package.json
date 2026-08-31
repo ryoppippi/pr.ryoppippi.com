@@ -40,7 +40,7 @@
 		"eslint-plugin-format": "^2.0.1",
 		"eslint-plugin-svelte": "^3.23.0",
 		"feed": "^6.0.0",
-		"lint-staged": "^17.3.0",
+		"lint-staged": "^17.4.1",
 		"minimatch": "^10.2.6",
 		"octokit": "^5.0.5",
 		"simple-git-hooks": "^2.13.1",
@@ -55,7 +55,7 @@
 		"unplugin-icons": "^23.0.1",
 		"vite": "8.2.2",
 		"vite-plugin-kit-routes": "^1.0.6",
-		"wrangler": "^4.125.0"
+		"wrangler": "^4.127.0"
 	},
 	"simple-git-hooks": {
 		"pre-commit": "pnpm lint-staged"
