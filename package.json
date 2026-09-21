@@ -24,7 +24,7 @@
 		"prepare:types": "nr cf-types"
 	},
 	"devDependencies": {
-		"@antfu/ni": "^30.5.0",
+		"@antfu/ni": "^30.6.0",
 		"@iconify-json/line-md": "^1.2.16",
 		"@iconify-json/ph": "^1.2.2",
 		"@ryoppippi/eslint-config": "^0.4.0",
@@ -32,9 +32,9 @@
 		"@sveltejs/kit": "^2.70.3",
 		"@sveltejs/vite-plugin-svelte": "7.3.0",
 		"@types/dom-view-transitions": "^1.0.6",
-		"@types/node": "^24.13.4",
-		"@unocss/extractor-svelte": "^66.10.2",
-		"@unocss/reset": "^66.10.2",
+		"@types/node": "^24.13.5",
+		"@unocss/extractor-svelte": "^66.10.5",
+		"@unocss/reset": "^66.10.5",
 		"@vueuse/core": "^14.4.0",
 		"eslint": "^9.39.5",
 		"eslint-plugin-format": "^2.0.1",
@@ -51,11 +51,11 @@
 		"svelte-meta-tags": "^5.0.2",
 		"typescript": "^6.0.3",
 		"typescript-svelte-plugin": "^0.3.52",
-		"unocss": "^66.10.2",
+		"unocss": "^66.10.5",
 		"unplugin-icons": "^23.0.1",
 		"vite": "8.3.0",
 		"vite-plugin-kit-routes": "^1.0.6",
-		"wrangler": "^4.131.0"
+		"wrangler": "^4.134.0"
 	},
 	"simple-git-hooks": {
 		"pre-commit": "pnpm lint-staged"
