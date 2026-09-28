@@ -96,14 +96,14 @@ importers:
         specifier: ^66.10.5
         version: 66.10.5(cac@7.0.0)(rolldown@1.2.8)(srvx@1.0.3)(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0))
       unplugin-icons:
-        specifier: ^23.0.1
-        version: 23.0.1(@vue/compiler-sfc@3.5.13)(svelte@5.57.0(@typescript-eslint/types@8.52.0))
+        specifier: ^24.0.0
+        version: 24.0.0(@vue/compiler-sfc@3.5.13)(esbuild@0.28.1)(rolldown@1.2.8)(svelte@5.57.0(@typescript-eslint/types@8.52.0))(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0))
       vite:
         specifier: 8.3.0
         version: 8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0)
       vite-plugin-kit-routes:
         specifier: ^1.0.6
-        version: 1.0.6(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.57.0(@typescript-eslint/types@8.52.0))(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0)))(svelte@5.57.0(@typescript-eslint/types@8.52.0))(typescript@6.0.3)(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0)))(@typescript-eslint/types@8.52.0)(rolldown@1.2.8)(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0))
+        version: 1.0.6(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.57.0(@typescript-eslint/types@8.52.0))(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0)))(svelte@5.57.0(@typescript-eslint/types@8.52.0))(typescript@6.0.3)(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0)))(@typescript-eslint/types@8.52.0)(esbuild@0.28.1)(rolldown@1.2.8)(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0))
       wrangler:
         specifier: ^4.134.0
         version: 4.135.0(@types/node@24.13.6)
@@ -2942,8 +2942,9 @@ packages:
   nth-check@2.1.1:
     resolution: {integrity: sha512-lqjrjmaOoAnWfMmBPL+XNnynZh2+swxiX3WUE0s4yEHI6m+AwrK2UZOimIRl3X/4QctVqS8AiZjFqyOGrMXb/w==}
 
-  obug@2.1.1:
-    resolution: {integrity: sha512-uTqF9MuPraAQ+IsnPf366RG4cP9RtUi7MLO1N3KEc+wb0a6yKpeL0lmk2IB1jY5KHPAlTc6T/JRdC/YqxHNwkQ==}
+  obug@2.2.1:
+    resolution: {integrity: sha512-XrsrhT5sybtKI6wakr2SPOlGZWWYbUXZ7a0jT8/QOeAPau+1X/bSegNe5YR75oJmEZQbKningirmGOEJCIk61Q==}
+    engines: {node: '>=12.20.0'}
 
   octokit@5.0.5:
     resolution: {integrity: sha512-4+/OFSqOjoyULo7eN7EA97DE0Xydj/PW5aIckxqQIoFjFwqXKuFCvXUJObyJfBF9Khu4RL/jlDRI9FPaMGfPnw==}
@@ -3406,12 +3407,13 @@ packages:
       '@unocss/webpack':
         optional: true
 
-  unplugin-icons@23.0.1:
-    resolution: {integrity: sha512-rv0XEJepajKzDLvRUWASM8K+8+/CCfZn2jtogXqg6RIp7kpatRc/aFrVJn8ANQA09e++lPEEv9yX8cC9enc+QQ==}
+  unplugin-icons@24.0.0:
+    resolution: {integrity: sha512-wV6c7I0PtiIP8KIU7Z1Ukyc2uzgY9ind3RXNu7j63L9qTWDn7CzLnW9FD57DKbfGpWKQv3qyV2PCtBG8Y5Llcg==}
     peerDependencies:
       '@svgr/core': '>=7.0.0'
       '@svgx/core': ^1.0.1
       '@vue/compiler-sfc': ^3.0.2
+      '@vue/compiler-vapor': ^3.6.0-rc.5
       svelte: ^3.0.0 || ^4.0.0 || ^5.0.0
     peerDependenciesMeta:
       '@svgr/core':
@@ -3419,6 +3421,8 @@ packages:
       '@svgx/core':
         optional: true
       '@vue/compiler-sfc':
+        optional: true
+      '@vue/compiler-vapor':
         optional: true
       svelte:
         optional: true
@@ -3431,9 +3435,41 @@ packages:
     resolution: {integrity: sha512-5uKD0nqiYVzlmCRs01Fhs2BdkEgBS3SAVP6ndrBsuK42iC2+JHyxM05Rm9G8+5mkmRtzMZGY8Ct5+mliZxU/Ww==}
     engines: {node: '>=18.12.0'}
 
-  unplugin@3.0.0:
-    resolution: {integrity: sha512-0Mqk3AT2TZCXWKdcoaufeXNukv2mTrEZExeXlHIOZXdqYoHHr4n51pymnwV8x2BOVxwXbK2HLlI7usrqMpycdg==}
+  unplugin@3.4.0:
+    resolution: {integrity: sha512-9skdIFlCsPdFV7wUfZxNsFInlW+7nJmGu2gkTu0OUhF56aXGsHab9x52/QhdJ4lC7ZDPWTxbiC4ANqVlsuaW3w==}
     engines: {node: ^20.19.0 || >=22.12.0}
+    peerDependencies:
+      '@farmfe/core': '*'
+      '@rsbuild/core': '*'
+      '@rspack/core': '*'
+      bun-types-no-globals: '*'
+      esbuild: '*'
+      rolldown: '*'
+      rollup: '*'
+      unloader: '*'
+      vite: '*'
+      webpack: '*'
+    peerDependenciesMeta:
+      '@farmfe/core':
+        optional: true
+      '@rsbuild/core':
+        optional: true
+      '@rspack/core':
+        optional: true
+      bun-types-no-globals:
+        optional: true
+      esbuild:
+        optional: true
+      rolldown:
+        optional: true
+      rollup:
+        optional: true
+      unloader:
+        optional: true
+      vite:
+        optional: true
+      webpack:
+        optional: true
 
   update-browserslist-db@1.2.3:
     resolution: {integrity: sha512-Js0m9cx+qOgDxo0eMiFGEueWztz+d4+M3rGlmKPT+T4IS/jP4ylw3Nwpu6cpTTP8R1MAC1kF4VbdLt3ARf209w==}
@@ -4165,16 +4201,25 @@ snapshots:
     dependencies:
       esm-env: 1.2.2
 
-  '@kitql/internals@0.11.3(@typescript-eslint/types@8.52.0)(rolldown@1.2.8)':
+  '@kitql/internals@0.11.3(@typescript-eslint/types@8.52.0)(esbuild@0.28.1)(rolldown@1.2.8)(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0))':
     dependencies:
       '@kitql/helpers': 0.8.15
       esrap: 2.2.6(@typescript-eslint/types@8.52.0)
       oxc-parser: 0.132.0
-      oxc-walker: 1.0.0(oxc-parser@0.132.0)(rolldown@1.2.8)
+      oxc-walker: 1.0.0(esbuild@0.28.1)(oxc-parser@0.132.0)(rolldown@1.2.8)(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0))
       svelte: 5.57.0(@typescript-eslint/types@8.52.0)
     transitivePeerDependencies:
+      - '@farmfe/core'
+      - '@rsbuild/core'
+      - '@rspack/core'
       - '@typescript-eslint/types'
+      - bun-types-no-globals
+      - esbuild
       - rolldown
+      - rollup
+      - unloader
+      - vite
+      - webpack
 
   '@napi-rs/wasm-runtime@1.2.2(@emnapi/core@1.10.0)(@emnapi/runtime@1.10.0)':
     dependencies:
@@ -4662,7 +4707,7 @@ snapshots:
     dependencies:
       deepmerge: 4.3.1
       magic-string: 1.4.1
-      obug: 2.1.1
+      obug: 2.2.1
       svelte: 5.57.0(@typescript-eslint/types@8.52.0)
       vite: 8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0)
       vitefu: 1.1.2(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0))
@@ -5877,12 +5922,23 @@ snapshots:
       ufo: 1.6.4
       unplugin: 2.3.11
 
-  magic-regexp@0.11.0:
+  magic-regexp@0.11.0(esbuild@0.28.1)(rolldown@1.2.8)(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0)):
     dependencies:
       magic-string: 0.30.21
       regexp-tree: 0.1.27
       type-level-regexp: 0.1.17
-      unplugin: 3.0.0
+      unplugin: 3.4.0(esbuild@0.28.1)(rolldown@1.2.8)(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0))
+    transitivePeerDependencies:
+      - '@farmfe/core'
+      - '@rsbuild/core'
+      - '@rspack/core'
+      - bun-types-no-globals
+      - esbuild
+      - rolldown
+      - rollup
+      - unloader
+      - vite
+      - webpack
 
   magic-string@0.30.21:
     dependencies:
@@ -6265,7 +6321,7 @@ snapshots:
     dependencies:
       boolbase: 1.0.0
 
-  obug@2.1.1: {}
+  obug@2.2.1: {}
 
   octokit@5.0.5:
     dependencies:
@@ -6352,12 +6408,22 @@ snapshots:
       magic-regexp: 0.10.0
       oxc-parser: 0.150.0
 
-  oxc-walker@1.0.0(oxc-parser@0.132.0)(rolldown@1.2.8):
+  oxc-walker@1.0.0(esbuild@0.28.1)(oxc-parser@0.132.0)(rolldown@1.2.8)(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0)):
     dependencies:
-      magic-regexp: 0.11.0
+      magic-regexp: 0.11.0(esbuild@0.28.1)(rolldown@1.2.8)(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0))
     optionalDependencies:
       oxc-parser: 0.132.0
       rolldown: 1.2.8
+    transitivePeerDependencies:
+      - '@farmfe/core'
+      - '@rsbuild/core'
+      - '@rspack/core'
+      - bun-types-no-globals
+      - esbuild
+      - rollup
+      - unloader
+      - vite
+      - webpack
 
   oxfmt@0.35.0:
     dependencies:
@@ -6831,16 +6897,27 @@ snapshots:
       - srvx
       - vite
 
-  unplugin-icons@23.0.1(@vue/compiler-sfc@3.5.13)(svelte@5.57.0(@typescript-eslint/types@8.52.0)):
+  unplugin-icons@24.0.0(@vue/compiler-sfc@3.5.13)(esbuild@0.28.1)(rolldown@1.2.8)(svelte@5.57.0(@typescript-eslint/types@8.52.0))(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0)):
     dependencies:
       '@antfu/install-pkg': 1.1.0
       '@iconify/utils': 3.1.7
       local-pkg: 1.2.1
-      obug: 2.1.1
-      unplugin: 2.3.11
+      obug: 2.2.1
+      unplugin: 3.4.0(esbuild@0.28.1)(rolldown@1.2.8)(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0))
     optionalDependencies:
       '@vue/compiler-sfc': 3.5.13
       svelte: 5.57.0(@typescript-eslint/types@8.52.0)
+    transitivePeerDependencies:
+      - '@farmfe/core'
+      - '@rsbuild/core'
+      - '@rspack/core'
+      - bun-types-no-globals
+      - esbuild
+      - rolldown
+      - rollup
+      - unloader
+      - vite
+      - webpack
 
   unplugin-utils@0.3.2:
     dependencies:
@@ -6854,11 +6931,15 @@ snapshots:
       picomatch: 4.0.7
       webpack-virtual-modules: 0.6.2
 
-  unplugin@3.0.0:
+  unplugin@3.4.0(esbuild@0.28.1)(rolldown@1.2.8)(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0)):
     dependencies:
       '@jridgewell/remapping': 2.3.5
       picomatch: 4.0.7
       webpack-virtual-modules: 0.6.2
+    optionalDependencies:
+      esbuild: 0.28.1
+      rolldown: 1.2.8
+      vite: 8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0)
 
   update-browserslist-db@1.2.3(browserslist@4.28.1):
     dependencies:
@@ -6872,16 +6953,24 @@ snapshots:
 
   util-deprecate@1.0.2: {}
 
-  vite-plugin-kit-routes@1.0.6(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.57.0(@typescript-eslint/types@8.52.0))(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0)))(svelte@5.57.0(@typescript-eslint/types@8.52.0))(typescript@6.0.3)(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0)))(@typescript-eslint/types@8.52.0)(rolldown@1.2.8)(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0)):
+  vite-plugin-kit-routes@1.0.6(@sveltejs/kit@2.70.3(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.57.0(@typescript-eslint/types@8.52.0))(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0)))(svelte@5.57.0(@typescript-eslint/types@8.52.0))(typescript@6.0.3)(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0)))(@typescript-eslint/types@8.52.0)(esbuild@0.28.1)(rolldown@1.2.8)(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0)):
     dependencies:
       '@kitql/helpers': 0.8.15
-      '@kitql/internals': 0.11.3(@typescript-eslint/types@8.52.0)(rolldown@1.2.8)
+      '@kitql/internals': 0.11.3(@typescript-eslint/types@8.52.0)(esbuild@0.28.1)(rolldown@1.2.8)(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0))
       '@sveltejs/kit': 2.70.3(@sveltejs/vite-plugin-svelte@7.3.0(svelte@5.57.0(@typescript-eslint/types@8.52.0))(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0)))(svelte@5.57.0(@typescript-eslint/types@8.52.0))(typescript@6.0.3)(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0))
       vite: 8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0)
       vite-plugin-watch-and-run: 1.8.2(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0))
     transitivePeerDependencies:
+      - '@farmfe/core'
+      - '@rsbuild/core'
+      - '@rspack/core'
       - '@typescript-eslint/types'
+      - bun-types-no-globals
+      - esbuild
       - rolldown
+      - rollup
+      - unloader
+      - webpack
 
   vite-plugin-watch-and-run@1.8.2(vite@8.3.0(@types/node@24.13.6)(esbuild@0.28.1)(jiti@2.6.1)(tsx@4.19.2)(yaml@2.9.0)):
     dependencies:
