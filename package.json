@@ -52,7 +52,7 @@
 		"typescript": "^6.0.3",
 		"typescript-svelte-plugin": "^0.3.52",
 		"unocss": "^66.10.5",
-		"unplugin-icons": "^23.0.1",
+		"unplugin-icons": "^24.0.0",
 		"vite": "8.3.0",
 		"vite-plugin-kit-routes": "^1.0.6",
 		"wrangler": "^4.134.0"
