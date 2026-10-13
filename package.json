@@ -28,7 +28,7 @@
 		"@iconify-json/line-md": "^1.2.16",
 		"@iconify-json/ph": "^1.2.2",
 		"@ryoppippi/eslint-config": "^0.4.0",
-		"@sveltejs/adapter-cloudflare": "^7.2.9",
+		"@sveltejs/adapter-cloudflare": "^8.0.0",
 		"@sveltejs/kit": "^2.70.3",
 		"@sveltejs/vite-plugin-svelte": "7.3.1",
 		"@types/dom-view-transitions": "^1.0.6",
