@@ -41,7 +41,7 @@
 		"eslint-plugin-svelte": "^3.23.1",
 		"feed": "^6.0.0",
 		"lint-staged": "^17.6.0",
-		"minimatch": "^10.2.6",
+		"minimatch": "^11.0.3",
 		"octokit": "^5.0.5",
 		"simple-git-hooks": "^2.14.0",
 		"std-env": "^4.3.0",
